@@ -1,4 +1,4 @@
-baseURL = "https://ovalves.github.io"
+baseURL = "https://ovalves.github.io/"
 languageCode = "pt-BR"
 title = "Vinicius Alves"
 theme = "cactus"
