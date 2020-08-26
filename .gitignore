@@ -1,3 +1,2 @@
 .travis.yml
-config.toml
 deploy.sh
