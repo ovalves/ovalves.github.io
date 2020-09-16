@@ -9,6 +9,11 @@
             "name":"Selene Skeleton",
             "url":"https://github.com/ovalves/selene-skeleton",
             "desc":"The Selene framework project skeleton."
+        },
+        {
+            "name":"Celeste",
+            "url":"https://github.com/ovalves/celeste-engine",
+            "desc":"Celeste Engine is a simple game engine that allows you to write legible and realiable code for high quality 2D games."
         }
     ]
 }
