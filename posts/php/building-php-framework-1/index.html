@@ -9,8 +9,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Construindo um framework web em PHP - Parte 1" />
-<meta property="og:description" content="O código do projeto pode ser encontrado no github neste link
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo." />
+<meta property="og:description" content="Código do projeto no github
+Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
+Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &ldquo;laravel&rdquo; ou &ldquo;react&rdquo;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ovalves.github.io/posts/php/building-php-framework-1/" />
 <meta property="article:published_time" content="2020-09-16T16:15:42+00:00" />
@@ -18,8 +19,9 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Construindo um framework web em PHP - Parte 1"/>
-<meta name="twitter:description" content="O código do projeto pode ser encontrado no github neste link
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo."/>
+<meta name="twitter:description" content="Código do projeto no github
+Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
+Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &ldquo;laravel&rdquo; ou &ldquo;react&rdquo;."/>
 
   
   
@@ -67,12 +69,6 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
     <br/>
     <span id="actions">
       <ul>
-        
-        <li>
-          <a class="icon" href=" https://ovalves.github.io/posts/php/building-php-framework-2/">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
         
         
         <li>
@@ -152,7 +148,7 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=C%c3%b3digo%20do%20projeto%20no%20github%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.%0aMotiva%c3%a7%c3%a3o%20Muitos%20desenvolvedores%20iniciam%20suas%20carreiras%20j%c3%a1%20programando%20em%20cima%20de%20abstra%c3%a7%c3%b5es%2c%20vide%20a%20imensa%20quantidade%20de%20desenvolvedores%20%26ldquo%3blaravel%26rdquo%3b%20ou%20%26ldquo%3breact%26rdquo%3b.">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -221,8 +217,7 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
 
   
     <div class="content" itemprop="articleBody">
-      <p>O código do projeto pode ser encontrado no github neste
-<a href="https://github.com/ovalves/selene">link</a></p>
+      <p><em><a href="https://github.com/ovalves/selene">Código do projeto no github</a></em></p>
 <h2 id="introdução">Introdução</h2>
 <p>Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.</p>
 <h3 id="motivação">Motivação</h3>
@@ -262,8 +257,7 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
 </ul>
 <h2 id="gerenciamento-de-dependências">Gerenciamento de dependências</h2>
 <p>Iremos utilizar o <a href="https://getcomposer.org">composer</a> para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.</p>
-<p><em>Parte 2 da série - em breve</em></p>
-<!-- raw HTML omitted -->
+<p><em>Parte 2 - em breve</em></p>
 
     </div>
   </article>
@@ -364,7 +358,7 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=C%c3%b3digo%20do%20projeto%20no%20github%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.%0aMotiva%c3%a7%c3%a3o%20Muitos%20desenvolvedores%20iniciam%20suas%20carreiras%20j%c3%a1%20programando%20em%20cima%20de%20abstra%c3%a7%c3%b5es%2c%20vide%20a%20imensa%20quantidade%20de%20desenvolvedores%20%26ldquo%3blaravel%26rdquo%3b%20ou%20%26ldquo%3breact%26rdquo%3b.">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
