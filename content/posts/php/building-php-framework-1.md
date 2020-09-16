@@ -1,6 +1,6 @@
 ---
 title: Construindo um framework web em PHP - Parte 1
-date: 2020-09-16 16:15:42
+date: 2020-09-16 18:11:40
 tags:
     - PHP
     - Arquitetura de software
