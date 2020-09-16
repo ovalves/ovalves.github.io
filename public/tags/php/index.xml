@@ -18,18 +18,9 @@
       <pubDate>Wed, 16 Sep 2020 16:15:42 +0000</pubDate>
       
       <guid>https://ovalves.github.io/posts/php/building-php-framework-1/</guid>
-      <description>O código do projeto pode ser encontrado no github neste link
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.</description>
-    </item>
-    
-    <item>
-      <title>Construindo um framework web em PHP - Parte 2</title>
-      <link>https://ovalves.github.io/posts/php/building-php-framework-2/</link>
-      <pubDate>Wed, 16 Sep 2020 16:15:42 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/posts/php/building-php-framework-2/</guid>
-      <description>O código do projeto pode ser encontrado no github neste link
-Introdução Algumas pessoas têm vontade de escrever seu próprio framework. Outras pessoas, por outro lado preferem usar os já existentes. E existem centenas, talvez milhares de frameworks web no mercado. Por que mais um? Por que iremos nos dar ao trabalho de implementarmos nosso próprio framework na &amp;ldquo;unha&amp;rdquo;? Bom, acredito que assim como eu, você também já se viu tendo de aprender diversas tecnologias e frameworks que estão em alta no momento, e quando a tal moda acaba você precisa recomeçar do zero em outro framework, talvez até em outra linguagem de programação.</description>
+      <description>Código do projeto no github
+Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
+Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
     </item>
     
   </channel>

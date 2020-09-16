@@ -11,16 +11,12 @@ keywords:
     - Arquitetura de software
 ---
 
-O código do projeto pode ser encontrado no github neste
-[link](https://github.com/ovalves/selene)
+*[Código do projeto no github](https://github.com/ovalves/selene)*
 
 ## Introdução
-
 Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
 
-
 ### Motivação
-
 Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações,
 vide a imensa quantidade de desenvolvedores "laravel" ou "react".
 Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. Tentaremos criar um framework robusto que ajude outros devs a executarem tarefas do dia dia.
@@ -31,14 +27,12 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que,
 >Disclaimer: O framework criado tem a finalidade de ser didático, caso queira usá-lo em produção faça muitos testes antes.
 
 ### Aqui estão mais razões para criar seu próprio framework:
-
 - Aprender mais sobre arquitetura de sistemas modernos para web.
 - Criar só por diversão mesmo
 - Para entender que criar sistemas robustos e com boa experiência para outros programadores usarem é uma tarefa difícil, mas recompensadora.
 - Para ter maior compreensão sobre como diferentes módulos de um framework podem conversar entre si
 - Para aprender novos paradigmas de programação
 - Para reforçar o conhecimento em alguma linguagem de programação
-
 
 ## O que será abordado
 - Criação de uma engine de roteamento simples porém poderosa
@@ -59,5 +53,4 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que,
 ## Gerenciamento de dependências
 Iremos utilizar o [composer](https://getcomposer.org) para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.
 
-*Parte 2 da série - em breve*
-<!-- [Construindo um framework PHP](/posts/php/selene/desenvolvendo-php-framework-2/) -->
+*Parte 2 - em breve*
