@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Construindo um framework web em PHP - Parte 1 </title>
+  <title> Construindo um framework web em PHP - Parte 2 </title>
   <meta name="description" content="Sou apenas um caminhante á procura de mim mesmo.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="Construindo um framework web em PHP - Parte 1" />
+  <meta property="og:title" content="Construindo um framework web em PHP - Parte 2" />
 <meta property="og:description" content="O código do projeto pode ser encontrado no github neste link
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo." />
+Introdução Algumas pessoas têm vontade de escrever seu próprio framework. Outras pessoas, por outro lado preferem usar os já existentes. E existem centenas, talvez milhares de frameworks web no mercado. Por que mais um? Por que iremos nos dar ao trabalho de implementarmos nosso próprio framework na &ldquo;unha&rdquo;? Bom, acredito que assim como eu, você também já se viu tendo de aprender diversas tecnologias e frameworks que estão em alta no momento, e quando a tal moda acaba você precisa recomeçar do zero em outro framework, talvez até em outra linguagem de programação." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ovalves.github.io/posts/php/building-php-framework-1/" />
+<meta property="og:url" content="https://ovalves.github.io/posts/php/building-php-framework-2/" />
 <meta property="article:published_time" content="2020-09-16T16:15:42+00:00" />
 <meta property="article:modified_time" content="2020-09-16T16:15:42+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Construindo um framework web em PHP - Parte 1"/>
+<meta name="twitter:title" content="Construindo um framework web em PHP - Parte 2"/>
 <meta name="twitter:description" content="O código do projeto pode ser encontrado no github neste link
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo."/>
+Introdução Algumas pessoas têm vontade de escrever seu próprio framework. Outras pessoas, por outro lado preferem usar os já existentes. E existem centenas, talvez milhares de frameworks web no mercado. Por que mais um? Por que iremos nos dar ao trabalho de implementarmos nosso próprio framework na &ldquo;unha&rdquo;? Bom, acredito que assim como eu, você também já se viu tendo de aprender diversas tecnologias e frameworks que estão em alta no momento, e quando a tal moda acaba você precisa recomeçar do zero em outro framework, talvez até em outra linguagem de programação."/>
 
   
   
@@ -68,15 +68,9 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href=" https://ovalves.github.io/posts/php/building-php-framework-2/">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
         
         <li>
-          <a class="icon" href="https://ovalves.github.io/about/">
+          <a class="icon" href="https://ovalves.github.io/posts/php/building-php-framework-1/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -107,57 +101,57 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&text=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&text=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&is_video=false&description=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&is_video=false&description=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f">
+    <a class="icon" href="mailto:?subject=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-stumbleupon " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-digg " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Algumas%20pessoas%20t%c3%aam%20vontade%20de%20escrever%20seu%20pr%c3%b3prio%20framework.%20Outras%20pessoas%2c%20por%20outro%20lado%20preferem%20usar%20os%20j%c3%a1%20existentes.%20E%20existem%20centenas%2c%20talvez%20milhares%20de%20frameworks%20web%20no%20mercado.%20Por%20que%20mais%20um%3f%20Por%20que%20iremos%20nos%20dar%20ao%20trabalho%20de%20implementarmos%20nosso%20pr%c3%b3prio%20framework%20na%20%26ldquo%3bunha%26rdquo%3b%3f%20Bom%2c%20acredito%20que%20assim%20como%20eu%2c%20voc%c3%aa%20tamb%c3%a9m%20j%c3%a1%20se%20viu%20tendo%20de%20aprender%20diversas%20tecnologias%20e%20frameworks%20que%20est%c3%a3o%20em%20alta%20no%20momento%2c%20e%20quando%20a%20tal%20moda%20acaba%20voc%c3%aa%20precisa%20recome%c3%a7ar%20do%20zero%20em%20outro%20framework%2c%20talvez%20at%c3%a9%20em%20outra%20linguagem%20de%20programa%c3%a7%c3%a3o.">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&t=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&t=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -167,11 +161,10 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a>
       <ul>
-        <li><a href="#motivação">Motivação</a></li>
-        <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a></li>
-        <li><a href="#aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</a></li>
+        <li><a href="#aqui-estão-algumas-razões-para-criar-seu-próprio-framework">Aqui estão algumas razões para criar seu próprio framework:</a></li>
       </ul>
     </li>
     <li><a href="#o-que-será-abordado">O que será abordado</a></li>
@@ -186,7 +179,7 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Construindo um framework web em PHP - Parte 1
+        Construindo um framework web em PHP - Parte 2
       </h1>
       <div class="meta">
         
@@ -201,6 +194,12 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
             
             
             <a class="category-link" href="/categories/frameworks-php">Frameworks PHP</a>
+            
+            
+            <a class="category-link" href="/categories/frameworks-web">Frameworks Web</a>
+            
+             ,  
+            <a class="category-link" href="/categories/php">PHP</a>
             
         </div>
         
@@ -224,25 +223,23 @@ Introdução Nesta série de artigos irei abordar todos os passos necessários p
       <p>O código do projeto pode ser encontrado no github neste
 <a href="https://github.com/ovalves/selene">link</a></p>
 <h2 id="introdução">Introdução</h2>
-<p>Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.</p>
-<h3 id="motivação">Motivação</h3>
-<p>Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações,
-vide a imensa quantidade de desenvolvedores &ldquo;laravel&rdquo; ou &ldquo;react&rdquo;.
-Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. Tentaremos criar um framework robusto que ajude outros devs a executarem tarefas do dia dia.</p>
-<h3 id="por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</h3>
+<p>Algumas pessoas têm vontade de escrever seu próprio framework. Outras pessoas, por outro lado preferem usar os já existentes. E existem centenas, talvez milhares de frameworks web no mercado. Por que mais um? Por que iremos nos dar ao trabalho de implementarmos nosso próprio framework na &ldquo;unha&rdquo;? Bom, acredito que assim como eu, você  também já se viu tendo de aprender diversas tecnologias e frameworks que estão em alta no momento, e quando a tal moda acaba você precisa recomeçar do zero em outro framework, talvez até em outra linguagem de programação.</p>
 <p>Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que, por sua vez, tornará mais fácil a compreensão de outros frameworks existentes no mercado, porque no final das contas, a grande maioria segue quase que os mesmos princípios. Esse desafio também o forçará a tomar decisões que, em outro momento ou projeto  você acredita-se que poderia evitar: decisões de arquitetura, decisões de código, decisões por falta de tempo.</p>
 <blockquote>
-<p>Disclaimer: O framework criado tem a finalidade de ser didático, caso queira usá-lo em produção faça muitos testes antes.</p>
+<p>Disclaimer: Você não irá escrever o próximo reactjs ou vue ou laravel, pelo menos não no seu primeiro framework.</p>
 </blockquote>
-<h3 id="aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</h3>
+<h2 id="por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</h2>
+<p><em>&ldquo;Não reinvente a roda, eles dizem&rdquo; ou &ldquo;escolha um framework já existente e confiável.&quot;</em>
+Na maioria das vezes eles estão certos, ainda mais quando estamos falando de projetos de empresas ou quando segurança é um problema, ou mesmo o tempo é uma variável problemática. No mais, crie seu próprio framework, se você é curioso e quer saber como as coisas funcionam por debaixo dos panos, ou se você simplesmente quer aprender mais sobre determinada linguagem de programação.</p>
+<h3 id="aqui-estão-algumas-razões-para-criar-seu-próprio-framework">Aqui estão algumas razões para criar seu próprio framework:</h3>
 <ul>
 <li>Aprender mais sobre arquitetura de sistemas modernos para web.</li>
-<li>Criar só por diversão mesmo</li>
+<li>Por diversão</li>
 <li>Para entender que criar sistemas robustos e com boa experiência para outros programadores usarem é uma tarefa difícil, mas recompensadora.</li>
-<li>Para ter maior compreensão sobre como diferentes módulos de um framework podem conversar entre si</li>
-<li>Para aprender novos paradigmas de programação</li>
-<li>Para reforçar o conhecimento em alguma linguagem de programação</li>
 </ul>
+<p>Esta série irá guiá-lo através de todo o processo da criação de um
+framework web, um passo de cada vez. E em cada etapa você terá um
+framework web funcional. Começaremos com um framework bem simples, acrescentando mais recursos com o tempo. E então, eventualmente, você terá um framework web completo.</p>
 <h2 id="o-que-será-abordado">O que será abordado</h2>
 <ul>
 <li>Criação de uma engine de roteamento simples porém poderosa</li>
@@ -253,7 +250,7 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
 <li>Criação de um sistema de template engine, facilitando a criação das views no framework</li>
 <li>Criação de um sistema de Middlewares</li>
 <li>Criação de um sistema de arquivos</li>
-<li>Criação de um sistema de Request e Response (para trabalharmos com as requições HTTP)</li>
+<li>Criação de um sistema de Request e Response (para trabalharmos com as requisições HTTP)</li>
 <li>Criação de um sistema de gerenciamento de banco de dados (Gerenciamento de conexões, persistência, etc)</li>
 <li>O framework seguirá o padrão MVC</li>
 <li>Sistema de logs</li>
@@ -262,8 +259,8 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
 </ul>
 <h2 id="gerenciamento-de-dependências">Gerenciamento de dependências</h2>
 <p>Iremos utilizar o <a href="https://getcomposer.org">composer</a> para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.</p>
-<p><em>Parte 2 da série - em breve</em></p>
-<!-- raw HTML omitted -->
+<p><em>Parte 2 da série</em>
+<a href="/posts/php/selene/desenvolvendo-php-framework-2/">Construindo seu framework PHP</a></p>
 
     </div>
   </article>
@@ -297,11 +294,10 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a>
       <ul>
-        <li><a href="#motivação">Motivação</a></li>
-        <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a></li>
-        <li><a href="#aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</a></li>
+        <li><a href="#aqui-estão-algumas-razões-para-criar-seu-próprio-framework">Aqui estão algumas razões para criar seu próprio framework:</a></li>
       </ul>
     </li>
     <li><a href="#o-que-será-abordado">O que será abordado</a></li>
@@ -319,57 +315,57 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&text=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&text=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&is_video=false&description=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&is_video=false&description=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f">
+    <a class="icon" href="mailto:?subject=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&title=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Nesta%20s%c3%a9rie%20de%20artigos%20irei%20abordar%20todos%20os%20passos%20necess%c3%a1rios%20para%20a%20constru%c3%a7%c3%a3o%20de%20um%20framework%20completo%20em%20PHP.%20Da%20cria%c3%a7%c3%a3o%20do%20sistema%20de%20roteamento%20%c3%a0%20a%20cria%c3%a7%c3%a3o%20de%20uma%20template%20engine%20simples.%20Em%20cada%20etapa%20da%20cria%c3%a7%c3%a3o%20voc%c3%aa%20ter%c3%a1%20um%20framework%20web%20funcional.%20Come%c3%a7aremos%20com%20um%20framework%20bem%20simples%20e%20iremos%20acrescentando%20mais%20recursos%20com%20o%20tempo.">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&name=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202&description=O%20c%c3%b3digo%20do%20projeto%20pode%20ser%20encontrado%20no%20github%20neste%20link%0aIntrodu%c3%a7%c3%a3o%20Algumas%20pessoas%20t%c3%aam%20vontade%20de%20escrever%20seu%20pr%c3%b3prio%20framework.%20Outras%20pessoas%2c%20por%20outro%20lado%20preferem%20usar%20os%20j%c3%a1%20existentes.%20E%20existem%20centenas%2c%20talvez%20milhares%20de%20frameworks%20web%20no%20mercado.%20Por%20que%20mais%20um%3f%20Por%20que%20iremos%20nos%20dar%20ao%20trabalho%20de%20implementarmos%20nosso%20pr%c3%b3prio%20framework%20na%20%26ldquo%3bunha%26rdquo%3b%3f%20Bom%2c%20acredito%20que%20assim%20como%20eu%2c%20voc%c3%aa%20tamb%c3%a9m%20j%c3%a1%20se%20viu%20tendo%20de%20aprender%20diversas%20tecnologias%20e%20frameworks%20que%20est%c3%a3o%20em%20alta%20no%20momento%2c%20e%20quando%20a%20tal%20moda%20acaba%20voc%c3%aa%20precisa%20recome%c3%a7ar%20do%20zero%20em%20outro%20framework%2c%20talvez%20at%c3%a9%20em%20outra%20linguagem%20de%20programa%c3%a7%c3%a3o.">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-1%2f&t=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%201">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fphp%2fbuilding-php-framework-2%2f&t=Construindo%20um%20framework%20web%20em%20PHP%20-%20Parte%202">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -59,5 +59,5 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que,
 ## Gerenciamento de dependências
 Iremos utilizar o [composer](https://getcomposer.org) para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.
 
-*Parte 2 da série*
-[Construindo um framework PHP](/posts/php/selene/desenvolvendo-php-framework-2/)
+*Parte 2 da série - em breve*
+<!-- [Construindo um framework PHP](/posts/php/selene/desenvolvendo-php-framework-2/) -->
