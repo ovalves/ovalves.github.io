@@ -179,15 +179,7 @@ Controle de versão Um sistema de controle de versão é um software com a final
     <li><a href="#listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</a></li>
     <li><a href="#adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</a></li>
     <li><a href="#removendo-arquivos-da-staging-area">Removendo arquivos da staging area</a></li>
-    <li><a href="#fazendo-um-commit">Fazendo um commit</a>
-      <ul>
-        <li><a href="#motivação">Motivação</a></li>
-        <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a></li>
-        <li><a href="#aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</a></li>
-      </ul>
-    </li>
-    <li><a href="#o-que-será-abordado">O que será abordado</a></li>
-    <li><a href="#gerenciamento-de-dependências">Gerenciamento de dependências</a></li>
+    <li><a href="#fazendo-um-commit">Fazendo um commit</a></li>
   </ul>
 </nav>
     </div>
@@ -282,44 +274,6 @@ git config --global user.email &quot;Seu email&quot;
 <p>Um commit é uma unidade de controle que pode contar um ou mais arquivos e operações que foram realizadas no <em>working directory</em>.</p>
 <pre><code>git commit -m &quot;meu primeiro commit&quot;
 </code></pre><p>No comando acima utilizamos a <em>flag -m</em> que significa que estamos passando uma mensagem para o <em>commit</em>. Esta mensagem é usada para identificar o conteúdo deste <em>commit</em>.</p>
-<h3 id="motivação">Motivação</h3>
-<p>Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações,
-vide a imensa quantidade de desenvolvedores &ldquo;laravel&rdquo; ou &ldquo;react&rdquo;.
-Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. Tentaremos criar um framework robusto que ajude outros devs a executarem tarefas do dia dia.</p>
-<h3 id="por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</h3>
-<p>Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que, por sua vez, tornará mais fácil a compreensão de outros frameworks existentes no mercado, porque no final das contas, a grande maioria segue quase que os mesmos princípios. Esse desafio também o forçará a tomar decisões que, em outro momento ou projeto  você acredita-se que poderia evitar: decisões de arquitetura, decisões de código, decisões por falta de tempo.</p>
-<blockquote>
-<p>Disclaimer: O framework criado tem a finalidade de ser didático, caso queira usá-lo em produção faça muitos testes antes.</p>
-</blockquote>
-<h3 id="aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</h3>
-<ul>
-<li>Aprender mais sobre arquitetura de sistemas modernos para web.</li>
-<li>Criar só por diversão mesmo</li>
-<li>Para entender que criar sistemas robustos e com boa experiência para outros programadores usarem é uma tarefa difícil, mas recompensadora.</li>
-<li>Para ter maior compreensão sobre como diferentes módulos de um framework podem conversar entre si</li>
-<li>Para aprender novos paradigmas de programação</li>
-<li>Para reforçar o conhecimento em alguma linguagem de programação</li>
-</ul>
-<h2 id="o-que-será-abordado">O que será abordado</h2>
-<ul>
-<li>Criação de uma engine de roteamento simples porém poderosa</li>
-<li>Criação de um sistema de injeção de dependências</li>
-<li>Criação de um sistema de gerenciamento de sessão</li>
-<li>Criação de um sistema de autenticação seguro</li>
-<li>Criação de um ORM para execução das queries no banco de dados</li>
-<li>Criação de um sistema de template engine, facilitando a criação das views no framework</li>
-<li>Criação de um sistema de Middlewares</li>
-<li>Criação de um sistema de arquivos</li>
-<li>Criação de um sistema de Request e Response (para trabalharmos com as requições HTTP)</li>
-<li>Criação de um sistema de gerenciamento de banco de dados (Gerenciamento de conexões, persistência, etc)</li>
-<li>O framework seguirá o padrão MVC</li>
-<li>Sistema de logs</li>
-<li>Criação de um console gerador de código, para criação das models, controllers, views, etc</li>
-<li>Criação de um <a href="https://github.com/ovalves/selene-skeleton">skeleton</a> para rápida criação de novos projetos utilizando o framework</li>
-</ul>
-<h2 id="gerenciamento-de-dependências">Gerenciamento de dependências</h2>
-<p>Iremos utilizar o <a href="https://getcomposer.org">composer</a> para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.</p>
-<p><em>Parte 2 - em breve</em></p>
 
     </div>
   </article>
@@ -371,15 +325,7 @@ Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. 
     <li><a href="#listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</a></li>
     <li><a href="#adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</a></li>
     <li><a href="#removendo-arquivos-da-staging-area">Removendo arquivos da staging area</a></li>
-    <li><a href="#fazendo-um-commit">Fazendo um commit</a>
-      <ul>
-        <li><a href="#motivação">Motivação</a></li>
-        <li><a href="#por-que-criar-seu-próprio-framework">Por que criar seu próprio framework?</a></li>
-        <li><a href="#aqui-estão-mais-razões-para-criar-seu-próprio-framework">Aqui estão mais razões para criar seu próprio framework:</a></li>
-      </ul>
-    </li>
-    <li><a href="#o-que-será-abordado">O que será abordado</a></li>
-    <li><a href="#gerenciamento-de-dependências">Gerenciamento de dependências</a></li>
+    <li><a href="#fazendo-um-commit">Fazendo um commit</a></li>
   </ul>
 </nav>
     </div>
