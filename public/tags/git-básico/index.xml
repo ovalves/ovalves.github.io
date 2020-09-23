@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Vinicius Alves</title>
-    <link>https://ovalves.github.io/posts/</link>
-    <description>Recent content in Posts on Vinicius Alves</description>
+    <title>Git Básico on Vinicius Alves</title>
+    <link>https://ovalves.github.io/tags/git-b%C3%A1sico/</link>
+    <description>Recent content in Git Básico on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
     <lastBuildDate>Wed, 23 Sep 2020 11:11:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ovalves.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovalves.github.io/tags/git-b%C3%A1sico/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <guid>https://ovalves.github.io/posts/git/git-basico/</guid>
       <description>Introdução Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software. O git pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo, ele foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux.
 Controle de versão Um sistema de controle de versão é um software com a finalidade de gerenciar diferentes versões no desenvolvimento de documentos. Esses sistemas são utilizados no desenvolvimento de software para controlar suas versões, manter o histórico de atualizações, e para o desenvolvimento de códigos-fontes e documentação.</description>
-    </item>
-    
-    <item>
-      <title>Construindo um framework web em PHP - Parte 1</title>
-      <link>https://ovalves.github.io/posts/php/building-php-framework-1/</link>
-      <pubDate>Wed, 16 Sep 2020 18:11:40 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/posts/php/building-php-framework-1/</guid>
-      <description>Código do projeto no github
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
-Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
     </item>
     
   </channel>
