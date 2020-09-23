@@ -3,12 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
-    <lastmod>2020-09-16T18:11:40+00:00</lastmod>
+    <loc>https://ovalves.github.io/categories/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/categories/</loc>
+    <loc>https://ovalves.github.io/categories/git/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/git-b%C3%A1sico/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/git/git-basico/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/</loc>
+    <lastmod>2020-09-23T11:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
   </url>
   
@@ -24,21 +54,6 @@
   
   <url>
     <loc>https://ovalves.github.io/tags/php/</loc>
-    <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/posts/</loc>
-    <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/</loc>
-    <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
   </url>
   
