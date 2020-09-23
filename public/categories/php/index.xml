@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on Vinicius Alves</title>
-    <link>https://ovalves.github.io/tags/php/</link>
+    <link>https://ovalves.github.io/categories/php/</link>
     <description>Recent content in PHP on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
     <lastBuildDate>Wed, 23 Sep 2020 12:39:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ovalves.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovalves.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,17 +22,6 @@
 Introdução Antigamente precisávamos criar várias entradas no crontab para cada tarefa que precisava ser agendar no servidor. No entanto, isso pode rapidamente se tornar um problema, uma vez que a programação das tarefas agendadas não está mais no working directory.
 Resumindo para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.
 O agendador de tarefas do Laravel (command scheduler) nos permite definir de forma fluente e expressiva uma programação de comandos dentro do próprio Laravel.</description>
-    </item>
-    
-    <item>
-      <title>Construindo um framework web em PHP - Parte 1</title>
-      <link>https://ovalves.github.io/posts/php/building-php-framework-1/</link>
-      <pubDate>Wed, 16 Sep 2020 18:11:40 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/posts/php/building-php-framework-1/</guid>
-      <description>Código do projeto no github
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
-Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
     </item>
     
   </channel>

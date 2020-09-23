@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 23 Sep 2020 11:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2020 12:39:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cron Job no Laravel</title>
+      <link>https://ovalves.github.io/posts/php/laravel/cron-job/cron-job-laravel/</link>
+      <pubDate>Wed, 23 Sep 2020 12:39:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/php/laravel/cron-job/cron-job-laravel/</guid>
+      <description>Código do projeto no github
+Introdução Antigamente precisávamos criar várias entradas no crontab para cada tarefa que precisava ser agendar no servidor. No entanto, isso pode rapidamente se tornar um problema, uma vez que a programação das tarefas agendadas não está mais no working directory.
+Resumindo para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.
+O agendador de tarefas do Laravel (command scheduler) nos permite definir de forma fluente e expressiva uma programação de comandos dentro do próprio Laravel.</description>
+    </item>
     
     <item>
       <title>Git Básico</title>
