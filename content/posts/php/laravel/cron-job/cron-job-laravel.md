@@ -16,7 +16,7 @@ keywords:
 ## Introdução
 Antigamente precisávamos criar várias entradas no crontab para cada tarefa que precisava ser agendar no servidor. No entanto, isso pode rapidamente se tornar um problema, uma vez que a programação das tarefas agendadas não está mais no *working directory*.
 
-Resumindo para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.
+Resumindo, para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.
 
 O agendador de tarefas do Laravel (*command scheduler*) nos permite definir de forma fluente e expressiva uma programação de comandos dentro do próprio Laravel. Ao usar o agendador, precisamos criar apenas uma única entrada no crontab. A programação das tarefas é registrada no arquivo *app/Console/Kernel.php*.
 
