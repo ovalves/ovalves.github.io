@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 11:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2020 21:35:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Redes Neurais Artificiais</title>
       <link>https://ovalves.github.io/posts/ia/rede-neural-simples/</link>
-      <pubDate>Thu, 24 Sep 2020 11:35:00 +0000</pubDate>
+      <pubDate>Thu, 24 Sep 2020 21:35:00 +0000</pubDate>
       
       <guid>https://ovalves.github.io/posts/ia/rede-neural-simples/</guid>
       <description>Introdução O tipo mais comum de rede neural artificial é uma rede feedforward com retropropagação (backpropagation). Em uma rede feedforward cada camada se conecta à próxima camada não havendo caminho de volta. Todas as suas conexões se movem em uma única direção, partindo da camada de entrada rumo a camada de saída.
