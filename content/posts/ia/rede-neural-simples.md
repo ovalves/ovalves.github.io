@@ -31,7 +31,7 @@ A camada de saída retorna um resultado para o ambiente externo. O número de ne
 A menor unidade em uma rede neural artificial é o neurônio. Ele armazena um vetor de pesos. Cada neurônio recebe dados de entradas, esses dados são  **multiplicados (dot product)** pelos **pesos sinápticos** e **somadas entre si** junto com uma constante chamada de **bias**.
 
 ## Função de Ativação
-Após o somatório dos neurônios, o valor obtido passa pelo cálculo da função de ativação. O objetivo deste calculo é limitar a amplitude da camada de saída da rede neural normalizando o resultado final em um intervalo fechado entre (0, 1).
+Após o somatório dos neurônios, o valor obtido passa pelo cálculo da função de ativação. O objetivo deste cálculo é limitar a amplitude da camada de saída da rede neural normalizando o resultado final em um intervalo fechado entre (0, 1).
 
 ## Retropropagação
 A retropropagação define a forma de treinamento da rede. O algoritmo de retropropagação tem por finalidade encontrar o erro emitido pela saída de uma rede neural e utilizar esse dado para modificar os pesos dos neurônios. Os neurônios que produzem saídas com erros maiores sofrem mais modificações. O erro emitido pela saída da rede neural é oriundo da fase de treinamento.
