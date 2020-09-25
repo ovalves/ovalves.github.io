@@ -7,6 +7,7 @@ categories:
     - Git
 keywords:
     - GIT
+published: true
 ---
 
 ## Introdução

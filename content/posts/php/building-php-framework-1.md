@@ -9,6 +9,7 @@ categories:
 keywords:
     - PHP
     - Arquitetura de software
+published: true
 ---
 
 *[Código do projeto no github](https://github.com/ovalves/selene)*

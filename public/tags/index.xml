@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 23 Sep 2020 12:39:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2020 11:35:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Inteligência artificial</title>
+      <link>https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/</link>
+      <pubDate>Thu, 24 Sep 2020 11:35:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redes Neurais Artificiais</title>
+      <link>https://ovalves.github.io/tags/redes-neurais-artificiais/</link>
+      <pubDate>Thu, 24 Sep 2020 11:35:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/tags/redes-neurais-artificiais/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Laravel</title>

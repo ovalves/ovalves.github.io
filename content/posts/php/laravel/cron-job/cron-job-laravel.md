@@ -9,6 +9,7 @@ categories:
 keywords:
     - PHP
     - Laravel
+published: true
 ---
 
 *[Código do projeto no github](https://github.com/ovalves/selene)*
