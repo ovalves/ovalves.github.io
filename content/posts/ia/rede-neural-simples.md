@@ -1,6 +1,6 @@
 ---
 title: Redes Neurais Artificiais
-date: 2020-09-24 11:35:00
+date: 2020-09-24 21:35:00
 tags:
     - Redes Neurais Artificiais
     - Inteligência artificial
