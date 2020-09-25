@@ -25,7 +25,7 @@ O **perceptron multicamadas (MLP)** é uma rede neural semelhante à **perceptro
 Um vetor de entradas é passado para o neurônio. Cada neurônio na camada de entrada representa alguma variável do mundo real - por exemplo características de uma pessoa.
 
 ## Camada de Saída
-A camada de saída retorna um resultado para o ambiente externo. O número de neurônios está diretamente relacionado com a tarefa que a rede neural executa. Na fase de treinamento o resultado emitido pela camada de saída é utilizado para ajustar os pesos da rede neural.
+A camada de saída retorna um resultado para o ambiente externo. O número de neurônios está relacionado com a tarefa que a rede neural irá executar. Na fase de treinamento o resultado emitido pela camada de saída é utilizado para ajustar os pesos da rede neural.
 
 ## Neurônios
 A menor unidade em uma rede neural artificial é o neurônio. Ele armazena um vetor de pesos. Cada neurônio recebe dados de entradas, esses dados são  **multiplicados (dot product)** pelos **pesos sinápticos** e **somadas entre si** junto com uma constante chamada de **bias**.
