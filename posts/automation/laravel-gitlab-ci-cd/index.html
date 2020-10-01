@@ -348,7 +348,7 @@ cat ~/.ssh/id_rsa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
 
 @setup
-    $repository <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;git@gitlab.example.com:&lt;USERNAME&gt;/laravel-sample.git&#39;</span>;
+    $repository <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;git@gitlab.example.com:&lt;NOME_USUARIO&gt;/&lt;NOME_REPOSITORIO&gt;.git&#39;</span>;
     $releases_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/www/app/releases&#39;</span>;
     $app_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/www/app&#39;</span>;
     $release <span style="color:#f92672">=</span> date<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;YmdHis&#39;</span><span style="color:#f92672">)</span>;
@@ -425,7 +425,7 @@ cat ~/.ssh/id_rsa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">@servers([&#39;web&#39; =&gt; &#39;deployer@192.168.1.1&#39;])
 
 @setup
-    $repository = &#39;git@gitlab.example.com:&lt;<span style="color:#f92672">USERNAME</span>&gt;/laravel-sample.git&#39;;
+    $repository = &#39;git@gitlab.example.com:&lt;<span style="color:#f92672">NOME_USUARIO</span>&gt;/&lt;<span style="color:#f92672">NOME_REPOSITORIO</span>&gt;.git&#39;;
     $releases_dir = &#39;/var/www/app/releases&#39;;
     $app_dir = &#39;/var/www/app&#39;;
     $release = date(&#39;YmdHis&#39;);
