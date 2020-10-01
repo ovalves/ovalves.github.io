@@ -194,7 +194,7 @@ O primeiro passo é definirmos as variaveis dentro da diretiva de @setup.
 ...
 
 @setup
-    $repository = 'git@gitlab.example.com:<USERNAME>/laravel-sample.git';
+    $repository = 'git@gitlab.example.com:<NOME_USUARIO>/<NOME_REPOSITORIO>.git';
     $releases_dir = '/var/www/app/releases';
     $app_dir = '/var/www/app';
     $release = date('YmdHis');
@@ -290,7 +290,7 @@ O link simbólico atual irá sempre apontar para a versão mais recente da nossa
 @servers(['web' => 'deployer@192.168.1.1'])
 
 @setup
-    $repository = 'git@gitlab.example.com:<USERNAME>/laravel-sample.git';
+    $repository = 'git@gitlab.example.com:<NOME_USUARIO>/<NOME_REPOSITORIO>.git';
     $releases_dir = '/var/www/app/releases';
     $app_dir = '/var/www/app';
     $release = date('YmdHis');
