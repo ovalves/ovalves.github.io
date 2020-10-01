@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Thu, 24 Sep 2020 21:35:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2020 23:55:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Deploy automático e testes de aplicações Laravel com GitLab CI/CD</title>
+      <link>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</link>
+      <pubDate>Wed, 30 Sep 2020 23:55:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</guid>
+      <description>Introdução Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
+Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
+ PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e o PHP.</description>
+    </item>
     
     <item>
       <title>Redes Neurais Artificiais</title>

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Deploy automático e testes de aplicações Laravel com GitLab CI/CD </title>
+  <meta name="description" content="Sou apenas um caminhante á procura de mim mesmo.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Deploy automático e testes de aplicações Laravel com GitLab CI/CD" />
+<meta property="og:description" content="Introdução Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
+Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
+ PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e o PHP." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/" />
+<meta property="article:published_time" content="2020-09-30T23:55:00+00:00" />
+<meta property="article:modified_time" content="2020-09-30T23:55:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploy automático e testes de aplicações Laravel com GitLab CI/CD"/>
+<meta name="twitter:description" content="Introdução Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
+Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
+ PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e o PHP."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ovalves.github.io/css/style-dark.css">
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ovalves.github.io/images/favicon.ico" />
+
+  
+  
+  
+</head>
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        
+        <li><a href="/">Início</a></li>
+        
+        <li><a href="/posts">Artigos</a></li>
+        
+        <li><a href="/categories">Categorias</a></li>
+        
+        <li><a href="/tags">Tags</a></li>
+        
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ovalves.github.io/posts/ia/rede-neural-simples/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Artigo anterior</span>
+      <span id="i-next" class="info" style="display:none;">Pŕoximo artigo</span>
+      <span id="i-top" class="info" style="display:none;">Voltar ao topo</span>
+      <span id="i-share" class="info" style="display:none;">Compartilhar</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&text=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&is_video=false&description=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&name=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD&description=Introdu%c3%a7%c3%a3o%20Neste%20tutorial%20iremos%20utilizar%20o%20sistema%20de%20CI%2fCD%20do%20GitLab%20para%20automatizarmos%20os%20testes%20e%20disponibilizarmos%20as%20novas%20vers%c3%b5es%20do%20software%20de%20forma%20cont%c3%adnua%20e%20descomplicada.%0aIremos%20utilizar%20o%20framework%20PHP%20Laravel.%20Iremos%20configurar%20tarefas%20de%20com%20o%20Envoy%2c%20e%20depois%20veremos%20como%20testar%20o%20software%20e%20implant%c3%a1-lo%20com%20GitLab%20CI%20%2f%20CD%20via%20Entrega%20Cont%c3%adnua.%0a%20PS.%3a%20Este%20tutorial%20leva%20em%20conta%20que%20voc%c3%aa%20j%c3%a1%20tenha%20instalado%20o%20framework%20laravel%2c%20tenha%20instalado%20alguma%20distribui%c3%a7%c3%a3o%20do%20linux%2c%20bem%20como%20o%20NGINX%2c%20e%20o%20PHP.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&t=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#testes-de-unidade">Testes de unidade</a></li>
+    <li><a href="#publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</a></li>
+    <li><a href="#configurando-o-servidor">Configurando o servidor</a>
+      <ul>
+        <li><a href="#criando-um-usuário-de-deploy">Criando um usuário de deploy</a></li>
+        <li><a href="#alternando-entre-usuários-no-linux">Alternando entre usuários no linux</a></li>
+        <li><a href="#gerando-um-chave-ssh">Gerando um chave ssh</a></li>
+        <li><a href="#adicionando-a-chave-ssh">Adicionando a chave ssh</a></li>
+        <li><a href="#adicionando-a-chave-ssh-privada-no-gitlab">Adicionando a chave ssh privada no GitLab</a></li>
+        <li><a href="#configurando-o-servidor-nginx">Configurando o servidor NGINX</a></li>
+        <li><a href="#instalando-o-envoy-para-execução-das-tarefas-do-deploy">Instalando o Envoy para execução das tarefas do deploy</a></li>
+        <li><a href="#criando-nosso-primeiro-envoy-script">Criando nosso primeiro Envoy script</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-automatizado">Deploy Automatizado</a>
+      <ul>
+        <li><a href="#adicionando-mais-poder-as-nossas-tarefas-com-envoy">Adicionando mais poder as nossas tarefas com Envoy</a></li>
+        <li><a href="#a-diretiva-setup">A diretiva @setup</a></li>
+        <li><a href="#a-diretiva-story">A diretiva @story</a></li>
+        <li><a href="#clonando-o-repositório">Clonando o repositório</a></li>
+        <li><a href="#instalando-as-dependências-com-o-composer">Instalando as dependências com o Composer</a></li>
+        <li><a href="#ativando-os-novos-releases">Ativando os novos releases</a></li>
+        <li><a href="#o-script-do-envoy-completo">O script do Envoy completo</a></li>
+        <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Deploy automático e testes de aplicações Laravel com GitLab CI/CD
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2020-09-30 23:55:00 &#43;0000 UTC" itemprop="datePublished">30/09/2020</time>
+          
+        </div>
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/gitlab">GitLab</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/gitlab-ci/cd" rel="tag">GitLab CI/CD</a>
+            
+        </div> 
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="introdução">Introdução</h2>
+<p>Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.</p>
+<p>Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.</p>
+<blockquote>
+<p>PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e  o PHP.</p>
+</blockquote>
+<h2 id="testes-de-unidade">Testes de unidade</h2>
+<p>Todas as novas instalações do Laravel vem com dois tipos de testes, teste de recursos (feature test) e testes de unidade (unit test), colocados no diretório de testes.</p>
+<p><strong>Exemplo de teste de unidade</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Tests\Unit</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Tests\TestCase</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Foundation\Testing\RefreshDatabase</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExampleTest</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">TestCase</span>
+{
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * A basic test example.
+</span><span style="color:#e6db74">     *
+</span><span style="color:#e6db74">     * @return void
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testBasicTest</span>()
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertTrue</span>(<span style="color:#66d9ef">true</span>);
+    }
+}
+</code></pre></div><p>Por padrão o Laravel usa o framework <strong>PHPUnit</strong> para executar os testes.</p>
+<p>Rode os testes usando o comando <strong>vendor/bin/phpunit</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">OK <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> test, <span style="color:#ae81ff">1</span> assertions<span style="color:#f92672">)</span>
+</code></pre></div><h2 id="publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</h2>
+<p>Com o projeto instalado e funcionando localmente, vamos enviar o código para o repositório remoto.</p>
+<blockquote>
+<p>Para saber como criar um novo projeto no GitLab acesse: <em><a href="https://docs.gitlab.com/ee/gitlab-basics/create-project.html">https://docs.gitlab.com/ee/gitlab-basics/create-project.html</a></em>. Depois de criar o projeto, siga as instruções da linha de comando exibidas na página inicial do projeto.</p>
+</blockquote>
+<p><strong>Vamos iniciar um repositório do git para guardar o código do projeto</strong></p>
+<pre><code>mkdir blog
+cd blog
+git init
+git remote add origin git@gitlab.example.com:&lt;NOME_USUARIO&gt;/&lt;NOME_REPOSITORIO&gt;.git
+git add .
+git commit -m 'Initial Commit'
+git push -u origin master
+</code></pre><h2 id="configurando-o-servidor">Configurando o servidor</h2>
+<h3 id="criando-um-usuário-de-deploy">Criando um usuário de deploy</h3>
+<p>*<em>Abra algum terminal no seu linux e digite os seguintes comando</em></p>
+<pre><code>sudo adduser deployer
+sudo setfacl -R -m u:deployer:rwx /var/www
+</code></pre><p><em>Nos comandos acima nós, criamos um usuário chamado deployer e demos a ele permissão de escrite-leitura e execução nas pastas /var/www</em></p>
+<blockquote>
+<p>Caso você não tenha o pacote ACL instalado no seu servidor, instale-o usando o seguinte comando:</p>
+</blockquote>
+<pre><code>sudo apt install acl
+</code></pre><h3 id="alternando-entre-usuários-no-linux">Alternando entre usuários no linux</h3>
+<p>Antes de gerarmos a chave ssh vamos alternar para o usuário que criamos anteriormente.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su deployer
+</code></pre></div><h3 id="gerando-um-chave-ssh">Gerando um chave ssh</h3>
+<p>Para que possamos implantar nosso aplicativo no servidor de produção a partir de um repositório privado no GitLab. Primeiro, precisamos gerar um novo par de chaves SSH sem senha para o usuário <strong>deployer</strong>.</p>
+<p><strong>Para gerar uma chave ssh use o seguinte comando</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b <span style="color:#ae81ff">2048</span> -C <span style="color:#e6db74">&#34;email@example.com&#34;</span>
+</code></pre></div><p><strong>Acesse: <a href="https://docs.gitlab.com/ee/ssh/README.html">https://docs.gitlab.com/ee/ssh/README.html</a> para conhecer outras formas de gerar chaves ssh</strong></p>
+<h3 id="adicionando-a-chave-ssh">Adicionando a chave ssh</h3>
+<p>Após a criação da chave precisamos adiciona-la a lista de chaves confiaveis. Ainda logado na conta do usuário <strong>deployer</strong>. Execute os seguintes comandos.</p>
+<pre><code>cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+cat ~/.ssh/id_rsa
+</code></pre><p><em>Nos comando acima nós, copiamos o conteúdo da chave pública para uma lista de chaves confiaveis. Em seguida escrevemos o conteúdo da chave privada para o STDOUT do linux. Copie o conteúdo desta chave, iremos usa-la em seguida.</em></p>
+<h3 id="adicionando-a-chave-ssh-privada-no-gitlab">Adicionando a chave ssh privada no GitLab</h3>
+<p>Agora, vamos adicionar o conteúdo da chave SSH privada ao seu projeto GitLab como uma variável. Variáveis ​​são ​​definidas pelo usuário e são armazenadas em .gitlab-ci.yml, para fins de segurança.</p>
+<p>No campo KEY, adicione o nome SSH_PRIVATE_KEY e, no campo VALUE, cole a chave privada que você copiou anteriormente.</p>
+<!-- raw HTML omitted -->
+<p>Agora vamos adicionar a chave pública ao projeto como uma chave de implantação, o que nos dará a capacidade de acessar nosso repositório do servidor por meio do protocolo SSH.</p>
+<p>Ainda logado com o usuário deployer, execute o seguinte comando:</p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+</code></pre><p>No campo Título, adicione o nome que desejar e cole a chave pública no campo Chave.</p>
+<!-- raw HTML omitted -->
+<p>Agora, vamos clonar nosso repositório no servidor apenas para garantir que o usuário <strong>deployer</strong> possui acesso ao repositório.</p>
+<p>Ainda logado com o usuário deployer, execute o seguinte comando:</p>
+<pre><code>git clone git@gitlab.example.com:&lt;NOME_USUARIO&gt;/&lt;NOME_REPOSITORIO&gt;.git
+</code></pre><h3 id="configurando-o-servidor-nginx">Configurando o servidor NGINX</h3>
+<p>Abra o arquivo de configuração do servidor NGINX padrão digitando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vim /etc/nginx/sites-available/default
+</code></pre></div><p>A configuração deve ficar assim.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+    root /var/www/app/current/public;
+    server_name example.com;
+
+    ...
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="instalando-o-envoy-para-execução-das-tarefas-do-deploy">Instalando o Envoy para execução das tarefas do deploy</h3>
+<p>Para usar o Envoy, primeiro devemos instalá-lo em nossa máquina local.</p>
+<p>Para instalar o envio, use o comando</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">composer global require laravel/envoy
+</code></pre></div><h3 id="criando-nosso-primeiro-envoy-script">Criando nosso primeiro Envoy script</h3>
+<p>Crie um arquivo chamado Envoy.blade.php na raiz do projeto.</p>
+<p>Vamos adicionar uma tarefa simples afim de entender como o Envoy funciona.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">@servers([&#39;web&#39; =&gt; &#39;remote_username@remote_host&#39;])
+
+@task(&#39;list&#39;, [&#39;on&#39; =&gt; &#39;web&#39;])
+    ls -l
+@endtask
+</code></pre></div><p>Dentro da diretiva <strong>@task</strong>, definimos os comandos bash que devem ser executados no servidor quando a tarefa for executada.</p>
+<p><strong>Na máquina local, use o comando run para executar tarefas do Envoy.</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">envoy run list
+</code></pre></div><p>Essa tarefa irá se conectar ao servidor e listar o conteúdo do diretório.</p>
+<blockquote>
+<p>PS.: O Envoy não é uma dependência do Laravel, portanto pode ser usado em qualquer aplicação PHP.</p>
+</blockquote>
+<h2 id="deploy-automatizado">Deploy Automatizado</h2>
+<p>A implantação irá clonar a versão mais recente do repositório no GitLab, instalar as dependências do Composer e ativar a nova versão baixada, criando os links simbolicos necessárioas para funcionamento do projeto.</p>
+<h3 id="adicionando-mais-poder-as-nossas-tarefas-com-envoy">Adicionando mais poder as nossas tarefas com Envoy</h3>
+<h3 id="a-diretiva-setup">A diretiva @setup</h3>
+<p>O primeiro passo é definirmos as variaveis dentro da diretiva de @setup.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+
+@setup
+    $repository <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;git@gitlab.example.com:&lt;USERNAME&gt;/laravel-sample.git&#39;</span>;
+    $releases_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/www/app/releases&#39;</span>;
+    $app_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/www/app&#39;</span>;
+    $release <span style="color:#f92672">=</span> date<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;YmdHis&#39;</span><span style="color:#f92672">)</span>;
+    $new_release_dir <span style="color:#f92672">=</span> $releases_dir .<span style="color:#e6db74">&#39;/&#39;</span>. $release;
+@endsetup
+...
+
+</code></pre></div><ul>
+<li>$repository é o endereço do nosso repositório no GitLab</li>
+<li>O diretório $releases_dir é onde iremos implantar a aplicação</li>
+<li>$app_dir é a localização real do aplicativo dentro do servidor</li>
+<li>A pasta $release irá manter as diferentes versões de build da aplicação. Então toda vez que rodarmos o deploy uma nova versão do nosso aplicativo será com a data atual</li>
+<li>$new_release_dir é o caminho completo da nova versão que está em uso no momento</li>
+</ul>
+<h3 id="a-diretiva-story">A diretiva @story</h3>
+<p>A diretiva @story nos permite definir uma lista de tarefas serão executadas como uma única tarefa.</p>
+<p>Teremos três tarefas. clone_repository, run_composer, update_symlinks.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+...
+
+@story<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;deploy&#39;</span><span style="color:#f92672">)</span>
+    clone_repository
+    run_composer
+    update_symlinks
+@endstory
+
+...
+
+</code></pre></div><p>Vamos criar essas tarefas.</p>
+<h3 id="clonando-o-repositório">Clonando o repositório</h3>
+<p>A primeira tarefa criará o diretório de releases (se não existir) e, em seguida, clonará a branch master do repositório no diretório de release:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+...
+
+@task<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;clone_repository&#39;</span><span style="color:#f92672">)</span>
+    echo <span style="color:#e6db74">&#39;Cloning repository&#39;</span>
+    <span style="color:#f92672">[</span> -d <span style="color:#f92672">{{</span> $releases_dir <span style="color:#f92672">}}</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> mkdir <span style="color:#f92672">{{</span> $releases_dir <span style="color:#f92672">}}</span>
+    git clone --depth <span style="color:#ae81ff">1</span> <span style="color:#f92672">{{</span> $repository <span style="color:#f92672">}}</span> <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>
+    cd <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>
+    git reset --hard <span style="color:#f92672">{{</span> $commit <span style="color:#f92672">}}</span>
+@endtask
+
+...
+
+</code></pre></div><h3 id="instalando-as-dependências-com-o-composer">Instalando as dependências com o Composer</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+
+@task<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;run_composer&#39;</span><span style="color:#f92672">)</span>
+    echo <span style="color:#e6db74">&#34;Starting deployment ({{ </span>$release<span style="color:#e6db74"> }})&#34;</span>
+    cd <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>
+    composer install --prefer-dist --no-scripts -q -o
+@endtask
+
+...
+
+</code></pre></div><h3 id="ativando-os-novos-releases">Ativando os novos releases</h3>
+<p>O link simbólico atual irá sempre apontar para a versão mais recente da nossa aplicação:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">...
+
+@task<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;update_symlinks&#39;</span><span style="color:#f92672">)</span>
+    echo <span style="color:#e6db74">&#34;Linking storage directory&#34;</span>
+    rm -rf <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>/storage
+    ln -nfs <span style="color:#f92672">{{</span> $app_dir <span style="color:#f92672">}}</span>/storage <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>/storage
+
+    echo <span style="color:#e6db74">&#39;Linking .env file&#39;</span>
+    ln -nfs <span style="color:#f92672">{{</span> $app_dir <span style="color:#f92672">}}</span>/.env <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span>/.env
+
+    echo <span style="color:#e6db74">&#39;Linking current release&#39;</span>
+    ln -nfs <span style="color:#f92672">{{</span> $new_release_dir <span style="color:#f92672">}}</span> <span style="color:#f92672">{{</span> $app_dir <span style="color:#f92672">}}</span>/current
+@endtask
+
+...
+</code></pre></div><h3 id="o-script-do-envoy-completo">O script do Envoy completo</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">@servers([&#39;web&#39; =&gt; &#39;deployer@192.168.1.1&#39;])
+
+@setup
+    $repository = &#39;git@gitlab.example.com:&lt;<span style="color:#f92672">USERNAME</span>&gt;/laravel-sample.git&#39;;
+    $releases_dir = &#39;/var/www/app/releases&#39;;
+    $app_dir = &#39;/var/www/app&#39;;
+    $release = date(&#39;YmdHis&#39;);
+    $new_release_dir = $releases_dir .&#39;/&#39;. $release;
+@endsetup
+
+@story(&#39;deploy&#39;)
+    clone_repository
+    run_composer
+    update_symlinks
+@endstory
+
+@task(&#39;clone_repository&#39;)
+    echo &#39;Cloning repository&#39;
+    [ -d {{ $releases_dir }} ] || mkdir {{ $releases_dir }}
+    git clone --depth 1 {{ $repository }} {{ $new_release_dir }}
+    cd {{ $new_release_dir }}
+    git reset --hard {{ $commit }}
+@endtask
+
+@task(&#39;run_composer&#39;)
+    echo &#34;Starting deployment ({{ $release }})&#34;
+    cd {{ $new_release_dir }}
+    composer install --prefer-dist --no-scripts -q -o
+@endtask
+
+@task(&#39;update_symlinks&#39;)
+    echo &#34;Linking storage directory&#34;
+    rm -rf {{ $new_release_dir }}/storage
+    ln -nfs {{ $app_dir }}/storage {{ $new_release_dir }}/storage
+
+    echo &#39;Linking .env file&#39;
+    ln -nfs {{ $app_dir }}/.env {{ $new_release_dir }}/.env
+
+    echo &#39;Linking current release&#39;
+    ln -nfs {{ $new_release_dir }} {{ $app_dir }}/current
+@endtask
+</code></pre></div><blockquote>
+<p>PS.: No primeiro deploy será necessário copiar manualmente a pasta <strong>storage</strong> do laravel e o arquivo <strong>.env</strong> para o diretório raiz da aplicação <strong>/var/www/app</strong>.</p>
+</blockquote>
+<h3 id="publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add Envoy.blade.php
+git commit -m <span style="color:#e6db74">&#39;Add Envoy&#39;</span>
+git push origin master
+</code></pre></div><p>Referência: <a href="https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy">https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy</a></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Início</a></li>
+         
+          <li><a href="/posts">Artigos</a></li>
+         
+          <li><a href="/categories">Categorias</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introdução">Introdução</a></li>
+    <li><a href="#testes-de-unidade">Testes de unidade</a></li>
+    <li><a href="#publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</a></li>
+    <li><a href="#configurando-o-servidor">Configurando o servidor</a>
+      <ul>
+        <li><a href="#criando-um-usuário-de-deploy">Criando um usuário de deploy</a></li>
+        <li><a href="#alternando-entre-usuários-no-linux">Alternando entre usuários no linux</a></li>
+        <li><a href="#gerando-um-chave-ssh">Gerando um chave ssh</a></li>
+        <li><a href="#adicionando-a-chave-ssh">Adicionando a chave ssh</a></li>
+        <li><a href="#adicionando-a-chave-ssh-privada-no-gitlab">Adicionando a chave ssh privada no GitLab</a></li>
+        <li><a href="#configurando-o-servidor-nginx">Configurando o servidor NGINX</a></li>
+        <li><a href="#instalando-o-envoy-para-execução-das-tarefas-do-deploy">Instalando o Envoy para execução das tarefas do deploy</a></li>
+        <li><a href="#criando-nosso-primeiro-envoy-script">Criando nosso primeiro Envoy script</a></li>
+      </ul>
+    </li>
+    <li><a href="#deploy-automatizado">Deploy Automatizado</a>
+      <ul>
+        <li><a href="#adicionando-mais-poder-as-nossas-tarefas-com-envoy">Adicionando mais poder as nossas tarefas com Envoy</a></li>
+        <li><a href="#a-diretiva-setup">A diretiva @setup</a></li>
+        <li><a href="#a-diretiva-story">A diretiva @story</a></li>
+        <li><a href="#clonando-o-repositório">Clonando o repositório</a></li>
+        <li><a href="#instalando-as-dependências-com-o-composer">Instalando as dependências com o Composer</a></li>
+        <li><a href="#ativando-os-novos-releases">Ativando os novos releases</a></li>
+        <li><a href="#o-script-do-envoy-completo">O script do Envoy completo</a></li>
+        <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&text=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&is_video=false&description=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&title=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&name=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD&description=Introdu%c3%a7%c3%a3o%20Neste%20tutorial%20iremos%20utilizar%20o%20sistema%20de%20CI%2fCD%20do%20GitLab%20para%20automatizarmos%20os%20testes%20e%20disponibilizarmos%20as%20novas%20vers%c3%b5es%20do%20software%20de%20forma%20cont%c3%adnua%20e%20descomplicada.%0aIremos%20utilizar%20o%20framework%20PHP%20Laravel.%20Iremos%20configurar%20tarefas%20de%20com%20o%20Envoy%2c%20e%20depois%20veremos%20como%20testar%20o%20software%20e%20implant%c3%a1-lo%20com%20GitLab%20CI%20%2f%20CD%20via%20Entrega%20Cont%c3%adnua.%0a%20PS.%3a%20Este%20tutorial%20leva%20em%20conta%20que%20voc%c3%aa%20j%c3%a1%20tenha%20instalado%20o%20framework%20laravel%2c%20tenha%20instalado%20alguma%20distribui%c3%a7%c3%a3o%20do%20linux%2c%20bem%20como%20o%20NGINX%2c%20e%20o%20PHP.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fautomation%2flaravel-gitlab-ci-cd%2f&t=Deploy%20autom%c3%a1tico%20e%20testes%20de%20aplica%c3%a7%c3%b5es%20Laravel%20com%20GitLab%20CI%2fCD">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2020  Vinicius Alves 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+</html>
