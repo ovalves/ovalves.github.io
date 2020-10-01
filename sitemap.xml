@@ -4,7 +4,27 @@
   
   <url>
     <loc>https://ovalves.github.io/categories/</loc>
-    <lastmod>2020-09-24T21:35:00+00:00</lastmod>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/gitlab/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +34,6 @@
   
   <url>
     <loc>https://ovalves.github.io/categories/intelig%C3%AAncia-artificial/</loc>
-    <lastmod>2020-09-24T21:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/posts/</loc>
     <lastmod>2020-09-24T21:35:00+00:00</lastmod>
   </url>
   
@@ -34,11 +49,6 @@
   
   <url>
     <loc>https://ovalves.github.io/tags/</loc>
-    <lastmod>2020-09-24T21:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/</loc>
     <lastmod>2020-09-24T21:35:00+00:00</lastmod>
   </url>
   
@@ -95,6 +105,10 @@
   <url>
     <loc>https://ovalves.github.io/about/</loc>
     <lastmod>2020-09-16T17:51:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/gitlab-ci/cd/</loc>
   </url>
   
 </urlset>
