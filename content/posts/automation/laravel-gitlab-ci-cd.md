@@ -199,6 +199,7 @@ O primeiro passo é definirmos as variaveis dentro da diretiva de @setup.
     $app_dir = '/var/www/app';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
+    $keep_releases = 7;
 @endsetup
 ...
 
@@ -208,6 +209,7 @@ O primeiro passo é definirmos as variaveis dentro da diretiva de @setup.
 * $app_dir é a localização real do aplicativo dentro do servidor
 * A pasta $release irá manter as diferentes versões de build da aplicação. Então toda vez que rodarmos o deploy uma nova versão do nosso aplicativo será com a data atual
 * $new_release_dir é o caminho completo da nova versão que está em uso no momento
+* $keep_releases é o número de releases que iremos manter como diretório no servidor
 
 ### A diretiva @story
 A diretiva @story nos permite definir uma lista de tarefas serão executadas como uma única tarefa.
@@ -287,7 +289,7 @@ O link simbólico atual irá sempre apontar para a versão mais recente da nossa
 ### O script do Envoy completo
 
 ```php
-@servers(['web' => 'deployer@192.168.1.1'])
+@servers(['web' => 'deployer@127.0.0.1'])
 
 @setup
     $repository = 'git@gitlab.example.com:<NOME_USUARIO>/<NOME_REPOSITORIO>.git';
@@ -295,20 +297,23 @@ O link simbólico atual irá sempre apontar para a versão mais recente da nossa
     $app_dir = '/var/www/app';
     $release = date('YmdHis');
     $new_release_dir = $releases_dir .'/'. $release;
+    $keep_releases = 7;
 @endsetup
 
 @story('deploy')
     clone_repository
     run_composer
     update_symlinks
+    change_owner
+    restart_services
+    clean
 @endstory
 
 @task('clone_repository')
     echo 'Cloning repository'
     [ -d {{ $releases_dir }} ] || mkdir {{ $releases_dir }}
     git clone --depth 1 {{ $repository }} {{ $new_release_dir }}
-    cd {{ $new_release_dir }}
-    git reset --hard {{ $commit }}
+    echo "Repository has been cloned";
 @endtask
 
 @task('run_composer')
@@ -327,6 +332,26 @@ O link simbólico atual irá sempre apontar para a versão mais recente da nossa
 
     echo 'Linking current release'
     ln -nfs {{ $new_release_dir }} {{ $app_dir }}/current
+@endtask
+
+@task('change_owner')
+    echo "Changing owner"
+    sudo chown -R deployer:www-data {{ $new_release_dir }}
+    sudo chown -R deployer:www-data {{ $app_dir }}/current
+    sudo chown -R www-data:www-data {{ $app_dir }}/storage
+@endtask
+
+@task('restart_services')
+    echo "Restarting services"
+    sudo service nginx restart
+    sudo service php7.3-fpm reload
+@endtask
+
+{{-- Clean old releases --}}
+@task('clean')
+    echo "Clean old releases";
+    cd {{ $releases_dir }};
+    rm -rf $(ls -t | tail -n +{{ $keep_releases }});
 @endtask
 ```
 

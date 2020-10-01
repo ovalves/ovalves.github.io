@@ -353,6 +353,7 @@ cat ~/.ssh/id_rsa
     $app_dir <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/var/www/app&#39;</span>;
     $release <span style="color:#f92672">=</span> date<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;YmdHis&#39;</span><span style="color:#f92672">)</span>;
     $new_release_dir <span style="color:#f92672">=</span> $releases_dir .<span style="color:#e6db74">&#39;/&#39;</span>. $release;
+    $keep_releases <span style="color:#f92672">=</span> 7;
 @endsetup
 ...
 
@@ -362,6 +363,7 @@ cat ~/.ssh/id_rsa
 <li>$app_dir é a localização real do aplicativo dentro do servidor</li>
 <li>A pasta $release irá manter as diferentes versões de build da aplicação. Então toda vez que rodarmos o deploy uma nova versão do nosso aplicativo será com a data atual</li>
 <li>$new_release_dir é o caminho completo da nova versão que está em uso no momento</li>
+<li>$keep_releases é o número de releases que iremos manter como diretório no servidor</li>
 </ul>
 <h3 id="a-diretiva-story">A diretiva @story</h3>
 <p>A diretiva @story nos permite definir uma lista de tarefas serão executadas como uma única tarefa.</p>
@@ -422,7 +424,7 @@ cat ~/.ssh/id_rsa
 
 ...
 </code></pre></div><h3 id="o-script-do-envoy-completo">O script do Envoy completo</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">@servers([&#39;web&#39; =&gt; &#39;deployer@192.168.1.1&#39;])
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">@servers([&#39;web&#39; =&gt; &#39;deployer@127.0.0.1&#39;])
 
 @setup
     $repository = &#39;git@gitlab.example.com:&lt;<span style="color:#f92672">NOME_USUARIO</span>&gt;/&lt;<span style="color:#f92672">NOME_REPOSITORIO</span>&gt;.git&#39;;
@@ -430,20 +432,23 @@ cat ~/.ssh/id_rsa
     $app_dir = &#39;/var/www/app&#39;;
     $release = date(&#39;YmdHis&#39;);
     $new_release_dir = $releases_dir .&#39;/&#39;. $release;
+    $keep_releases = 7;
 @endsetup
 
 @story(&#39;deploy&#39;)
     clone_repository
     run_composer
     update_symlinks
+    change_owner
+    restart_services
+    clean
 @endstory
 
 @task(&#39;clone_repository&#39;)
     echo &#39;Cloning repository&#39;
     [ -d {{ $releases_dir }} ] || mkdir {{ $releases_dir }}
     git clone --depth 1 {{ $repository }} {{ $new_release_dir }}
-    cd {{ $new_release_dir }}
-    git reset --hard {{ $commit }}
+    echo &#34;Repository has been cloned&#34;;
 @endtask
 
 @task(&#39;run_composer&#39;)
@@ -462,6 +467,26 @@ cat ~/.ssh/id_rsa
 
     echo &#39;Linking current release&#39;
     ln -nfs {{ $new_release_dir }} {{ $app_dir }}/current
+@endtask
+
+@task(&#39;change_owner&#39;)
+    echo &#34;Changing owner&#34;
+    sudo chown -R deployer:www-data {{ $new_release_dir }}
+    sudo chown -R deployer:www-data {{ $app_dir }}/current
+    sudo chown -R www-data:www-data {{ $app_dir }}/storage
+@endtask
+
+@task(&#39;restart_services&#39;)
+    echo &#34;Restarting services&#34;
+    sudo service nginx restart
+    sudo service php7.3-fpm reload
+@endtask
+
+{{-- Clean old releases --}}
+@task(&#39;clean&#39;)
+    echo &#34;Clean old releases&#34;;
+    cd {{ $releases_dir }};
+    rm -rf $(ls -t | tail -n +{{ $keep_releases }});
 @endtask
 </code></pre></div><blockquote>
 <p>PS.: No primeiro deploy será necessário copiar manualmente a pasta <strong>storage</strong> do laravel e o arquivo <strong>.env</strong> para o diretório raiz da aplicação <strong>/var/www/app</strong>.</p>
