@@ -7,7 +7,7 @@ tags:
     - Laravel
 categories:
     - GitLab
-    - PGP
+    - PHP
     - Laravel
 keywords:
     - GitLab
