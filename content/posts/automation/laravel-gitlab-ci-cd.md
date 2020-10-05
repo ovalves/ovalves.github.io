@@ -114,8 +114,10 @@ cat ~/.ssh/id_rsa
 ### Adicionando a chave ssh privada no GitLab
 Agora, vamos adicionar o conteúdo da chave SSH privada ao seu projeto GitLab como uma variável. Variáveis ​​são ​​definidas pelo usuário e são armazenadas em .gitlab-ci.yml, para fins de segurança.
 
+**Navegue até: Settings > CI/CD > Variables**
+
 No campo KEY, adicione o nome SSH_PRIVATE_KEY e, no campo VALUE, cole a chave privada que você copiou anteriormente.
-<!-- <IMAGE> -->
+![img](../../../resources/_gen/images/laravel-gitlab-ci-cd/add_variable.png)
 
 Agora vamos adicionar a chave pública ao projeto como uma chave de implantação, o que nos dará a capacidade de acessar nosso repositório do servidor por meio do protocolo SSH.
 
@@ -123,8 +125,11 @@ Ainda logado com o usuário deployer, execute o seguinte comando:
 ```
 cat ~/.ssh/id_rsa.pub
 ```
+
+**Navegue até: Settings > Repository > Deploy Keys**
+
 No campo Título, adicione o nome que desejar e cole a chave pública no campo Chave.
-<!-- <IMAGE> -->
+![img](../../../resources/_gen/images/laravel-gitlab-ci-cd/deploy_keys.png)
 
 Agora, vamos clonar nosso repositório no servidor apenas para garantir que o usuário **deployer** possui acesso ao repositório.
 
@@ -336,15 +341,15 @@ O link simbólico atual irá sempre apontar para a versão mais recente da nossa
 
 @task('change_owner')
     echo "Changing owner"
-    sudo chown -R deployer:www-data {{ $new_release_dir }}
-    sudo chown -R deployer:www-data {{ $app_dir }}/current
-    sudo chown -R www-data:www-data {{ $app_dir }}/storage
+    chown -R deployer:www-data {{ $new_release_dir }}
+    chown -R deployer:www-data {{ $app_dir }}/current
+    chown -R www-data:www-data {{ $app_dir }}/storage
 @endtask
 
 @task('restart_services')
     echo "Restarting services"
-    sudo service nginx restart
-    sudo service php7.3-fpm reload
+    service nginx restart
+    service php7.4-fpm reload
 @endtask
 
 {{-- Clean old releases --}}
@@ -364,6 +369,101 @@ git add Envoy.blade.php
 git commit -m 'Add Envoy'
 git push origin master
 ```
+
+## Integração contínua com GitLab
+Vamos preparar o ambiente do gitlab Para fazermos o build, os testes e a implantação da aplicação laravel com o **GitLab CI/CD**. Usaremos uma imagem do docker para facilitar a execução das tarefas.
+
+### Criando um container docker
+**Crie um Dockerfile na raiz do seu diretório**
+
+```Dockerfile
+FROM php:7.4
+RUN apt-get update
+RUN apt-get install -qq git curl libmcrypt-dev libjpeg-dev libpng-dev libfreetype6-dev libbz2-dev
+RUN apt-get clean
+RUN docker-php-ext-install mcrypt pdo_mysql zip
+RUN curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer global require "laravel/envoy=~1.0"
+```
+
+### Configurando o GitLab Container Registry
+Com Dockerfile finalizado, precisamos compilá-lo e enviá-lo para o **GitLab Container Registry**.
+
+O **GitLab Container Registry** é o local onde podemos armazenar imagens para uso posterior.
+
+Navegue até a página **Packages & Registries > Container Registry**
+
+Primeiro faça login no **GitLab Container Registry** usando nosso nome de usuário e senha GitLab
+```bash
+docker login registry.gitlab.com
+```
+
+Para criar o container utilize o seguinte comando
+```bash
+docker build -t registry.gitlab.com/<NOME_USUARIO>/NOME_PROJETO .
+```
+
+Para enviar o container para o **GitLab Container Registry** utilize o seguinte comando
+```bash
+docker push registry.gitlab.com/<NOME_USUARIO>/NOME_PROJETO
+```
+
+### Publique o Dockerfile no gitlab
+```bash
+git add Dockerfile
+git commit -m 'Add Dockerfile'
+git push origin master
+```
+
+### Configurando o GitLab CI/CD
+Vamos criar um arquivo chamado **.gitlab-ci.yml** na raiz do nosso projeto.
+
+```yml
+# Caminho recebido após publicar o container no GitLab Container Registry
+image: registry.gitlab.com/<USERNAME>/NOME_PROJETO:latest
+
+stages:
+  - test
+  - deploy
+
+unit_test:
+  stage: test
+  script:
+    - cp .env.example .env
+    - composer install
+    - php artisan key:generate
+    - php artisan migrate
+    - vendor/bin/phpunit
+
+deploy_production:
+  stage: deploy
+  script:
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    - ~/.composer/vendor/bin/envoy run deploy --commit="$CI_COMMIT_SHA"
+  environment:
+    name: production
+    url: http://127.0.0.1
+  when: manual
+  only:
+    - master
+```
+
+### Para ativar o GitLab CI/CD publique o .gitlab-ci.yml no gitlab
+```bash
+git add .gitlab-ci.yml
+git commit -m 'Add .gitlab-ci.yml'
+git push origin master
+```
+
+### Fazendo um deploy automatizado
+Após realizar um commit no seu repositório, navegue até **CI/CD > Pipelines** e clique em **deploy**
+
+![img](../../../resources/_gen/images/laravel-gitlab-ci-cd/deploy.png)
 
 Referência: https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy
 

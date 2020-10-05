@@ -190,6 +190,16 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envo
         <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
       </ul>
     </li>
+    <li><a href="#integração-contínua-com-gitlab">Integração contínua com GitLab</a>
+      <ul>
+        <li><a href="#criando-um-container-docker">Criando um container docker</a></li>
+        <li><a href="#configurando-o-gitlab-container-registry">Configurando o GitLab Container Registry</a></li>
+        <li><a href="#publique-o-dockerfile-no-gitlab">Publique o Dockerfile no gitlab</a></li>
+        <li><a href="#configurando-o-gitlab-cicd">Configurando o GitLab CI/CD</a></li>
+        <li><a href="#para-ativar-o-gitlab-cicd-publique-o-gitlab-ciyml-no-gitlab">Para ativar o GitLab CI/CD publique o .gitlab-ci.yml no gitlab</a></li>
+        <li><a href="#fazendo-um-deploy-automatizado">Fazendo um deploy automatizado</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -301,13 +311,15 @@ cat ~/.ssh/id_rsa
 </code></pre><p><em>Nos comando acima nós, copiamos o conteúdo da chave pública para uma lista de chaves confiaveis. Em seguida escrevemos o conteúdo da chave privada para o STDOUT do linux. Copie o conteúdo desta chave, iremos usa-la em seguida.</em></p>
 <h3 id="adicionando-a-chave-ssh-privada-no-gitlab">Adicionando a chave ssh privada no GitLab</h3>
 <p>Agora, vamos adicionar o conteúdo da chave SSH privada ao seu projeto GitLab como uma variável. Variáveis ​​são ​​definidas pelo usuário e são armazenadas em .gitlab-ci.yml, para fins de segurança.</p>
-<p>No campo KEY, adicione o nome SSH_PRIVATE_KEY e, no campo VALUE, cole a chave privada que você copiou anteriormente.</p>
-<!-- raw HTML omitted -->
+<p><strong>Navegue até: Settings &gt; CI/CD &gt; Variables</strong></p>
+<p>No campo KEY, adicione o nome SSH_PRIVATE_KEY e, no campo VALUE, cole a chave privada que você copiou anteriormente.
+<img src="../../../resources/_gen/images/laravel-gitlab-ci-cd/add_variable.png" alt="img"></p>
 <p>Agora vamos adicionar a chave pública ao projeto como uma chave de implantação, o que nos dará a capacidade de acessar nosso repositório do servidor por meio do protocolo SSH.</p>
 <p>Ainda logado com o usuário deployer, execute o seguinte comando:</p>
 <pre><code>cat ~/.ssh/id_rsa.pub
-</code></pre><p>No campo Título, adicione o nome que desejar e cole a chave pública no campo Chave.</p>
-<!-- raw HTML omitted -->
+</code></pre><p><strong>Navegue até: Settings &gt; Repository &gt; Deploy Keys</strong></p>
+<p>No campo Título, adicione o nome que desejar e cole a chave pública no campo Chave.
+<img src="../../../resources/_gen/images/laravel-gitlab-ci-cd/deploy_keys.png" alt="img"></p>
 <p>Agora, vamos clonar nosso repositório no servidor apenas para garantir que o usuário <strong>deployer</strong> possui acesso ao repositório.</p>
 <p>Ainda logado com o usuário deployer, execute o seguinte comando:</p>
 <pre><code>git clone git@gitlab.example.com:&lt;NOME_USUARIO&gt;/&lt;NOME_REPOSITORIO&gt;.git
@@ -471,15 +483,15 @@ cat ~/.ssh/id_rsa
 
 @task(&#39;change_owner&#39;)
     echo &#34;Changing owner&#34;
-    sudo chown -R deployer:www-data {{ $new_release_dir }}
-    sudo chown -R deployer:www-data {{ $app_dir }}/current
-    sudo chown -R www-data:www-data {{ $app_dir }}/storage
+    chown -R deployer:www-data {{ $new_release_dir }}
+    chown -R deployer:www-data {{ $app_dir }}/current
+    chown -R www-data:www-data {{ $app_dir }}/storage
 @endtask
 
 @task(&#39;restart_services&#39;)
     echo &#34;Restarting services&#34;
-    sudo service nginx restart
-    sudo service php7.3-fpm reload
+    service nginx restart
+    service php7.4-fpm reload
 @endtask
 
 {{-- Clean old releases --}}
@@ -495,7 +507,73 @@ cat ~/.ssh/id_rsa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add Envoy.blade.php
 git commit -m <span style="color:#e6db74">&#39;Add Envoy&#39;</span>
 git push origin master
-</code></pre></div><p>Referência: <a href="https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy">https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy</a></p>
+</code></pre></div><h2 id="integração-contínua-com-gitlab">Integração contínua com GitLab</h2>
+<p>Vamos preparar o ambiente do gitlab Para fazermos o build, os testes e a implantação da aplicação laravel com o <strong>GitLab CI/CD</strong>. Usaremos uma imagem do docker para facilitar a execução das tarefas.</p>
+<h3 id="criando-um-container-docker">Criando um container docker</h3>
+<p><strong>Crie um Dockerfile na raiz do seu diretório</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> php:7.4</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get update<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get install -qq git curl libmcrypt-dev libjpeg-dev libpng-dev libfreetype6-dev libbz2-dev<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> apt-get clean<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> docker-php-ext-install mcrypt pdo_mysql zip<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> curl --silent --show-error https://getcomposer.org/installer | php -- --install-dir<span style="color:#f92672">=</span>/usr/local/bin --filename<span style="color:#f92672">=</span>composer<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> composer global require <span style="color:#e6db74">&#34;laravel/envoy=~1.0&#34;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h3 id="configurando-o-gitlab-container-registry">Configurando o GitLab Container Registry</h3>
+<p>Com Dockerfile finalizado, precisamos compilá-lo e enviá-lo para o <strong>GitLab Container Registry</strong>.</p>
+<p>O <strong>GitLab Container Registry</strong> é o local onde podemos armazenar imagens para uso posterior.</p>
+<p>Navegue até a página <strong>Packages &amp; Registries &gt; Container Registry</strong></p>
+<p>Primeiro faça login no <strong>GitLab Container Registry</strong> usando nosso nome de usuário e senha GitLab</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login registry.gitlab.com
+</code></pre></div><p>Para criar o container utilize o seguinte comando</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t registry.gitlab.com/&lt;NOME_USUARIO&gt;/NOME_PROJETO .
+</code></pre></div><p>Para enviar o container para o <strong>GitLab Container Registry</strong> utilize o seguinte comando</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push registry.gitlab.com/&lt;NOME_USUARIO&gt;/NOME_PROJETO
+</code></pre></div><h3 id="publique-o-dockerfile-no-gitlab">Publique o Dockerfile no gitlab</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add Dockerfile
+git commit -m <span style="color:#e6db74">&#39;Add Dockerfile&#39;</span>
+git push origin master
+</code></pre></div><h3 id="configurando-o-gitlab-cicd">Configurando o GitLab CI/CD</h3>
+<p>Vamos criar um arquivo chamado <strong>.gitlab-ci.yml</strong> na raiz do nosso projeto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#75715e"># Caminho recebido após publicar o container no GitLab Container Registry</span>
+<span style="color:#66d9ef">image</span>: registry.gitlab.com/&lt;USERNAME&gt;/NOME_PROJETO:latest
+
+<span style="color:#66d9ef">stages</span>:
+  - test
+  - deploy
+
+<span style="color:#66d9ef">unit_test</span>:
+  <span style="color:#66d9ef">stage</span>: test
+  <span style="color:#66d9ef">script</span>:
+    - cp .env.example .env
+    - composer install
+    - php artisan key:generate
+    - php artisan migrate
+    - vendor/bin/phpunit
+
+<span style="color:#66d9ef">deploy_production</span>:
+  <span style="color:#66d9ef">stage</span>: deploy
+  <span style="color:#66d9ef">script</span>:
+    - <span style="color:#e6db74">&#39;which ssh-agent || ( apt-get update -y &amp;&amp; apt-get install openssh-client -y )&#39;</span>
+    - eval $(ssh-agent -s)
+    - ssh-add &lt;(echo <span style="color:#e6db74">&#34;$SSH_PRIVATE_KEY&#34;</span>)
+    - mkdir -p ~/.ssh
+    - <span style="color:#e6db74">&#39;[[ -f /.dockerenv ]] &amp;&amp; echo -e &#34;Host *\n\tStrictHostKeyChecking no\n\n&#34; &gt; ~/.ssh/config&#39;</span>
+
+    - ~/.composer/vendor/bin/envoy run deploy --commit=<span style="color:#e6db74">&#34;$CI_COMMIT_SHA&#34;</span>
+  <span style="color:#66d9ef">environment</span>:
+    <span style="color:#66d9ef">name</span>: production
+    <span style="color:#66d9ef">url</span>: http://<span style="color:#ae81ff">127.0.0.1</span>
+  <span style="color:#66d9ef">when</span>: manual
+  <span style="color:#66d9ef">only</span>:
+    - master
+</code></pre></div><h3 id="para-ativar-o-gitlab-cicd-publique-o-gitlab-ciyml-no-gitlab">Para ativar o GitLab CI/CD publique o .gitlab-ci.yml no gitlab</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add .gitlab-ci.yml
+git commit -m <span style="color:#e6db74">&#39;Add .gitlab-ci.yml&#39;</span>
+git push origin master
+</code></pre></div><h3 id="fazendo-um-deploy-automatizado">Fazendo um deploy automatizado</h3>
+<p>Após realizar um commit no seu repositório, navegue até <strong>CI/CD &gt; Pipelines</strong> e clique em <strong>deploy</strong></p>
+<p><img src="../../../resources/_gen/images/laravel-gitlab-ci-cd/deploy.png" alt="img"></p>
+<p>Referência: <a href="https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy">https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy</a></p>
 
     </div>
   </article>
@@ -554,6 +632,16 @@ git push origin master
         <li><a href="#ativando-os-novos-releases">Ativando os novos releases</a></li>
         <li><a href="#o-script-do-envoy-completo">O script do Envoy completo</a></li>
         <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
+      </ul>
+    </li>
+    <li><a href="#integração-contínua-com-gitlab">Integração contínua com GitLab</a>
+      <ul>
+        <li><a href="#criando-um-container-docker">Criando um container docker</a></li>
+        <li><a href="#configurando-o-gitlab-container-registry">Configurando o GitLab Container Registry</a></li>
+        <li><a href="#publique-o-dockerfile-no-gitlab">Publique o Dockerfile no gitlab</a></li>
+        <li><a href="#configurando-o-gitlab-cicd">Configurando o GitLab CI/CD</a></li>
+        <li><a href="#para-ativar-o-gitlab-cicd-publique-o-gitlab-ciyml-no-gitlab">Para ativar o GitLab CI/CD publique o .gitlab-ci.yml no gitlab</a></li>
+        <li><a href="#fazendo-um-deploy-automatizado">Fazendo um deploy automatizado</a></li>
       </ul>
     </li>
   </ul>
