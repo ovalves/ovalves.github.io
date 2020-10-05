@@ -123,7 +123,7 @@ Agora, vamos adicionar o conteúdo da chave SSH privada ao seu projeto GitLab co
 **Navegue até: Settings > CI/CD > Variables**
 
 No campo KEY, adicione o nome SSH_PRIVATE_KEY e, no campo VALUE, cole a chave privada que você copiou anteriormente.
-![img](./images/add_variable.png)
+![img](../images/add_variable.png)
 
 Agora vamos adicionar a chave pública ao projeto como uma chave de implantação, o que nos dará a capacidade de acessar nosso repositório do servidor por meio do protocolo SSH.
 
@@ -135,7 +135,7 @@ cat ~/.ssh/id_rsa.pub
 **Navegue até: Settings > Repository > Deploy Keys**
 
 No campo Título, adicione o nome que desejar e cole a chave pública no campo Chave.
-![img](./images/deploy_keys.png)
+![img](../images/deploy_keys.png)
 
 Agora, vamos clonar nosso repositório no servidor apenas para garantir que o usuário **deployer** possui acesso ao repositório.
 
@@ -469,7 +469,7 @@ git push origin master
 ### Fazendo um deploy automatizado
 Após realizar um commit no seu repositório, navegue até **CI/CD > Pipelines** e clique em **deploy**
 
-![img](./images/deploy.png)
+![img](../images/deploy.png)
 
 Referência: https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy
 
