@@ -3,10 +3,16 @@ title: Deploy automático e testes de aplicações Laravel com GitLab CI/CD
 date: 2020-09-30 23:55:00
 tags:
     - GitLab CI/CD
+    - PHP
+    - Laravel
 categories:
     - GitLab
+    - PGP
+    - Laravel
 keywords:
     - GitLab
+    - PHP
+    - Laravel
 published: true
 ---
 
