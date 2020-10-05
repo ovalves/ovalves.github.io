@@ -18,7 +18,32 @@
   </url>
   
   <url>
+    <loc>https://ovalves.github.io/tags/laravel/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/laravel/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/pgp/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/php/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2020-09-30T23:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
   </url>
   
@@ -48,22 +73,7 @@
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/tags/</loc>
-    <lastmod>2020-09-24T21:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ovalves.github.io/posts/php/laravel/cron-job/cron-job-laravel/</loc>
-    <lastmod>2020-09-23T12:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/laravel/</loc>
-    <lastmod>2020-09-23T12:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/php/</loc>
     <lastmod>2020-09-23T12:39:00+00:00</lastmod>
   </url>
   
