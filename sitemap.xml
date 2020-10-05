@@ -28,12 +28,12 @@
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/categories/pgp/</loc>
+    <loc>https://ovalves.github.io/tags/php/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/tags/php/</loc>
+    <loc>https://ovalves.github.io/categories/php/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
   </url>
   
@@ -74,11 +74,6 @@
   
   <url>
     <loc>https://ovalves.github.io/posts/php/laravel/cron-job/cron-job-laravel/</loc>
-    <lastmod>2020-09-23T12:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/categories/php/</loc>
     <lastmod>2020-09-23T12:39:00+00:00</lastmod>
   </url>
   
