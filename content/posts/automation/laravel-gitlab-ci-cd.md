@@ -19,7 +19,7 @@ published: true
 ## Introdução
 Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
 
-Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
+Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
 
 > PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e  o PHP.
 
@@ -96,7 +96,7 @@ Antes de gerarmos a chave ssh vamos alternar para o usuário que criamos anterio
 su deployer
 ```
 
-### Gerando um chave ssh
+### Gerando uma chave ssh
 Para que possamos implantar nosso aplicativo no servidor de produção a partir de um repositório privado no GitLab. Primeiro, precisamos gerar um novo par de chaves SSH sem senha para o usuário **deployer**.
 
 **Para gerar uma chave ssh use o seguinte comando**
@@ -107,7 +107,7 @@ ssh-keygen -t rsa -b 2048 -C "email@example.com"
 **Acesse: https://docs.gitlab.com/ee/ssh/README.html para conhecer outras formas de gerar chaves ssh**
 
 ### Adicionando a chave ssh
-Após a criação da chave precisamos adiciona-la a lista de chaves confiaveis. Ainda logado na conta do usuário **deployer**. Execute os seguintes comandos.
+Após a criação da chave precisamos adicioná-la a lista de chaves confiáveis. Ainda logado na conta do usuário **deployer**. Execute os seguintes comandos.
 
 
 ```
@@ -115,7 +115,7 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 cat ~/.ssh/id_rsa
 ```
 
-*Nos comando acima nós, copiamos o conteúdo da chave pública para uma lista de chaves confiaveis. Em seguida escrevemos o conteúdo da chave privada para o STDOUT do linux. Copie o conteúdo desta chave, iremos usa-la em seguida.*
+*Nos comando acima nós, copiamos o conteúdo da chave pública para uma lista de chaves confiáveis. Em seguida escrevemos o conteúdo da chave privada para o STDOUT do linux. Copie o conteúdo desta chave, iremos usa-la em seguida.*
 
 ### Adicionando a chave ssh privada no GitLab
 Agora, vamos adicionar o conteúdo da chave SSH privada ao seu projeto GitLab como uma variável. Variáveis ​​são ​​definidas pelo usuário e são armazenadas em .gitlab-ci.yml, para fins de segurança.
@@ -172,7 +172,7 @@ composer global require laravel/envoy
 ### Criando nosso primeiro Envoy script
 Crie um arquivo chamado Envoy.blade.php na raiz do projeto.
 
-Vamos adicionar uma tarefa simples afim de entender como o Envoy funciona.
+Vamos adicionar uma tarefa simples a fim de entender como o Envoy funciona.
 
 ```php
 @servers(['web' => 'remote_username@remote_host'])
@@ -194,12 +194,12 @@ Essa tarefa irá se conectar ao servidor e listar o conteúdo do diretório.
 > PS.: O Envoy não é uma dependência do Laravel, portanto pode ser usado em qualquer aplicação PHP.
 
 ## Deploy Automatizado
-A implantação irá clonar a versão mais recente do repositório no GitLab, instalar as dependências do Composer e ativar a nova versão baixada, criando os links simbolicos necessárioas para funcionamento do projeto.
+A implantação irá clonar a versão mais recente do repositório no GitLab, instalar as dependências do Composer e ativar a nova versão baixada, criando os links simbólicos necessários para funcionamento do projeto.
 
-### Adicionando mais poder as nossas tarefas com Envoy
+### Adicionando mais poder às nossas tarefas com Envoy
 
 ### A diretiva @setup
-O primeiro passo é definirmos as variaveis dentro da diretiva de @setup.
+O primeiro passo é definirmos as variáveis dentro da diretiva de @setup.
 
 ```bash
 ...
@@ -393,7 +393,7 @@ RUN composer global require "laravel/envoy=~1.0"
 ```
 
 ### Configurando o GitLab Container Registry
-Com Dockerfile finalizado, precisamos compilá-lo e enviá-lo para o **GitLab Container Registry**.
+Com Dockerfile finalizado, precisamos fazer o build do container e enviá-lo para o **GitLab Container Registry**.
 
 O **GitLab Container Registry** é o local onde podemos armazenar imagens para uso posterior.
 
@@ -472,6 +472,3 @@ Após realizar um commit no seu repositório, navegue até **CI/CD > Pipelines**
 ![img](../images/deploy.png)
 
 Referência: https://docs.gitlab.com/ee/ci/examples/laravel_with_gitlab_and_envoy
-
-
-

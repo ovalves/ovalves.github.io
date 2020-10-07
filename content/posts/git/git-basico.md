@@ -48,7 +48,7 @@ git init
 ```
 O comando acima irá iniciar um repositório do *git*
 
-*Criei um arquivo chamdo **README.md** dentro do mesmo diretório onde foi realizado o git init. Iremos utilizar este arquivo para aprender sobre as diferentes áreas de trabalho do git*
+*Criei um arquivo chamado **README.md** dentro do mesmo diretório onde foi realizado o git init. Iremos utilizar este arquivo para aprender sobre as diferentes áreas de trabalho do git*
 
 ## Estados e áreas
 ### No Git temos três estados que são:

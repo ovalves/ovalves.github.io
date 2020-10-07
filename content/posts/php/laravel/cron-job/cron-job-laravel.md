@@ -161,7 +161,7 @@ $schedule->command('cart:cron')->timezone('America/Sao_Paulo')->twiceDaily(10, 2
 ## Adicionando o executável do artisan no crontab
 
 ```bash
-crontab -e # Para editar o crontab e adicionar o script
+crontab -e # Para editar o crontab e adicione o script
 ```
 
 ```bash
@@ -178,5 +178,3 @@ crontab -l # Para listar todos os jobs criados
 ```php
 php artisan cart:cron
 ```
-
-

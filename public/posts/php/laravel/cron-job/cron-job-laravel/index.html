@@ -352,7 +352,7 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
 | -&gt;timezone('America/New_York'); | Set the timezone
 </code></pre><p><em>Para saber mais sobre os tipos de agendamentos possíveis, acesse: <a href="https://laravel.com/docs/7.x/scheduling#schedule-frequency-options">https://laravel.com/docs/7.x/scheduling#schedule-frequency-options</a></em></p>
 <h2 id="adicionando-o-executável-do-artisan-no-crontab">Adicionando o executável do artisan no crontab</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e <span style="color:#75715e"># Para editar o crontab e adicionar o script</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e <span style="color:#75715e"># Para editar o crontab e adicione o script</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -l <span style="color:#75715e"># Para listar todos os jobs criados</span>
 </code></pre></div><h3 id="adicione-o-executável-do-artisan-no-crontab">Adicione o executável do artisan no crontab</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* * * * * php /path/to/artisan schedule:run 1&gt;&gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>

@@ -20,10 +20,10 @@ Nesta série de artigos irei abordar todos os passos necessários para a constru
 ### Motivação
 Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações,
 vide a imensa quantidade de desenvolvedores "laravel" ou "react".
-Nosso inuito nessa série será criar um framework que se assemelhe ao laravel. Tentaremos criar um framework robusto que ajude outros devs a executarem tarefas do dia dia.
+Nosso intuito nessa série será criar um framework que se assemelhe ao laravel. Tentaremos criar um framework robusto que ajude outros devs a executarem tarefas do dia dia.
 
 ### Por que criar seu próprio framework?
-Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que, por sua vez, tornará mais fácil a compreensão de outros frameworks existentes no mercado, porque no final das contas, a grande maioria segue quase que os mesmos princípios. Esse desafio também o forçará a tomar decisões que, em outro momento ou projeto  você acredita-se que poderia evitar: decisões de arquitetura, decisões de código, decisões por falta de tempo.
+Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que tornará mais fácil a compreensão de outros frameworks existentes no mercado.
 
 >Disclaimer: O framework criado tem a finalidade de ser didático, caso queira usá-lo em produção faça muitos testes antes.
 
@@ -36,7 +36,7 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que,
 - Para reforçar o conhecimento em alguma linguagem de programação
 
 ## O que será abordado
-- Criação de uma engine de roteamento simples porém poderosa
+- Criação de uma engine de roteamento
 - Criação de um sistema de injeção de dependências
 - Criação de um sistema de gerenciamento de sessão
 - Criação de um sistema de autenticação seguro
@@ -44,7 +44,7 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que,
 - Criação de um sistema de template engine, facilitando a criação das views no framework
 - Criação de um sistema de Middlewares
 - Criação de um sistema de arquivos
-- Criação de um sistema de Request e Response (para trabalharmos com as requições HTTP)
+- Criação de um sistema de Request e Response (para trabalharmos com as requisições HTTP)
 - Criação de um sistema de gerenciamento de banco de dados (Gerenciamento de conexões, persistência, etc)
 - O framework seguirá o padrão MVC
 - Sistema de logs

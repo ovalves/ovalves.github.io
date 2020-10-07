@@ -19,7 +19,7 @@
       
       <guid>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</guid>
       <description>Introdução Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
-Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas de com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
+Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
  PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e o PHP.</description>
     </item>
     
