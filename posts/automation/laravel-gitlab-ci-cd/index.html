@@ -169,10 +169,7 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, 
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#testes-de-unidade">Testes de unidade</a></li>
-    <li><a href="#publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</a></li>
-    <li><a href="#configurando-o-servidor">Configurando o servidor</a>
+    <li>
       <ul>
         <li><a href="#criando-um-usuário-de-deploy">Criando um usuário de deploy</a></li>
         <li><a href="#alternando-entre-usuários-no-linux">Alternando entre usuários no linux</a></li>
@@ -184,7 +181,10 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, 
         <li><a href="#criando-nosso-primeiro-envoy-script">Criando nosso primeiro Envoy script</a></li>
       </ul>
     </li>
-    <li><a href="#deploy-automatizado">Deploy Automatizado</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#adicionando-mais-poder-às-nossas-tarefas-com-envoy">Adicionando mais poder às nossas tarefas com Envoy</a></li>
         <li><a href="#a-diretiva-setup">A diretiva @setup</a></li>
@@ -196,7 +196,10 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, 
         <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
       </ul>
     </li>
-    <li><a href="#integração-contínua-com-gitlab">Integração contínua com GitLab</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#criando-um-container-docker">Criando um container docker</a></li>
         <li><a href="#configurando-o-gitlab-container-registry">Configurando o GitLab Container Registry</a></li>
@@ -260,13 +263,13 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, 
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="introdução">Introdução</h2>
+      <h1 id="introdução">Introdução</h1>
 <p>Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.</p>
 <p>Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.</p>
 <blockquote>
 <p>PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e  o PHP.</p>
 </blockquote>
-<h2 id="testes-de-unidade">Testes de unidade</h2>
+<h1 id="testes-de-unidade">Testes de unidade</h1>
 <p>Todas as novas instalações do Laravel vem com dois tipos de testes, teste de recursos (feature test) e testes de unidade (unit test), colocados no diretório de testes.</p>
 <p><strong>Exemplo de teste de unidade</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
@@ -291,7 +294,7 @@ Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, 
 </code></pre></div><p>Por padrão o Laravel usa o framework <strong>PHPUnit</strong> para executar os testes.</p>
 <p>Rode os testes usando o comando <strong>vendor/bin/phpunit</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">OK <span style="color:#f92672">(</span><span style="color:#ae81ff">1</span> test, <span style="color:#ae81ff">1</span> assertions<span style="color:#f92672">)</span>
-</code></pre></div><h2 id="publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</h2>
+</code></pre></div><h1 id="publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</h1>
 <p>Com o projeto instalado e funcionando localmente, vamos enviar o código para o repositório remoto.</p>
 <blockquote>
 <p>Para saber como criar um novo projeto no GitLab acesse: <em><a href="https://docs.gitlab.com/ee/gitlab-basics/create-project.html">https://docs.gitlab.com/ee/gitlab-basics/create-project.html</a></em>. Depois de criar o projeto, siga as instruções da linha de comando exibidas na página inicial do projeto.</p>
@@ -304,7 +307,7 @@ git remote add origin git@gitlab.example.com:&lt;NOME_USUARIO&gt;/&lt;NOME_REPOS
 git add .
 git commit -m 'Initial Commit'
 git push -u origin master
-</code></pre><h2 id="configurando-o-servidor">Configurando o servidor</h2>
+</code></pre><h1 id="configurando-o-servidor">Configurando o servidor</h1>
 <h3 id="criando-um-usuário-de-deploy">Criando um usuário de deploy</h3>
 <p>*<em>Abra algum terminal no seu linux e digite os seguintes comando</em></p>
 <pre><code>sudo adduser deployer
@@ -370,7 +373,7 @@ cat ~/.ssh/id_rsa
 <blockquote>
 <p>PS.: O Envoy não é uma dependência do Laravel, portanto pode ser usado em qualquer aplicação PHP.</p>
 </blockquote>
-<h2 id="deploy-automatizado">Deploy Automatizado</h2>
+<h1 id="deploy-automatizado">Deploy Automatizado</h1>
 <p>A implantação irá clonar a versão mais recente do repositório no GitLab, instalar as dependências do Composer e ativar a nova versão baixada, criando os links simbólicos necessários para funcionamento do projeto.</p>
 <h3 id="adicionando-mais-poder-às-nossas-tarefas-com-envoy">Adicionando mais poder às nossas tarefas com Envoy</h3>
 <h3 id="a-diretiva-setup">A diretiva @setup</h3>
@@ -525,7 +528,7 @@ cat ~/.ssh/id_rsa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git add Envoy.blade.php
 git commit -m <span style="color:#e6db74">&#39;Add Envoy&#39;</span>
 git push origin master
-</code></pre></div><h2 id="integração-contínua-com-gitlab">Integração contínua com GitLab</h2>
+</code></pre></div><h1 id="integração-contínua-com-gitlab">Integração contínua com GitLab</h1>
 <p>Vamos preparar o ambiente do gitlab Para fazermos o build, os testes e a implantação da aplicação laravel com o <strong>GitLab CI/CD</strong>. Usaremos uma imagem do docker para facilitar a execução das tarefas.</p>
 <h3 id="criando-um-container-docker">Criando um container docker</h3>
 <p><strong>Crie um Dockerfile na raiz do seu diretório</strong></p>
@@ -625,10 +628,7 @@ git push origin master
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#testes-de-unidade">Testes de unidade</a></li>
-    <li><a href="#publicando-o-projeto-no-gitlab">Publicando o projeto no GitLab</a></li>
-    <li><a href="#configurando-o-servidor">Configurando o servidor</a>
+    <li>
       <ul>
         <li><a href="#criando-um-usuário-de-deploy">Criando um usuário de deploy</a></li>
         <li><a href="#alternando-entre-usuários-no-linux">Alternando entre usuários no linux</a></li>
@@ -640,7 +640,10 @@ git push origin master
         <li><a href="#criando-nosso-primeiro-envoy-script">Criando nosso primeiro Envoy script</a></li>
       </ul>
     </li>
-    <li><a href="#deploy-automatizado">Deploy Automatizado</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#adicionando-mais-poder-às-nossas-tarefas-com-envoy">Adicionando mais poder às nossas tarefas com Envoy</a></li>
         <li><a href="#a-diretiva-setup">A diretiva @setup</a></li>
@@ -652,7 +655,10 @@ git push origin master
         <li><a href="#publique-o-script-do-envoy-no-gitlab">Publique o Script do Envoy no GitLab</a></li>
       </ul>
     </li>
-    <li><a href="#integração-contínua-com-gitlab">Integração contínua com GitLab</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#criando-um-container-docker">Criando um container docker</a></li>
         <li><a href="#configurando-o-gitlab-container-registry">Configurando o GitLab Container Registry</a></li>
