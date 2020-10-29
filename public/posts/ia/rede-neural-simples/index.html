@@ -165,19 +165,7 @@ Perceptron Inventada em 1958 por Frank Rosenblatt no Cornell Aeronautical Labora
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#perceptron">Perceptron</a></li>
-    <li><a href="#perceptron-multicamadas">Perceptron multicamadas</a></li>
-    <li><a href="#camada-de-entrada">Camada de Entrada</a></li>
-    <li><a href="#camada-de-saída">Camada de Saída</a></li>
-    <li><a href="#neurônios">Neurônios</a></li>
-    <li><a href="#função-de-ativação">Função de Ativação</a></li>
-    <li><a href="#retropropagação">Retropropagação</a></li>
-    <li><a href="#a-retropropagação-possui-duas-etapas-que-são">A retropropagação possui duas etapas que são</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
   </span>
 </div>
@@ -221,23 +209,23 @@ Perceptron Inventada em 1958 por Frank Rosenblatt no Cornell Aeronautical Labora
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="introdução">Introdução</h2>
+      <h1 id="introdução">Introdução</h1>
 <p>O tipo mais comum de rede neural artificial é uma rede feedforward com retropropagação (backpropagation). Em uma rede feedforward cada camada se conecta à próxima camada não havendo caminho de volta. Todas as suas conexões se movem em uma única direção, partindo da camada de entrada rumo a camada de saída.</p>
-<h2 id="perceptron">Perceptron</h2>
+<h1 id="perceptron">Perceptron</h1>
 <p>Inventada em 1958 por <strong>Frank Rosenblatt</strong> no <strong>Cornell Aeronautical Laboratory</strong> o <strong>perceptron</strong> é um tipo de rede neural artificial. Ele pode ser visto como o tipo mais simples de rede neural feedforward: um classificador linear.</p>
-<h2 id="perceptron-multicamadas">Perceptron multicamadas</h2>
+<h1 id="perceptron-multicamadas">Perceptron multicamadas</h1>
 <p>O <strong>perceptron multicamadas (MLP)</strong> é uma rede neural semelhante à <strong>perceptron</strong>. Para ajudar na resolução de problemas não lineares foram adicionadas <strong>camadas de neurônio ocultas</strong> ligadas entre si por sinapses com pesos. O aprendizado nesse tipo de rede é geralmente feito através do algoritmo de retropropagação do erro.</p>
-<h2 id="camada-de-entrada">Camada de Entrada</h2>
+<h1 id="camada-de-entrada">Camada de Entrada</h1>
 <p>Um vetor de entradas é passado para o neurônio. Cada neurônio na camada de entrada representa alguma variável do mundo real - por exemplo características de uma pessoa.</p>
-<h2 id="camada-de-saída">Camada de Saída</h2>
+<h1 id="camada-de-saída">Camada de Saída</h1>
 <p>A camada de saída retorna um resultado para o ambiente externo. O número de neurônios está relacionado com a tarefa que a rede neural irá executar. Na fase de treinamento o resultado emitido pela camada de saída é utilizado para ajustar os pesos da rede neural.</p>
-<h2 id="neurônios">Neurônios</h2>
+<h1 id="neurônios">Neurônios</h1>
 <p>A menor unidade em uma rede neural artificial é o neurônio. Ele armazena um vetor de pesos. Cada neurônio recebe dados de entradas, esses dados são  <strong>multiplicados (dot product)</strong> pelos <strong>pesos sinápticos</strong> e <strong>somadas entre si</strong> junto com uma constante chamada de <strong>bias</strong>.</p>
-<h2 id="função-de-ativação">Função de Ativação</h2>
+<h1 id="função-de-ativação">Função de Ativação</h1>
 <p>Após o somatório dos neurônios, o valor obtido passa pelo cálculo da função de ativação. O objetivo deste cálculo é limitar a amplitude da camada de saída da rede neural normalizando o resultado final em um intervalo fechado entre (0, 1).</p>
-<h2 id="retropropagação">Retropropagação</h2>
+<h1 id="retropropagação">Retropropagação</h1>
 <p>A retropropagação define a forma de treinamento da rede. O algoritmo de retropropagação tem por finalidade encontrar o erro emitido pela saída de uma rede neural e utilizar esse dado para modificar os pesos dos neurônios. Os neurônios que produzem saídas com erros maiores sofrem mais modificações. O erro emitido pela saída da rede neural é oriundo da fase de treinamento.</p>
-<h2 id="a-retropropagação-possui-duas-etapas-que-são">A retropropagação possui duas etapas que são</h2>
+<h1 id="a-retropropagação-possui-duas-etapas-que-são">A retropropagação possui duas etapas que são</h1>
 <p><strong>Forward pass</strong>: As entradas são passadas através da rede e as previsões de saída obtidas (essa etapa também é conhecida como fase de propagação).</p>
 <p><strong>Backward pass</strong>: O gradiente da função de perda da camada de previsão é calculado. Usamos esse gradiente para atualizar recursivamente os pesos da rede (etapa também conhecida como fase de atualização de pesos ou retropropagação).</p>
 
@@ -271,19 +259,7 @@ Perceptron Inventada em 1958 por Frank Rosenblatt no Cornell Aeronautical Labora
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#perceptron">Perceptron</a></li>
-    <li><a href="#perceptron-multicamadas">Perceptron multicamadas</a></li>
-    <li><a href="#camada-de-entrada">Camada de Entrada</a></li>
-    <li><a href="#camada-de-saída">Camada de Saída</a></li>
-    <li><a href="#neurônios">Neurônios</a></li>
-    <li><a href="#função-de-ativação">Função de Ativação</a></li>
-    <li><a href="#retropropagação">Retropropagação</a></li>
-    <li><a href="#a-retropropagação-possui-duas-etapas-que-são">A retropropagação possui duas etapas que são</a></li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </div>
 
     <div id="share-footer" style="display: none">
