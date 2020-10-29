@@ -171,19 +171,19 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#criando-um-command">Criando um command</a></li>
-    <li><a href="#registrando-o-cron">Registrando o cron</a>
+    <li>
       <ul>
         <li><a href="#algumas-opções-de-frequencia-disponiveis">Algumas opções de frequencia disponiveis</a></li>
       </ul>
     </li>
-    <li><a href="#adicionando-o-executável-do-artisan-no-crontab">Adicionando o executável do artisan no crontab</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#adicione-o-executável-do-artisan-no-crontab">Adicione o executável do artisan no crontab</a></li>
       </ul>
     </li>
-    <li><a href="#rodando-o-cron-do-laravel-manualmente">Rodando o cron do laravel manualmente</a></li>
   </ul>
 </nav>
     </div>
@@ -230,12 +230,12 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
   
     <div class="content" itemprop="articleBody">
       <p><em><a href="https://github.com/ovalves/selene">Código do projeto no github</a></em></p>
-<h2 id="introdução">Introdução</h2>
+<h1 id="introdução">Introdução</h1>
 <p>Antigamente precisávamos criar várias entradas no crontab para cada tarefa que precisava ser agendar no servidor. No entanto, isso pode rapidamente se tornar um problema, uma vez que a programação das tarefas agendadas não está mais no <em>working directory</em>.</p>
 <p>Resumindo, para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.</p>
 <p>O agendador de tarefas do Laravel (<em>command scheduler</em>) nos permite definir de forma fluente e expressiva uma programação de comandos dentro do próprio Laravel. Ao usar o agendador, precisamos criar apenas uma única entrada no crontab. A programação das tarefas é registrada no arquivo <em>app/Console/Kernel.php</em>.</p>
 <p>Vamos ver um exemplo simples.</p>
-<h2 id="criando-um-command">Criando um command</h2>
+<h1 id="criando-um-command">Criando um command</h1>
 <pre><code>php artisan make:command CartCron --command=cart:cron
 </code></pre><p>O comando acima irá criar na pasta <em>app/Console/Commands</em> um arquivo chamado <em>CartCron.php</em></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
@@ -281,7 +281,7 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
         $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;cart cron rodando&#39;</span>);
     }
 }
-</code></pre></div><h2 id="registrando-o-cron">Registrando o cron</h2>
+</code></pre></div><h1 id="registrando-o-cron">Registrando o cron</h1>
 <p>Todos os <em>commands</em> gerados no <em>laravel</em> devem ser registrados em <em>app/Console/Kernel.php</em></p>
 <ul>
 <li>Abra o <em>app/Console/Kernel.php</em>;</li>
@@ -351,12 +351,12 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
 | -&gt;yearly();                     | Run the task every year                             |
 | -&gt;timezone('America/New_York'); | Set the timezone
 </code></pre><p><em>Para saber mais sobre os tipos de agendamentos possíveis, acesse: <a href="https://laravel.com/docs/7.x/scheduling#schedule-frequency-options">https://laravel.com/docs/7.x/scheduling#schedule-frequency-options</a></em></p>
-<h2 id="adicionando-o-executável-do-artisan-no-crontab">Adicionando o executável do artisan no crontab</h2>
+<h1 id="adicionando-o-executável-do-artisan-no-crontab">Adicionando o executável do artisan no crontab</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -e <span style="color:#75715e"># Para editar o crontab e adicione o script</span>
 </code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">crontab -l <span style="color:#75715e"># Para listar todos os jobs criados</span>
 </code></pre></div><h3 id="adicione-o-executável-do-artisan-no-crontab">Adicione o executável do artisan no crontab</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">* * * * * php /path/to/artisan schedule:run 1&gt;&gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span>
-</code></pre></div><h2 id="rodando-o-cron-do-laravel-manualmente">Rodando o cron do laravel manualmente</h2>
+</code></pre></div><h1 id="rodando-o-cron-do-laravel-manualmente">Rodando o cron do laravel manualmente</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">php artisan cart:cron
 </code></pre></div>
     </div>
@@ -391,19 +391,19 @@ O agendador de tarefas do Laravel (command scheduler) nos permite definir de for
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#criando-um-command">Criando um command</a></li>
-    <li><a href="#registrando-o-cron">Registrando o cron</a>
+    <li>
       <ul>
         <li><a href="#algumas-opções-de-frequencia-disponiveis">Algumas opções de frequencia disponiveis</a></li>
       </ul>
     </li>
-    <li><a href="#adicionando-o-executável-do-artisan-no-crontab">Adicionando o executável do artisan no crontab</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#adicione-o-executável-do-artisan-no-crontab">Adicione o executável do artisan no crontab</a></li>
       </ul>
     </li>
-    <li><a href="#rodando-o-cron-do-laravel-manualmente">Rodando o cron do laravel manualmente</a></li>
   </ul>
 </nav>
     </div>
