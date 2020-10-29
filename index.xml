@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 30 Sep 2020 23:55:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2020 16:25:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sistemas de recomendação</title>
+      <link>https://ovalves.github.io/posts/ia/recommender-system/</link>
+      <pubDate>Thu, 29 Oct 2020 16:25:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/ia/recommender-system/</guid>
+      <description>Código do projeto no github
+Introdução Definição da Wikipedia - Um Sistema de Recomendação combina várias técnicas computacionais para selecionar itens personalizados com base nos interesses dos usuários e conforme o contexto no qual estão inseridos. Tais itens podem assumir formas bem variadas como, por exemplo, livros, filmes, notícias, música, vídeos, anúncios, links patrocinados, páginas de internet, produtos de uma loja virtual, etc. Empresas como Amazon, Netflix e Google são reconhecidas pelo uso intensivo de sistemas de recomendação com os quais obtém grande vantagem competitiva.</description>
+    </item>
     
     <item>
       <title>Deploy automático e testes de aplicações Laravel com GitLab CI/CD</title>
