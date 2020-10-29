@@ -167,25 +167,19 @@ Controle de versão Um sistema de controle de versão é um software com a final
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#controle-de-versão">Controle de versão</a></li>
-    <li><a href="#instalação">Instalação</a></li>
-    <li><a href="#configuração-do-git">Configuração do Git</a></li>
-    <li><a href="#configurando-atalhos">Configurando atalhos</a></li>
-    <li><a href="#trabalhando-com-repositórios">Trabalhando com repositórios</a>
+    <li>
       <ul>
         <li><a href="#criando-um-repositório">Criando um repositório</a></li>
       </ul>
     </li>
-    <li><a href="#estados-e-áreas">Estados e áreas</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#no-git-temos-três-estados-que-são">No Git temos três estados que são:</a></li>
       </ul>
     </li>
-    <li><a href="#listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</a></li>
-    <li><a href="#adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</a></li>
-    <li><a href="#removendo-arquivos-da-staging-area">Removendo arquivos da staging area</a></li>
-    <li><a href="#fazendo-um-commit">Fazendo um commit</a></li>
   </ul>
 </nav>
     </div>
@@ -228,32 +222,32 @@ Controle de versão Um sistema de controle de versão é um software com a final
 
   
     <div class="content" itemprop="articleBody">
-      <h2 id="introdução">Introdução</h2>
+      <h1 id="introdução">Introdução</h1>
 <p>Git é um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software.
 O git pode ser usado para registrar o histórico de edições de qualquer tipo de arquivo, ele foi inicialmente projetado e desenvolvido por Linus Torvalds para o desenvolvimento do kernel Linux.</p>
-<h2 id="controle-de-versão">Controle de versão</h2>
+<h1 id="controle-de-versão">Controle de versão</h1>
 <p>Um sistema de controle de versão é um software com a finalidade de gerenciar diferentes versões no desenvolvimento de documentos.
 Esses sistemas são utilizados no desenvolvimento de software para controlar suas versões, manter o histórico de atualizações, e para o desenvolvimento de códigos-fontes e documentação.</p>
-<h2 id="instalação">Instalação</h2>
+<h1 id="instalação">Instalação</h1>
 <p><em>Para realizar a instalação do git acesse o site <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> e escolha a versão compatível com seu sistema operacional.</em></p>
-<h2 id="configuração-do-git">Configuração do Git</h2>
+<h1 id="configuração-do-git">Configuração do Git</h1>
 <p>Diga ao git quem você é.</p>
 <pre><code>git config --global user.name &quot;Seu nome&quot;
 git config --global user.email &quot;Seu email&quot;
 </code></pre><p>No comando acima utilizamos <em>&ndash;global</em>. Essa opção diz ao git para armazenar as configurações no arquivo <em>~/.gitconfig</em>. Esta configuração é definida para cada usuário do sistema operacional.</p>
 <p>Para compartilhar a mesma configuração entre todos os usuários do sistema operacional, utilize a opção <em>&ndash;system</em>. Esta opção vai armazenar as configurações no arquivo <em>/etc/gitconfig</em>.</p>
 <p>Para criar uma configuração restrita a um projeto específico, utilize <em>&ndash;local</em>. Esta opção vai armazenar as configurações no diretório do repositório corrente.</p>
-<h2 id="configurando-atalhos">Configurando atalhos</h2>
+<h1 id="configurando-atalhos">Configurando atalhos</h1>
 <p>Criando atalhos para comandos do git:</p>
 <pre><code>git config --global alias.ci commit
 </code></pre><p>O comando acima cria um atalho para o comando <em>commit</em> que será explicado mais a frente</p>
 <p><em>Para saber mais: <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases</a></em></p>
-<h2 id="trabalhando-com-repositórios">Trabalhando com repositórios</h2>
+<h1 id="trabalhando-com-repositórios">Trabalhando com repositórios</h1>
 <h3 id="criando-um-repositório">Criando um repositório</h3>
 <pre><code>git init
 </code></pre><p>O comando acima irá iniciar um repositório do <em>git</em></p>
 <p><em>Criei um arquivo chamado <strong>README.md</strong> dentro do mesmo diretório onde foi realizado o git init. Iremos utilizar este arquivo para aprender sobre as diferentes áreas de trabalho do git</em></p>
-<h2 id="estados-e-áreas">Estados e áreas</h2>
+<h1 id="estados-e-áreas">Estados e áreas</h1>
 <h3 id="no-git-temos-três-estados-que-são">No Git temos três estados que são:</h3>
 <ul>
 <li>Working directory</li>
@@ -261,22 +255,22 @@ git config --global user.email &quot;Seu email&quot;
 <li>Repositório (head / commits)</li>
 </ul>
 <p>O código local está dentro do working directory, no caso o arquivo README que acabamos de criar está dentro do working directory - este é o nosso local de trabalho.</p>
-<h2 id="listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</h2>
+<h1 id="listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</h1>
 <p>Arquivos não monitorados são arquivos que estão no <em>working directory</em> - ou melhor são os arquivos que ainda não apresentamos ao <em>git</em>.</p>
 <pre><code>git status
 </code></pre><p>Este comando irá exibir o arquivo <em>README.md</em> na listagem de arquivos não monitorados</p>
-<h2 id="adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</h2>
+<h1 id="adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</h1>
 <p>Agora iremos apresentar o arquivo para o <em>git</em>, colocando-o na <em>staging area</em></p>
 <pre><code>git add README.md
 </code></pre><p>Agora o arquivo <em>README.md</em> saiu do working directory e foi para a <em>staging area</em>. Nesse estado, o arquivo está sob o controle do git.</p>
 <p>O git irá armazenar o histórico de alterações deste arquivo.</p>
 <p>Os arquivos na staging area estão prontos para serem registrados como parte de um commit. <em>O commit é o registro das alterações de um ou mais arquivos que foram alterados no working directory</em>.</p>
 <p>A partir do estado da <em>staging area</em> seguido do <em>commit</em>, o arquivo do <em>repositório local</em> está pronto para ir para o <em>repositório remoto</em>.</p>
-<h2 id="removendo-arquivos-da-staging-area">Removendo arquivos da staging area</h2>
+<h1 id="removendo-arquivos-da-staging-area">Removendo arquivos da staging area</h1>
 <p>Para remover arquivos que foram adicionados incorretamente podemos usar o comando.</p>
 <pre><code>git reset HEAD &lt;NOME_DO_ARQUIVO&gt;
 </code></pre><p>Este comando irá remover o arquivo da <em>staging area</em>, devolvendo-o para o <em>working directory</em>.</p>
-<h2 id="fazendo-um-commit">Fazendo um commit</h2>
+<h1 id="fazendo-um-commit">Fazendo um commit</h1>
 <p>Um commit é uma unidade de controle que pode contar um ou mais arquivos e operações que foram realizadas no <em>working directory</em>.</p>
 <pre><code>git commit -m &quot;meu primeiro commit&quot;
 </code></pre><p>No comando acima utilizamos a <em>flag -m</em> que significa que estamos passando uma mensagem para o <em>commit</em>. Esta mensagem é usada para identificar o conteúdo deste <em>commit</em>.</p>
@@ -313,25 +307,19 @@ git config --global user.email &quot;Seu email&quot;
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#introdução">Introdução</a></li>
-    <li><a href="#controle-de-versão">Controle de versão</a></li>
-    <li><a href="#instalação">Instalação</a></li>
-    <li><a href="#configuração-do-git">Configuração do Git</a></li>
-    <li><a href="#configurando-atalhos">Configurando atalhos</a></li>
-    <li><a href="#trabalhando-com-repositórios">Trabalhando com repositórios</a>
+    <li>
       <ul>
         <li><a href="#criando-um-repositório">Criando um repositório</a></li>
       </ul>
     </li>
-    <li><a href="#estados-e-áreas">Estados e áreas</a>
+  </ul>
+
+  <ul>
+    <li>
       <ul>
         <li><a href="#no-git-temos-três-estados-que-são">No Git temos três estados que são:</a></li>
       </ul>
     </li>
-    <li><a href="#listando-os-arquivos-não-monitorados">Listando os arquivos não monitorados</a></li>
-    <li><a href="#adicionando-o-arquivo-na-staging-area">Adicionando o arquivo na staging area</a></li>
-    <li><a href="#removendo-arquivos-da-staging-area">Removendo arquivos da staging area</a></li>
-    <li><a href="#fazendo-um-commit">Fazendo um commit</a></li>
   </ul>
 </nav>
     </div>
