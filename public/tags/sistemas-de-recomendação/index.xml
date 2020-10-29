@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Inteligência artificial on Vinicius Alves</title>
-    <link>https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/</link>
-    <description>Recent content in Inteligência artificial on Vinicius Alves</description>
+    <title>Sistemas de recomendação on Vinicius Alves</title>
+    <link>https://ovalves.github.io/tags/sistemas-de-recomenda%C3%A7%C3%A3o/</link>
+    <description>Recent content in Sistemas de recomendação on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
     <lastBuildDate>Thu, 29 Oct 2020 16:25:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovalves.github.io/tags/sistemas-de-recomenda%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <guid>https://ovalves.github.io/posts/ia/recommender-system/</guid>
       <description>Código do projeto no github
 Introdução Definição da Wikipedia - Um Sistema de Recomendação combina várias técnicas computacionais para selecionar itens personalizados com base nos interesses dos usuários e conforme o contexto no qual estão inseridos. Tais itens podem assumir formas bem variadas como, por exemplo, livros, filmes, notícias, música, vídeos, anúncios, links patrocinados, páginas de internet, produtos de uma loja virtual, etc. Empresas como Amazon, Netflix e Google são reconhecidas pelo uso intensivo de sistemas de recomendação com os quais obtém grande vantagem competitiva.</description>
-    </item>
-    
-    <item>
-      <title>Redes Neurais Artificiais</title>
-      <link>https://ovalves.github.io/posts/ia/rede-neural-simples/</link>
-      <pubDate>Thu, 24 Sep 2020 21:35:00 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/posts/ia/rede-neural-simples/</guid>
-      <description>Introdução O tipo mais comum de rede neural artificial é uma rede feedforward com retropropagação (backpropagation). Em uma rede feedforward cada camada se conecta à próxima camada não havendo caminho de volta. Todas as suas conexões se movem em uma única direção, partindo da camada de entrada rumo a camada de saída.
-Perceptron Inventada em 1958 por Frank Rosenblatt no Cornell Aeronautical Laboratory o perceptron é um tipo de rede neural artificial.</description>
     </item>
     
   </channel>
