@@ -14,7 +14,7 @@ published: true
 
 *[Código do projeto no github](https://github.com/ovalves/selene)*
 
-## Introdução
+# Introdução
 Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
 
 ### Motivação
@@ -35,7 +35,7 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que 
 - Para aprender novos paradigmas de programação
 - Para reforçar o conhecimento em alguma linguagem de programação
 
-## O que será abordado
+# O que será abordado
 - Criação de uma engine de roteamento
 - Criação de um sistema de injeção de dependências
 - Criação de um sistema de gerenciamento de sessão
@@ -51,7 +51,7 @@ Escrever seu próprio framework o forçará a fazer escolhas de arquitetura que 
 - Criação de um console gerador de código, para criação das models, controllers, views, etc
 - Criação de um [skeleton](https://github.com/ovalves/selene-skeleton) para rápida criação de novos projetos utilizando o framework
 
-## Gerenciamento de dependências
+# Gerenciamento de dependências
 Iremos utilizar o [composer](https://getcomposer.org) para instalar os componentes que serão utilizados ao longo do projeto. Caso não saiba o que é o composer, aqui está um artigo onde descrevo brevemente para que serve.
 
 *Parte 2 - em breve*

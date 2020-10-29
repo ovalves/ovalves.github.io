@@ -14,7 +14,7 @@ published: true
 
 *[Código do projeto no github](https://github.com/ovalves/selene)*
 
-## Introdução
+# Introdução
 Antigamente precisávamos criar várias entradas no crontab para cada tarefa que precisava ser agendar no servidor. No entanto, isso pode rapidamente se tornar um problema, uma vez que a programação das tarefas agendadas não está mais no *working directory*.
 
 Resumindo, para registrar uma nova tarefa precisamos acessar o servidor e adicionar mais uma entrada no crontab.
@@ -23,7 +23,7 @@ O agendador de tarefas do Laravel (*command scheduler*) nos permite definir de f
 
 Vamos ver um exemplo simples.
 
-## Criando um command
+# Criando um command
 
 ```
 php artisan make:command CartCron --command=cart:cron
@@ -77,7 +77,7 @@ class CartCron extends Command
 }
 ```
 
-## Registrando o cron
+# Registrando o cron
 Todos os *commands* gerados no *laravel* devem ser registrados em *app/Console/Kernel.php*
 * Abra o *app/Console/Kernel.php*;
 * Adicione no *array* *$commands* o caminho para o cron que acabamos de criar.
@@ -158,7 +158,7 @@ $schedule->command('cart:cron')->timezone('America/Sao_Paulo')->twiceDaily(10, 2
 
 *Para saber mais sobre os tipos de agendamentos possíveis, acesse: https://laravel.com/docs/7.x/scheduling#schedule-frequency-options*
 
-## Adicionando o executável do artisan no crontab
+# Adicionando o executável do artisan no crontab
 
 ```bash
 crontab -e # Para editar o crontab e adicione o script
@@ -173,7 +173,7 @@ crontab -l # Para listar todos os jobs criados
 * * * * * php /path/to/artisan schedule:run 1>> /dev/null 2>&1
 ```
 
-## Rodando o cron do laravel manualmente
+# Rodando o cron do laravel manualmente
 
 ```php
 php artisan cart:cron
