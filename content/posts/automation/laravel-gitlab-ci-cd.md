@@ -16,14 +16,14 @@ keywords:
 published: true
 ---
 
-## Introdução
+# Introdução
 Neste tutorial iremos utilizar o sistema de CI/CD do GitLab para automatizarmos os testes e disponibilizarmos as novas versões do software de forma contínua e descomplicada.
 
 Iremos utilizar o framework PHP Laravel. Iremos configurar tarefas com o Envoy, e depois veremos como testar o software e implantá-lo com GitLab CI / CD via Entrega Contínua.
 
 > PS.: Este tutorial leva em conta que você já tenha instalado o framework laravel, tenha instalado alguma distribuição do linux, bem como o NGINX, e  o PHP.
 
-## Testes de unidade
+# Testes de unidade
 Todas as novas instalações do Laravel vem com dois tipos de testes, teste de recursos (feature test) e testes de unidade (unit test), colocados no diretório de testes.
 
 **Exemplo de teste de unidade**
@@ -58,7 +58,7 @@ Rode os testes usando o comando **vendor/bin/phpunit**
 OK (1 test, 1 assertions)
 ```
 
-## Publicando o projeto no GitLab
+# Publicando o projeto no GitLab
 Com o projeto instalado e funcionando localmente, vamos enviar o código para o repositório remoto.
 
 > Para saber como criar um novo projeto no GitLab acesse: *https://docs.gitlab.com/ee/gitlab-basics/create-project.html*. Depois de criar o projeto, siga as instruções da linha de comando exibidas na página inicial do projeto.
@@ -74,7 +74,7 @@ git commit -m 'Initial Commit'
 git push -u origin master
 ```
 
-## Configurando o servidor
+# Configurando o servidor
 
 ### Criando um usuário de deploy
 
@@ -193,7 +193,7 @@ Essa tarefa irá se conectar ao servidor e listar o conteúdo do diretório.
 
 > PS.: O Envoy não é uma dependência do Laravel, portanto pode ser usado em qualquer aplicação PHP.
 
-## Deploy Automatizado
+# Deploy Automatizado
 A implantação irá clonar a versão mais recente do repositório no GitLab, instalar as dependências do Composer e ativar a nova versão baixada, criando os links simbólicos necessários para funcionamento do projeto.
 
 ### Adicionando mais poder às nossas tarefas com Envoy
@@ -376,7 +376,7 @@ git commit -m 'Add Envoy'
 git push origin master
 ```
 
-## Integração contínua com GitLab
+# Integração contínua com GitLab
 Vamos preparar o ambiente do gitlab Para fazermos o build, os testes e a implantação da aplicação laravel com o **GitLab CI/CD**. Usaremos uma imagem do docker para facilitar a execução das tarefas.
 
 ### Criando um container docker
