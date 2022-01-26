@@ -1,129 +1,79 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://ovalves.github.io/categories/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/intelig%C3%AAncia-artificial/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/sistemas-de-recomenda%C3%A7%C3%A3o/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/ia/recommender-system/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/gitlab/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/laravel/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/laravel/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/php/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/php/</loc>
     <lastmod>2020-09-30T23:55:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/redes-neurais-artificiais/</loc>
     <lastmod>2020-09-24T21:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/ia/rede-neural-simples/</loc>
     <lastmod>2020-09-24T21:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/php/laravel/cron-job/cron-job-laravel/</loc>
     <lastmod>2020-09-23T12:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/git/</loc>
     <lastmod>2020-09-23T11:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/git-b%C3%A1sico/</loc>
     <lastmod>2020-09-23T11:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/git/git-basico/</loc>
     <lastmod>2020-09-23T11:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/posts/php/building-php-framework-1/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/categories/frameworks-php/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/about/</loc>
     <lastmod>2020-09-16T17:51:40+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://ovalves.github.io/tags/gitlab-ci/cd/</loc>
   </url>
-  
 </urlset>
