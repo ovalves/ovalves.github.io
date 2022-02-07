@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ovalves.github.io/categories/</loc>
-    <lastmod>2020-10-29T16:25:00+00:00</lastmod>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/categories/livros/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/tags/manual-devops/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/posts/manual-devops/anotacoes/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/tags/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ovalves.github.io/</loc>
+    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
   </url><url>
     <loc>https://ovalves.github.io/tags/intelig%C3%AAncia-artificial/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
@@ -11,19 +29,10 @@
     <loc>https://ovalves.github.io/categories/intelig%C3%AAncia-artificial/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
   </url><url>
-    <loc>https://ovalves.github.io/posts/</loc>
-    <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url><url>
     <loc>https://ovalves.github.io/tags/sistemas-de-recomenda%C3%A7%C3%A3o/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
   </url><url>
     <loc>https://ovalves.github.io/posts/ia/recommender-system/</loc>
-    <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ovalves.github.io/tags/</loc>
-    <lastmod>2020-10-29T16:25:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ovalves.github.io/</loc>
     <lastmod>2020-10-29T16:25:00+00:00</lastmod>
   </url><url>
     <loc>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</loc>
