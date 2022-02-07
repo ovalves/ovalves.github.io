@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Thu, 29 Oct 2020 16:25:00 +0000</lastBuildDate><atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Feb 2022 18:20:00 +0000</lastBuildDate><atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Manual Devops</title>
+      <link>https://ovalves.github.io/posts/manual-devops/anotacoes/</link>
+      <pubDate>Mon, 07 Feb 2022 18:20:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/manual-devops/anotacoes/</guid>
+      <description>O CONFLITO CRÔNICO BÁSICO  O termo “dívida técnica” foi cunhado pela primeira vez por Ward Cunningham. Análoga à dívida financeira, a dívida técnica descreve como as decisões que tomamos levam a problemas cada vez mais difíceis de corrigir com o passar do tempo, reduzindo continuamente as opções disponíveis no futuro — mesmo quando enfrentados prudentemente, ainda incorremos em juros.
+&amp;ndash; Kim, Gene; Humble, Jez; Debois, Patrick; Willis, John. Manual De DevOps (p.</description>
+    </item>
+    
     <item>
       <title>Sistemas de recomendação</title>
       <link>https://ovalves.github.io/posts/ia/recommender-system/</link>
