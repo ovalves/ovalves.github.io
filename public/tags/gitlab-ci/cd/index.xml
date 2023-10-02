@@ -6,7 +6,11 @@
     <description>Recent content in GitLab CI/CD on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <copyright>Vinicius Alves</copyright><atom:link href="https://ovalves.github.io/tags/gitlab-ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Vinicius Alves</copyright>
+    
+	<atom:link href="https://ovalves.github.io/tags/gitlab-ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Deploy automático e testes de aplicações Laravel com GitLab CI/CD</title>
       <link>https://ovalves.github.io/posts/automation/laravel-gitlab-ci-cd/</link>
