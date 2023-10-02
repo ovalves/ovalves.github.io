@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arquitetura de software on Vinicius Alves</title>
-    <link>https://ovalves.github.io/tags/arquitetura-de-software/</link>
-    <description>Recent content in Arquitetura de software on Vinicius Alves</description>
+    <title>Design de sistema on Vinicius Alves</title>
+    <link>https://ovalves.github.io/tags/design-de-sistema/</link>
+    <description>Recent content in Design de sistema on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
     <lastBuildDate>Wed, 13 Sep 2023 14:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ovalves.github.io/tags/arquitetura-de-software/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovalves.github.io/tags/design-de-sistema/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,17 +21,6 @@
       <description>Introdução Ao projetar um novo sistema muitas vezes precisamos estimar a quantidade de recursos necessárias e capacidade que o sistema terá para aguentar uma determinada carga de trabalho, para isso utilizamos uma espécie de conta de padaria (back-of-the-envelope estimation).
 Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, primeiro precisamos ter um conhecimento básico sobre escalabilidade, latencia, etc.
 Unidades de volume de dados Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, é fundamental conhecermos as unidades de volume de dados.</description>
-    </item>
-    
-    <item>
-      <title>Construindo um framework web em PHP - Parte 1</title>
-      <link>https://ovalves.github.io/posts/php/building-php-framework-1/</link>
-      <pubDate>Wed, 16 Sep 2020 18:11:40 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/posts/php/building-php-framework-1/</guid>
-      <description>Código do projeto no github
-Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
-Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
     </item>
     
   </channel>

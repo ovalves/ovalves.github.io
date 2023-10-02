@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Mon, 07 Feb 2022 18:20:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Sep 2023 14:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Back-of-the-envelope Estimation</title>
+      <link>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</link>
+      <pubDate>Wed, 13 Sep 2023 14:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</guid>
+      <description>Introdução Ao projetar um novo sistema muitas vezes precisamos estimar a quantidade de recursos necessárias e capacidade que o sistema terá para aguentar uma determinada carga de trabalho, para isso utilizamos uma espécie de conta de padaria (back-of-the-envelope estimation).
+Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, primeiro precisamos ter um conhecimento básico sobre escalabilidade, latencia, etc.
+Unidades de volume de dados Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, é fundamental conhecermos as unidades de volume de dados.</description>
+    </item>
     
     <item>
       <title>Manual Devops</title>

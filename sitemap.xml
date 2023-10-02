@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/design-de-sistema/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/design-de-sistema/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/</loc>
+    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/about/</loc>
     <lastmod>2023-09-12T12:20:00+00:00</lastmod>
   </url>
@@ -10,11 +45,6 @@
   <url>
     <loc>https://ovalves.github.io/</loc>
     <lastmod>2023-09-12T12:20:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/categories/</loc>
-    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
   </url>
   
   <url>
@@ -29,16 +59,6 @@
   
   <url>
     <loc>https://ovalves.github.io/posts/manual-devops/anotacoes/</loc>
-    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/posts/</loc>
-    <lastmod>2022-02-07T18:20:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/</loc>
     <lastmod>2022-02-07T18:20:00+00:00</lastmod>
   </url>
   
@@ -120,11 +140,6 @@
   <url>
     <loc>https://ovalves.github.io/posts/git/git-basico/</loc>
     <lastmod>2020-09-23T11:11:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
-    <lastmod>2020-09-16T18:11:40+00:00</lastmod>
   </url>
   
   <url>
