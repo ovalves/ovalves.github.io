@@ -3,17 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
-    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+    <loc>https://ovalves.github.io/posts/solution-architecture/adr/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</loc>
-    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
+    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/arquitetura-de-software/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ovalves.github.io/categories/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/</loc>
+    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/clean-architecture/</loc>
+    <lastmod>2023-09-20T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/clean-architecture/</loc>
+    <lastmod>2023-09-20T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/entidades/</loc>
+    <lastmod>2023-09-20T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</loc>
     <lastmod>2023-09-13T14:00:00+00:00</lastmod>
   </url>
   
@@ -24,16 +59,6 @@
   
   <url>
     <loc>https://ovalves.github.io/categories/design-de-sistema/</loc>
-    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/posts/</loc>
-    <lastmod>2023-09-13T14:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/</loc>
     <lastmod>2023-09-13T14:00:00+00:00</lastmod>
   </url>
   

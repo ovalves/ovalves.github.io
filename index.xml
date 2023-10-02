@@ -13,6 +13,26 @@
     
     
     <item>
+      <title>Architectural Decision Records (ADRs)</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/adr/</link>
+      <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/adr/</guid>
+      <description>Architectural Decision Records (ADRs) O que são ADRs? Os Architectural Decision Records, ou ADRs, são documentos que registram as decisões arquitetônicas significativas tomadas durante o desenvolvimento de um projeto de software. Eles são uma maneira de documentar o porquê, o quê e o como de escolhas importantes relacionadas à arquitetura de um sistema.
+Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as decisões arquitetônicas ao longo do tempo.</description>
+    </item>
+    
+    <item>
+      <title>Entidades em Clean Architecture</title>
+      <link>https://ovalves.github.io/posts/clean-arch/entidades/</link>
+      <pubDate>Wed, 20 Sep 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/entidades/</guid>
+      <description>Introdução Desenvolvida por Robert C. Martin, também conhecido como Uncle Bob, a Arquitetura Limpa é uma metodologia que visa criar sistemas que sejam fáceis de entender, manter e evoluir ao longo do tempo. E no cerne dessa abordagem, encontramos as &amp;ldquo;entidades.&amp;rdquo;
+O que são Entidades em Clean Architecture? As entidades são classes ou estruturas que representam regras de negócios ou domínio em um sistema. Elas são o coração do sistema, pois encapsulam os dados e o comportamento relacionados a essas regras de negócios.</description>
+    </item>
+    
+    <item>
       <title>Back-of-the-envelope Estimation</title>
       <link>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</link>
       <pubDate>Wed, 13 Sep 2023 14:00:00 +0000</pubDate>
