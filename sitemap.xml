@@ -33,6 +33,16 @@
   </url>
   
   <url>
+    <loc>https://ovalves.github.io/tags/fundamentos/</loc>
+    <lastmod>2023-09-21T08:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</loc>
+    <lastmod>2023-09-21T08:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/tags/clean-architecture/</loc>
     <lastmod>2023-09-20T20:00:00+00:00</lastmod>
   </url>
@@ -45,6 +55,11 @@
   <url>
     <loc>https://ovalves.github.io/posts/clean-arch/entidades/</loc>
     <lastmod>2023-09-20T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/basic/</loc>
+    <lastmod>2023-09-20T10:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -175,6 +190,41 @@
   <url>
     <loc>https://ovalves.github.io/categories/frameworks-php/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/solid-srp/</loc>
+    <lastmod>2020-05-08T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/solid/</loc>
+    <lastmod>2020-05-08T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/solid/</loc>
+    <lastmod>2020-05-08T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/solid-ocp/</loc>
+    <lastmod>2020-04-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/solid-lsp/</loc>
+    <lastmod>2020-03-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/solid-isp/</loc>
+    <lastmod>2020-02-08T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/clean-arch/solid-dip/</loc>
+    <lastmod>2020-01-08T14:00:00+00:00</lastmod>
   </url>
   
   <url>

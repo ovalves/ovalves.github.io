@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clean Architecture on Vinicius Alves</title>
-    <link>https://ovalves.github.io/tags/clean-architecture/</link>
-    <description>Recent content in Clean Architecture on Vinicius Alves</description>
+    <title>Fundamentos on Vinicius Alves</title>
+    <link>https://ovalves.github.io/tags/fundamentos/</link>
+    <description>Recent content in Fundamentos on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 20 Sep 2023 20:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Sep 2023 08:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ovalves.github.io/tags/clean-architecture/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ovalves.github.io/tags/fundamentos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Entidades em Clean Architecture</title>
-      <link>https://ovalves.github.io/posts/clean-arch/entidades/</link>
-      <pubDate>Wed, 20 Sep 2023 20:00:00 +0000</pubDate>
+      <title>Performance e Escalabilidade</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</link>
+      <pubDate>Thu, 21 Sep 2023 08:00:00 +0000</pubDate>
       
-      <guid>https://ovalves.github.io/posts/clean-arch/entidades/</guid>
-      <description>Introdução Desenvolvida por Robert C. Martin, também conhecido como Uncle Bob, a Arquitetura Limpa é uma metodologia que visa criar sistemas que sejam fáceis de entender, manter e evoluir ao longo do tempo. E no cerne dessa abordagem, encontramos as &amp;ldquo;entidades.&amp;rdquo;
-O que são Entidades em Clean Architecture? As entidades são classes ou estruturas que representam regras de negócios ou domínio em um sistema. Elas são o coração do sistema, pois encapsulam os dados e o comportamento relacionados a essas regras de negócios.</description>
+      <guid>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</guid>
+      <description>Performance Performance é a capacidade de um sistema ou aplicativo executar suas funções de maneira rápida e eficiente. Em termos simples, é a velocidade e a eficiência com as quais uma aplicação responde aos comandos do usuário. Uma boa performance é crucial para proporcionar uma boa experiência ao usuário.
+Principais Causas de Baixa Performance As principais razões para a baixa performance incluem:
+ Processamento ineficiente. Recursos computacionais limitados. Operações bloqueantes. Acesso serial a recursos.</description>
+    </item>
+    
+    <item>
+      <title>Fundamentos da Arquitetura de Software</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/basic/</link>
+      <pubDate>Wed, 20 Sep 2023 10:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/basic/</guid>
+      <description>O que é Arquitetura de Software? A arquitetura de software é o projeto estrutural e organizacional de um sistema de software. É a maneira como os diversos componentes de uma aplicação se relacionam e interagem entre si. A arquitetura define a divisão de responsabilidades, a comunicação entre os módulos, a escalabilidade do sistema e muitos outros aspectos críticos do desenvolvimento de software.
+Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de Responsabilidades): Um dos princípios mais fundamentais da arquitetura de software é a separação de responsabilidades.</description>
     </item>
     
     <item>
