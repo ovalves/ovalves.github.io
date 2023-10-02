@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ovalves.github.io/about/</loc>
+    <lastmod>2023-09-12T12:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/</loc>
+    <lastmod>2023-09-12T12:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/categories/</loc>
     <lastmod>2022-02-07T18:20:00+00:00</lastmod>
   </url>
@@ -125,16 +135,6 @@
   <url>
     <loc>https://ovalves.github.io/categories/frameworks-php/</loc>
     <lastmod>2020-09-16T18:11:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/about/</loc>
-    <lastmod>2020-09-16T17:51:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/</loc>
-    <lastmod>2020-09-16T17:51:40+00:00</lastmod>
   </url>
   
   <url>
