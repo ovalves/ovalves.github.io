@@ -1,16 +1,21 @@
 ---
 title: Sobre
-date: 2020-09-16 17:51:40
+date: 2023-09-12 12:20:00
 ---
 
-Desenvolvedor de software entusiasta com 4 anos de experiência tendo participado do ciclo de vida completo de desenvolvimento e manutenção de sistemas de grande porte e sistemas críticos com carga massiva de dados.
+Com 7 anos de experiência como Engenheiro de Software, possuo ampla vivência em diversos setores, incluindo educação, automotivo e varejo. Minhas habilidades abrangem metodologias ágeis, com destaque para o Scrum.
 
-Em funções anteriores, trabalhei no desenvolvimento de um framework de testes baseado no PHPUnit. Esse framework era usado para testar os sistemas legados da empresa, chegando em certos casos a reduzir 100% dos erros causados por má codificação e/ou testes viciados e reduzindo significativamente o tempo entre as entregas das demandas dos projetos.
+Atualmente, na CI&T, atuo nas áreas de engenharia de dados e software, resolvendo desafios de negócios complexos e implementando soluções abrangentes, como Machine Learning e Big Data.
 
-Atualmente estou me especializando em áreas como, machine learning, inteligência artificial, engenharia de dados, arquitetura de software e em boas práticas de programação.
+Minha expertise inclui ferramentas como:
+- Python, Go, NodeJS e PHP, Mysql e PostgreSQL, MongoDB, redis, Spark (PySpark), Airflow, Kafka, RabbitMQ, git, Shell, Docker, Kubernetes, Azure Devops, StatsD, Grafana, GitOps
+
+Minha bagagem profissional anterior inclui a aplicação de frameworks como:
+- Flask, FastAPI, Laravel, Symfony, Lumen e Express, além de experiência em bancos de dados como MariaDB e Neo4j. Também tenho conhecimento em ferramentas de monitoramento e gerenciamento, como Grafana e Graylog, e estou familiarizado com Shell scripting, PowerShell e ferramentas de manipulação de dados como awk.
+
+No momento, estou me especializando em arquitetura de soluções, visando fortalecer minha capacidade de criar estruturas tecnológicas flexíveis e de alta qualidade.
 
 
 - [Github](https://github.com/ovalves)
 - [Linkedin](https://www.linkedin.com/in/vinicius-de-oliveira-alves)
-- [Currículo Online](https://resume.io/r/jw9umCWOb)
 

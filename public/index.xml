@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 16 Sep 2020 17:51:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Sep 2023 12:20:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sobre</title>
+      <link>https://ovalves.github.io/about/</link>
+      <pubDate>Tue, 12 Sep 2023 12:20:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/about/</guid>
+      <description>Com 7 anos de experiência como Engenheiro de Software, possuo ampla vivência em diversos setores, incluindo educação, automotivo e varejo. Minhas habilidades abrangem metodologias ágeis, com destaque para o Scrum.
+Atualmente, na CI&amp;amp;T, atuo nas áreas de engenharia de dados e software, resolvendo desafios de negócios complexos e implementando soluções abrangentes, como Machine Learning e Big Data.
+Minha expertise inclui ferramentas como:
+ Python, Go, NodeJS e PHP, Mysql e PostgreSQL, MongoDB, redis, Spark (PySpark), Airflow, Kafka, RabbitMQ, git, Shell, Docker, Kubernetes, Azure Devops, StatsD, Grafana, GitOps  Minha bagagem profissional anterior inclui a aplicação de frameworks como:</description>
+    </item>
     
     <item>
       <title>Manual Devops</title>
@@ -84,16 +96,6 @@ Controle de versão Um sistema de controle de versão é um software com a final
       <description>Código do projeto no github
 Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
 Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Sobre</title>
-      <link>https://ovalves.github.io/about/</link>
-      <pubDate>Wed, 16 Sep 2020 17:51:40 +0000</pubDate>
-      
-      <guid>https://ovalves.github.io/about/</guid>
-      <description>Desenvolvedor de software entusiasta com 4 anos de experiência tendo participado do ciclo de vida completo de desenvolvimento e manutenção de sistemas de grande porte e sistemas críticos com carga massiva de dados.
-Em funções anteriores, trabalhei no desenvolvimento de um framework de testes baseado no PHPUnit. Esse framework era usado para testar os sistemas legados da empresa, chegando em certos casos a reduzir 100% dos erros causados por má codificação e/ou testes viciados e reduzindo significativamente o tempo entre as entregas das demandas dos projetos.</description>
     </item>
     
   </channel>
