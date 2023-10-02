@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 13 Sep 2023 14:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2023 18:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>Arquitetura de software</title>
       <link>https://ovalves.github.io/tags/arquitetura-de-software/</link>
-      <pubDate>Wed, 13 Sep 2023 14:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
       
       <guid>https://ovalves.github.io/tags/arquitetura-de-software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clean Architecture</title>
+      <link>https://ovalves.github.io/tags/clean-architecture/</link>
+      <pubDate>Wed, 20 Sep 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/tags/clean-architecture/</guid>
       <description></description>
     </item>
     

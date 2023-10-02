@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Wed, 13 Sep 2023 14:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2023 18:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/tags/arquitetura-de-software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Architectural Decision Records (ADRs)</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/adr/</link>
+      <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/adr/</guid>
+      <description>Architectural Decision Records (ADRs) O que são ADRs? Os Architectural Decision Records, ou ADRs, são documentos que registram as decisões arquitetônicas significativas tomadas durante o desenvolvimento de um projeto de software. Eles são uma maneira de documentar o porquê, o quê e o como de escolhas importantes relacionadas à arquitetura de um sistema.
+Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as decisões arquitetônicas ao longo do tempo.</description>
+    </item>
     
     <item>
       <title>Back-of-the-envelope Estimation</title>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clean Architecture on Vinicius Alves</title>
+    <link>https://ovalves.github.io/categories/clean-architecture/</link>
+    <description>Recent content in Clean Architecture on Vinicius Alves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <copyright>Vinicius Alves</copyright>
+    <lastBuildDate>Wed, 20 Sep 2023 20:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ovalves.github.io/categories/clean-architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Entidades em Clean Architecture</title>
+      <link>https://ovalves.github.io/posts/clean-arch/entidades/</link>
+      <pubDate>Wed, 20 Sep 2023 20:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/entidades/</guid>
+      <description>Introdução Desenvolvida por Robert C. Martin, também conhecido como Uncle Bob, a Arquitetura Limpa é uma metodologia que visa criar sistemas que sejam fáceis de entender, manter e evoluir ao longo do tempo. E no cerne dessa abordagem, encontramos as &amp;ldquo;entidades.&amp;rdquo;
+O que são Entidades em Clean Architecture? As entidades são classes ou estruturas que representam regras de negócios ou domínio em um sistema. Elas são o coração do sistema, pois encapsulam os dados e o comportamento relacionados a essas regras de negócios.</description>
+    </item>
+    
+  </channel>
+</rss>
