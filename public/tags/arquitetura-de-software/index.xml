@@ -23,6 +23,27 @@ Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as
     </item>
     
     <item>
+      <title>Performance e Escalabilidade</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</link>
+      <pubDate>Thu, 21 Sep 2023 08:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</guid>
+      <description>Performance Performance é a capacidade de um sistema ou aplicativo executar suas funções de maneira rápida e eficiente. Em termos simples, é a velocidade e a eficiência com as quais uma aplicação responde aos comandos do usuário. Uma boa performance é crucial para proporcionar uma boa experiência ao usuário.
+Principais Causas de Baixa Performance As principais razões para a baixa performance incluem:
+ Processamento ineficiente. Recursos computacionais limitados. Operações bloqueantes. Acesso serial a recursos.</description>
+    </item>
+    
+    <item>
+      <title>Fundamentos da Arquitetura de Software</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/basic/</link>
+      <pubDate>Wed, 20 Sep 2023 10:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/basic/</guid>
+      <description>O que é Arquitetura de Software? A arquitetura de software é o projeto estrutural e organizacional de um sistema de software. É a maneira como os diversos componentes de uma aplicação se relacionam e interagem entre si. A arquitetura define a divisão de responsabilidades, a comunicação entre os módulos, a escalabilidade do sistema e muitos outros aspectos críticos do desenvolvimento de software.
+Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de Responsabilidades): Um dos princípios mais fundamentais da arquitetura de software é a separação de responsabilidades.</description>
+    </item>
+    
+    <item>
       <title>Back-of-the-envelope Estimation</title>
       <link>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</link>
       <pubDate>Wed, 13 Sep 2023 14:00:00 +0000</pubDate>

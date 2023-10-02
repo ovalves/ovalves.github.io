@@ -23,6 +23,17 @@ Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as
     </item>
     
     <item>
+      <title>Performance e Escalabilidade</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</link>
+      <pubDate>Thu, 21 Sep 2023 08:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/performance-escalabilidade/</guid>
+      <description>Performance Performance é a capacidade de um sistema ou aplicativo executar suas funções de maneira rápida e eficiente. Em termos simples, é a velocidade e a eficiência com as quais uma aplicação responde aos comandos do usuário. Uma boa performance é crucial para proporcionar uma boa experiência ao usuário.
+Principais Causas de Baixa Performance As principais razões para a baixa performance incluem:
+ Processamento ineficiente. Recursos computacionais limitados. Operações bloqueantes. Acesso serial a recursos.</description>
+    </item>
+    
+    <item>
       <title>Entidades em Clean Architecture</title>
       <link>https://ovalves.github.io/posts/clean-arch/entidades/</link>
       <pubDate>Wed, 20 Sep 2023 20:00:00 +0000</pubDate>
@@ -30,6 +41,16 @@ Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as
       <guid>https://ovalves.github.io/posts/clean-arch/entidades/</guid>
       <description>Introdução Desenvolvida por Robert C. Martin, também conhecido como Uncle Bob, a Arquitetura Limpa é uma metodologia que visa criar sistemas que sejam fáceis de entender, manter e evoluir ao longo do tempo. E no cerne dessa abordagem, encontramos as &amp;ldquo;entidades.&amp;rdquo;
 O que são Entidades em Clean Architecture? As entidades são classes ou estruturas que representam regras de negócios ou domínio em um sistema. Elas são o coração do sistema, pois encapsulam os dados e o comportamento relacionados a essas regras de negócios.</description>
+    </item>
+    
+    <item>
+      <title>Fundamentos da Arquitetura de Software</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/basic/</link>
+      <pubDate>Wed, 20 Sep 2023 10:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/basic/</guid>
+      <description>O que é Arquitetura de Software? A arquitetura de software é o projeto estrutural e organizacional de um sistema de software. É a maneira como os diversos componentes de uma aplicação se relacionam e interagem entre si. A arquitetura define a divisão de responsabilidades, a comunicação entre os módulos, a escalabilidade do sistema e muitos outros aspectos críticos do desenvolvimento de software.
+Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de Responsabilidades): Um dos princípios mais fundamentais da arquitetura de software é a separação de responsabilidades.</description>
     </item>
     
     <item>
@@ -115,6 +136,57 @@ Controle de versão Um sistema de controle de versão é um software com a final
       <description>Código do projeto no github
 Introdução Nesta série de artigos irei abordar todos os passos necessários para a construção de um framework completo em PHP. Da criação do sistema de roteamento à a criação de uma template engine simples. Em cada etapa da criação você terá um framework web funcional. Começaremos com um framework bem simples e iremos acrescentando mais recursos com o tempo.
 Motivação Muitos desenvolvedores iniciam suas carreiras já programando em cima de abstrações, vide a imensa quantidade de desenvolvedores &amp;ldquo;laravel&amp;rdquo; ou &amp;ldquo;react&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>S - Single Responsibility Principle</title>
+      <link>https://ovalves.github.io/posts/clean-arch/solid-srp/</link>
+      <pubDate>Fri, 08 May 2020 13:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/solid-srp/</guid>
+      <description>Introdução O princípio SOLID é um conjunto de cinco princípios de design de software que visam tornar o código mais fácil de entender, manter e estender. Cada letra do acrônimo SOLID representa um desses princípios.
+S - Single Responsibility Principle (Princípio da Responsabilidade Única) Este princípio afirma que uma classe deve ter apenas uma razão para mudar. Em outras palavras, uma classe deve ter apenas uma responsabilidade.
+Esse princípio visa separar comportamentos para que, se os bugs surgirem após alguma mudança no código, isso não afetará outros comportamentos não relacionados.</description>
+    </item>
+    
+    <item>
+      <title>O - Open-Closed</title>
+      <link>https://ovalves.github.io/posts/clean-arch/solid-ocp/</link>
+      <pubDate>Wed, 08 Apr 2020 14:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/solid-ocp/</guid>
+      <description>Introdução O princípio SOLID é um conjunto de cinco princípios de design de software que visam tornar o código mais fácil de entender, manter e estender. Cada letra do acrônimo SOLID representa um desses princípios.
+O - Open-Closed Este princípio afirma que as classes devem estar abertas para extensão, mas fechadas para modificação. Se você deseja que a classe execute mais funções, a abordagem ideal é adicionar funções ao invés de alterá-las.</description>
+    </item>
+    
+    <item>
+      <title>L - Liskov Substitution Principle</title>
+      <link>https://ovalves.github.io/posts/clean-arch/solid-lsp/</link>
+      <pubDate>Sun, 08 Mar 2020 14:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/solid-lsp/</guid>
+      <description>Introdução O princípio SOLID é um conjunto de cinco princípios de design de software que visam tornar o código mais fácil de entender, manter e estender. Cada letra do acrônimo SOLID representa um desses princípios.
+L - Liskov Substitution Principle (Princípio da Substituição de Liskov) &amp;ldquo;Se S for um subtipo de T, os objetos do tipo T em um programa poderão ser substituídos por objetos do Tipo S sem alterar nenhuma das propriedades desse programa.</description>
+    </item>
+    
+    <item>
+      <title>I - Interface Segregation Principle</title>
+      <link>https://ovalves.github.io/posts/clean-arch/solid-isp/</link>
+      <pubDate>Sat, 08 Feb 2020 14:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/solid-isp/</guid>
+      <description>Introdução O princípio SOLID é um conjunto de cinco princípios de design de software que visam tornar o código mais fácil de entender, manter e estender. Cada letra do acrônimo SOLID representa um desses princípios.
+I - Interface Segregation Principle (Princípio da Segregação de Interfaces) Esse problema ocorre quando uma classe concreta implementa uma interface, e essa interface define mais ações do que classe concreta necessita. Nesse caso temos um desperdício e essa implementação pode produzir erros inesperados, caso a classe concreta não tenha a capacidade de executar as ações definidas pela interface.</description>
+    </item>
+    
+    <item>
+      <title>D - Dependency Inversion Principle</title>
+      <link>https://ovalves.github.io/posts/clean-arch/solid-dip/</link>
+      <pubDate>Wed, 08 Jan 2020 14:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/clean-arch/solid-dip/</guid>
+      <description>Introdução O princípio SOLID é um conjunto de cinco princípios de design de software que visam tornar o código mais fácil de entender, manter e estender. Cada letra do acrônimo SOLID representa um desses princípios.
+D - Dependency Inversion Principle (Princípio da Inversão de Dependência)  Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações. As abstrações não devem depender de classes concretas.</description>
     </item>
     
   </channel>
