@@ -11,7 +11,7 @@ published: true
 ---
 A Arquitetura Limpa (Clean Architecture) é um conceito e uma abordagem de design de software que enfatiza a separação de preocupações e a organização do código de forma a torná-lo mais flexível, testável e fácil de manter. Desenvolvida por Robert C. Martin, também conhecido como "Uncle Bob", a Arquitetura Limpa tem como objetivo principal criar sistemas de software que sejam independentes de frameworks, bancos de dados e detalhes de implementação, permitindo que as regras de negócios sejam o ponto central do projeto.
 
-![Clean Architecture](../_files/CleanArchitecture.jpg)
+![Clean Architecture](../images/CleanArchitecture.jpg)
 
 Os princípios da Arquitetura Limpa incluem:
 

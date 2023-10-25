@@ -12,7 +12,7 @@ published: true
 
 O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:
 
-![ddd](../_files/ddd.png)
+![ddd](../images/ddd.png)
 
 1. **Domínio:** O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios.
 

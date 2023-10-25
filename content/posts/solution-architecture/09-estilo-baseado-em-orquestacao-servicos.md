@@ -13,7 +13,7 @@ published: true
 
 A orquestração de serviços é um estilo arquitetural que se concentra na coordenação de vários serviços independentes para alcançar uma funcionalidade mais ampla e complexa. Nesse modelo, um serviço central, chamado "orquestrador", coordena a execução dos serviços componentes, garantindo que eles trabalhem juntos harmoniosamente para atender a um objetivo específico.
 
-![arquitetura baseada em orquestração de serviços](../_files/20231018135010.png)
+![arquitetura baseada em orquestração de serviços](../images/20231018135010.png)
 > Fundamentals of Software Architecture
 
 **Exemplo 1: Microserviços e Aplicações em Nuvem:**

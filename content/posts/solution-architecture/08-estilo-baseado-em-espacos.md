@@ -14,7 +14,7 @@ published: true
 
 A arquitetura baseada em espaços, é um estilo arquitetural que oferece uma maneira de compartilhar e processar dados em sistemas distribuídos. Esses espaços funcionam como armazenamentos de dados colaborativos em que informações podem ser escritas, lidas e compartilhadas. Os sistemas que adotam essa arquitetura têm componentes que interagem com esses espaços, tornando-a uma abordagem flexível e eficaz para a comunicação entre componentes distribuídos.
 
-![arquitetura baseada em espaços](../_files/20231018134249.png)
+![arquitetura baseada em espaços](../images/20231018134249.png)
 > Fundamentals of Software Architecture
 
 

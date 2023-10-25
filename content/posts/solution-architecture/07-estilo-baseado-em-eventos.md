@@ -13,7 +13,7 @@ published: true
 
 Na arquitetura baseada em eventos, o foco está na comunicação assíncrona por meio de eventos. Eventos são disparados quando algo significativo acontece em um sistema e podem ser consumidos por outros componentes ou serviços interessados. Isso permite que os sistemas sejam altamente reativos, escaláveis e interoperáveis.
 
-![arquitetura baseada em eventos](../_files/20231017212757.png)
+![arquitetura baseada em eventos](../images/20231017212757.png)
 > Fundamentals of Software Architecture
 
 

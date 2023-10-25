@@ -15,7 +15,7 @@ O estilo arquitetural baseado em microsserviços é uma abordagem para projetar 
 
 Essa arquitetura permite que uma aplicação seja construída e mantida de forma modular, com cada microsserviço desenvolvido, implantado e dimensionado separadamente. Cada serviço pode ser construído usando a tecnologia mais adequada para sua função, o que promove a flexibilidade e a escalabilidade. Além disso, a arquitetura de microsserviços facilita o desenvolvimento ágil, uma vez que equipes independentes podem se concentrar em microsserviços específicos.
 
-![arquitetura baseada em orquestração de serviços](../_files/20231018164501.png)
+![arquitetura baseada em orquestração de serviços](../images/20231018164501.png)
 Algumas características comuns da arquitetura de microsserviços são:
 
 - **Desacoplamento:** Cada microsserviço é independente e não tem conhecimento dos detalhes internos dos outros serviços. Isso reduz o acoplamento entre os componentes do sistema.

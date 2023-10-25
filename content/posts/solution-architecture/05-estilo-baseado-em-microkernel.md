@@ -30,7 +30,7 @@ A arquitetura baseada em microkernel também é comumente aplicada em sistemas e
 
  [^image]: Imagem retirada do livro: Fundamentals of Software Architecture
 
-![arquitetura baseada em micro kernel](../_files/20231017111108.png)
+![arquitetura baseada em micro kernel](../images/20231017111108.png)
 > Fundamentals of Software Architecture
 
 ### **Vantagens da Arquitetura Baseada em Microkernel:**

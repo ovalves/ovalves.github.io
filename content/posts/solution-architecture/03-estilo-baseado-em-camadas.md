@@ -57,7 +57,7 @@ A imagem[^image] abaixo exemplifica três maneiras do uso da arquitetura em cama
  [^network]: As setas indicam que as camadas se comunicam via *rede*
  [^image]: Imagem retirada do livro: Fundamentals of Software Architecture
 
-![arquitetura em camadas](../_files/1664372266667.png)
+![arquitetura em camadas](../images/1664372266667.png)
 > Fundamentals of Software Architecture
 
 Em resumo, a arquitetura em camadas é versátil e amplamente aplicável em diversos domínios. Seja em aplicações web, sistemas empresariais ou bancos de dados.

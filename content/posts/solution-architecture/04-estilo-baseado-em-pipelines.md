@@ -18,7 +18,7 @@ A imagem[^image] abaixo exemplifica o uso da arquitetura baseada em pipelines e 
  [^network]: As setas indicam que as pipelines se comunicam via *rede*
  [^image]: Imagem retirada do livro: Fundamentals of Software Architecture
 
-![arquitetura baseada em pipelines](../_files/20231017105747.png)
+![arquitetura baseada em pipelines](../images/20231017105747.png)
 > Fundamentals of Software Architecture
 
 ### **Entendendo a Arquitetura Baseada em Pipelines:**
