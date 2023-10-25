@@ -3,32 +3,87 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/arquitetura-de-software/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/tags/</loc>
+    <lastmod>2023-10-20T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/</loc>
+    <lastmod>2023-10-10T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/08-estilo-baseado-em-espacos/</loc>
+    <lastmod>2023-10-09T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/07-estilo-baseado-em-eventos/</loc>
+    <lastmod>2023-10-08T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/</loc>
+    <lastmod>2023-10-07T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/</loc>
+    <lastmod>2023-10-06T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/</loc>
+    <lastmod>2023-10-05T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/</loc>
+    <lastmod>2023-10-04T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/</loc>
+    <lastmod>2023-10-03T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/01-estilos-arquiteturais/</loc>
+    <lastmod>2023-10-02T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/posts/solution-architecture/adr/</loc>
     <lastmod>2023-10-01T18:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ovalves.github.io/tags/arquitetura-de-software/</loc>
-    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/categories/arquitetura-de-software/</loc>
-    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/categories/</loc>
-    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/posts/</loc>
-    <lastmod>2023-10-01T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ovalves.github.io/tags/</loc>
+    <loc>https://ovalves.github.io/posts/solution-architecture/04-padrao-clean-arch/</loc>
     <lastmod>2023-10-01T18:00:00+00:00</lastmod>
   </url>
   
@@ -63,6 +118,31 @@
   </url>
   
   <url>
+    <loc>https://ovalves.github.io/tags/agil/</loc>
+    <lastmod>2023-09-16T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/categories/agil/</loc>
+    <lastmod>2023-09-16T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/kanban/</loc>
+    <lastmod>2023-09-16T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/lean/</loc>
+    <lastmod>2023-09-15T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/xp-extreme-programming/</loc>
+    <lastmod>2023-09-14T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</loc>
     <lastmod>2023-09-13T14:00:00+00:00</lastmod>
   </url>
@@ -78,6 +158,11 @@
   </url>
   
   <url>
+    <loc>https://ovalves.github.io/posts/agil/scrum/</loc>
+    <lastmod>2023-09-13T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ovalves.github.io/about/</loc>
     <lastmod>2023-09-12T12:20:00+00:00</lastmod>
   </url>
@@ -85,6 +170,61 @@
   <url>
     <loc>https://ovalves.github.io/</loc>
     <lastmod>2023-09-12T12:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/desenvolvimento-iterativo-incremental-idd/</loc>
+    <lastmod>2023-09-11T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/solution-architecture/10-estilo-baseado-em-microsservicos/</loc>
+    <lastmod>2023-09-11T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/the-new-new-product-development-game/</loc>
+    <lastmod>2023-09-10T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/teoria-dos-jogos/</loc>
+    <lastmod>2023-09-09T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/teoria-das-restricoes/</loc>
+    <lastmod>2023-09-08T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/lean-manufacturing/</loc>
+    <lastmod>2023-09-07T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/ciclo-de-deming-pdca/</loc>
+    <lastmod>2023-09-04T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/metodologias-ageis/</loc>
+    <lastmod>2023-09-03T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/manifesto-agil/</loc>
+    <lastmod>2023-09-03T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/mundo-bani/</loc>
+    <lastmod>2023-09-02T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ovalves.github.io/posts/agil/mundo-vuca/</loc>
+    <lastmod>2023-09-01T12:00:00+00:00</lastmod>
   </url>
   
   <url>

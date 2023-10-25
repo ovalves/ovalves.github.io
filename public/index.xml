@@ -13,6 +13,114 @@
     
     
     <item>
+      <title>Padrão DDD</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/</link>
+      <pubDate>Fri, 20 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/</guid>
+      <description>O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:
+  Domínio: O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Orquestração de Serviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/</link>
+      <pubDate>Tue, 10 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/</guid>
+      <description>Estilo Baseado Em Orquestração de Serviços A orquestração de serviços é um estilo arquitetural que se concentra na coordenação de vários serviços independentes para alcançar uma funcionalidade mais ampla e complexa. Nesse modelo, um serviço central, chamado &amp;ldquo;orquestrador&amp;rdquo;, coordena a execução dos serviços componentes, garantindo que eles trabalhem juntos harmoniosamente para atender a um objetivo específico.
+ Fundamentals of Software Architecture
+ Exemplo 1: Microserviços e Aplicações em Nuvem:
+Em ambientes de microserviços, a orquestração de serviços é essencial.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Espaços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/08-estilo-baseado-em-espacos/</link>
+      <pubDate>Mon, 09 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/08-estilo-baseado-em-espacos/</guid>
+      <description>Estilo Baseado em Espaços A arquitetura baseada em espaços, é um estilo arquitetural que oferece uma maneira de compartilhar e processar dados em sistemas distribuídos. Esses espaços funcionam como armazenamentos de dados colaborativos em que informações podem ser escritas, lidas e compartilhadas. Os sistemas que adotam essa arquitetura têm componentes que interagem com esses espaços, tornando-a uma abordagem flexível e eficaz para a comunicação entre componentes distribuídos.
+ Fundamentals of Software Architecture</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Eventos</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/07-estilo-baseado-em-eventos/</link>
+      <pubDate>Sun, 08 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/07-estilo-baseado-em-eventos/</guid>
+      <description>Estilo Baseado em Eventos Na arquitetura baseada em eventos, o foco está na comunicação assíncrona por meio de eventos. Eventos são disparados quando algo significativo acontece em um sistema e podem ser consumidos por outros componentes ou serviços interessados. Isso permite que os sistemas sejam altamente reativos, escaláveis e interoperáveis.
+ Fundamentals of Software Architecture
+ Exemplo 1: Aplicações em Tempo Real:
+Um dos exemplos mais proeminentes da arquitetura baseada em eventos é em aplicações em tempo real, como salas de bate-papo ou aplicativos de jogos multiplayer.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Serviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/</link>
+      <pubDate>Sat, 07 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/</guid>
+      <description>Estilo Baseado em Serviços A arquitetura baseada em serviços, também conhecida como arquitetura orientada a serviços (SOA), é um estilo arquitetural amplamente adotado que permite a criação de sistemas flexíveis, escaláveis e altamente interoperáveis.
+Entendendo a Arquitetura Baseada em Serviços:
+A arquitetura baseada em serviços é centrada na ideia de dividir um sistema em componentes independentes e autônomos, conhecidos como &amp;ldquo;serviços&amp;rdquo;. Cada serviço realiza uma função específica e se comunica com outros serviços por meio de padrões de comunicação bem definidos, como SOAP, REST ou gRPC.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Microkernel</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/</link>
+      <pubDate>Fri, 06 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/</guid>
+      <description>Estilo Baseado em Microkernel A arquitetura baseada em microkernel é um estilo arquitetural que se concentra em manter o núcleo do sistema simples, com funcionalidades essenciais, enquanto os serviços adicionais são movidos para módulos externos. Essa abordagem facilita a manutenção, extensibilidade e adaptabilidade em sistemas complexos.
+Entendendo a Arquitetura Baseada em Microkernel: O conceito-chave por trás da arquitetura baseada em microkernel é manter o núcleo (kernel) do sistema o mais enxuto e simples possível, tratando apenas das funções essenciais, como gerenciamento de memória, escalonamento de processos e comunicação básica.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Pipelines</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/</link>
+      <pubDate>Thu, 05 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/</guid>
+      <description>Estilo Baseado em Pipelines A arquitetura baseada em pipelines é um estilo arquitetural frequentemente utilizado em sistemas que envolvem processamento de dados em lote, transformações sequenciais ou encadeamento de tarefas. Essa arquitetura é projetada para facilitar o envio e processamento de dados por uma série de estágios, onde cada estágio executa uma função específica.
+A imagem1 abaixo exemplifica o uso da arquitetura baseada em pipelines e como as pipelines se comunicam2.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Camadas</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/</link>
+      <pubDate>Wed, 04 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/</guid>
+      <description>Estilo Baseado em Camadas A arquitetura em camadas é um dos estilos arquiteturais mais fundamentais e amplamente utilizados na construção de sistemas. Baseia-se na ideia de dividir um sistema em camadas distintas, cada uma com um conjunto específico de responsabilidades, promovendo a modularidade e a manutenção mais fácil.
+Entendendo a Arquitetura em Camadas: Na arquitetura em camadas, o sistema é dividido em camadas horizontais, com cada camada executando funções bem definidas.</description>
+    </item>
+    
+    <item>
+      <title>Condutores arquiteturais</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/</link>
+      <pubDate>Tue, 03 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/</guid>
+      <description>Condutores arquiteturais Os condutores arquiteturais são direcionadores chave que desempenham um papel crucial na determinação do estilo arquitetural, na escolha de padrões de design e nas decisões de implementação. Esses condutores são considerações-chave que ajudam a orientar o processo de arquitetura, garantindo que o sistema atenda aos requisitos e às necessidades específicas do projeto.
+Exemplos de condutores arquiteturais de software:
+  Requisitos de Desempenho: O desempenho é um condutor arquitetural fundamental.</description>
+    </item>
+    
+    <item>
+      <title>Estilos Arquiteturais</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/01-estilos-arquiteturais/</link>
+      <pubDate>Mon, 02 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/01-estilos-arquiteturais/</guid>
+      <description>O que é um estilo arquitetural? Uma das decisões mais importantes na concepção de um software é a escolha do estilo arquitetural, que estabelece as diretrizes e padrões gerais para a organização do sistema.
+Estilos arquiteturais mais comuns:
+1. Arquitetura em Camadas (Layered Architecture):
+Este é um dos estilos arquiteturais mais amplamente utilizados, caracterizado pela separação de um sistema em camadas distintas. Cada camada possui um conjunto específico de responsabilidades e se comunica com camadas adjacentes.</description>
+    </item>
+    
+    <item>
       <title>Architectural Decision Records (ADRs)</title>
       <link>https://ovalves.github.io/posts/solution-architecture/adr/</link>
       <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
@@ -20,6 +128,15 @@
       <guid>https://ovalves.github.io/posts/solution-architecture/adr/</guid>
       <description>Architectural Decision Records (ADRs) O que são ADRs? Os Architectural Decision Records, ou ADRs, são documentos que registram as decisões arquitetônicas significativas tomadas durante o desenvolvimento de um projeto de software. Eles são uma maneira de documentar o porquê, o quê e o como de escolhas importantes relacionadas à arquitetura de um sistema.
 Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as decisões arquitetônicas ao longo do tempo.</description>
+    </item>
+    
+    <item>
+      <title>Padrão MVVM</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/04-padrao-clean-arch/</link>
+      <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/04-padrao-clean-arch/</guid>
+      <description>A Arquitetura Limpa (Clean Architecture) é um conceito e uma abordagem de design de software que enfatiza a separação de preocupações e a organização do código de forma a torná-lo mais flexível, testável e fácil de manter. Desenvolvida por Robert C. Martin, também conhecido como &amp;ldquo;Uncle Bob&amp;rdquo;, a Arquitetura Limpa tem como objetivo principal criar sistemas de software que sejam independentes de frameworks, bancos de dados e detalhes de implementação, permitindo que as regras de negócios sejam o ponto central do projeto.</description>
     </item>
     
     <item>
@@ -54,6 +171,37 @@ Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de 
     </item>
     
     <item>
+      <title>Kanban</title>
+      <link>https://ovalves.github.io/posts/agil/kanban/</link>
+      <pubDate>Sat, 16 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/kanban/</guid>
+      <description>A ideia por trás do Kanban é bastante simples: você visualiza suas tarefas ou projetos em cartões e move esses cartões através de colunas em um quadro, representando o fluxo de trabalho. Cada coluna representa uma etapa do processo, e os cartões se movem de uma coluna para a próxima à medida que progridem.
+Os Princípios Básicos do Kanban
+  Visualização do Trabalho: O Kanban oferece uma visão clara e transparente de todo o trabalho em andamento.</description>
+    </item>
+    
+    <item>
+      <title>Lean</title>
+      <link>https://ovalves.github.io/posts/agil/lean/</link>
+      <pubDate>Fri, 15 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/lean/</guid>
+      <description>O Lean, também conhecido como Sistema Toyota de Produção (TPS), foi desenvolvido pela Toyota nos anos 1950. Desde então, essa filosofia de gestão se espalhou por todo o mundo e é amplamente adotada em empresas de diversos setores. Em sua essência, o Lean se concentra em maximizar o valor para o cliente, minimizando o desperdício. Ele busca criar um fluxo de trabalho suave e eficiente, onde cada etapa do processo adiciona valor ao produto final.</description>
+    </item>
+    
+    <item>
+      <title>XP - Extreme Programming</title>
+      <link>https://ovalves.github.io/posts/agil/xp-extreme-programming/</link>
+      <pubDate>Thu, 14 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/xp-extreme-programming/</guid>
+      <description>O Extreme Programming é uma metodologia ágil que surgiu no final da década de 1990, com o objetivo de melhorar a qualidade do software, a satisfação do cliente e a eficiência da equipe de desenvolvimento.
+Os Pilares do XP:
+  Comunicação eficaz: No XP, a comunicação entre os membros da equipe e com o cliente é essencial. Isso é alcançado através de reuniões frequentes, programação em pares e feedback contínuo.</description>
+    </item>
+    
+    <item>
       <title>Back-of-the-envelope Estimation</title>
       <link>https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/</link>
       <pubDate>Wed, 13 Sep 2023 14:00:00 +0000</pubDate>
@@ -62,6 +210,18 @@ Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de 
       <description>Introdução Ao projetar um novo sistema muitas vezes precisamos estimar a quantidade de recursos necessárias e capacidade que o sistema terá para aguentar uma determinada carga de trabalho, para isso utilizamos uma espécie de conta de padaria (back-of-the-envelope estimation).
 Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, primeiro precisamos ter um conhecimento básico sobre escalabilidade, latencia, etc.
 Unidades de volume de dados Para realizar efetivamente o calculo da capacidade e os recursos de um sistema, é fundamental conhecermos as unidades de volume de dados.</description>
+    </item>
+    
+    <item>
+      <title>Scrum</title>
+      <link>https://ovalves.github.io/posts/agil/scrum/</link>
+      <pubDate>Wed, 13 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/scrum/</guid>
+      <description>Scrum é uma metodologia ágil de gerenciamento de projetos que oferece uma abordagem flexível e colaborativa para o desenvolvimento de produtos. O Scrum enfatiza a comunicação constante, a adaptação às mudanças e a entrega contínua de valor aos clientes.
+Os Pilares do Scrum:
+  Transparência: Todas as informações relevantes sobre o projeto são visíveis para todos os membros da equipe, criando um ambiente de trabalho transparente e honesto.
+  Inspeção: A equipe Scrum regularmente inspeciona o progresso do trabalho para identificar problemas e áreas de melhoria.</description>
     </item>
     
     <item>
@@ -74,6 +234,124 @@ Unidades de volume de dados Para realizar efetivamente o calculo da capacidade e
 Atualmente, na CI&amp;amp;T, atuo nas áreas de engenharia de dados e software, resolvendo desafios de negócios complexos e implementando soluções abrangentes, como Machine Learning e Big Data.
 Minha expertise inclui ferramentas como:
  Python, Go, NodeJS e PHP, Mysql e PostgreSQL, MongoDB, redis, Spark (PySpark), Airflow, Kafka, RabbitMQ, git, Shell, Docker, Kubernetes, Azure Devops, StatsD, Grafana, GitOps  Minha bagagem profissional anterior inclui a aplicação de frameworks como:</description>
+    </item>
+    
+    <item>
+      <title>Desenvolvimento Iterativo e Incremental (IDD)</title>
+      <link>https://ovalves.github.io/posts/agil/desenvolvimento-iterativo-incremental-idd/</link>
+      <pubDate>Mon, 11 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/desenvolvimento-iterativo-incremental-idd/</guid>
+      <description>O Desenvolvimento Iterativo e Incremental é uma abordagem ágil para o desenvolvimento de software que enfatiza a entrega contínua de funcionalidades em pequenas iterações. Em vez de tentar criar um produto completo em um único ciclo de desenvolvimento, o IDD divide o projeto em partes menores e gerenciáveis, que são desenvolvidas de forma iterativa e incremental.
+Principais Características do IDD:
+  Iterativo: O IDD divide o projeto em iterações ou ciclos, cada um dos quais produz uma versão funcional do software.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Microsserviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/10-estilo-baseado-em-microsservicos/</link>
+      <pubDate>Mon, 11 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/10-estilo-baseado-em-microsservicos/</guid>
+      <description>Estilo Baseado em Microsserviços O estilo arquitetural baseado em microsserviços é uma abordagem para projetar sistemas de software em que uma aplicação é dividida em uma coleção de serviços independentes, conhecidos como &amp;ldquo;microsserviços&amp;rdquo;. Cada microsserviço é responsável por executar uma função específica do sistema e opera de maneira autônoma, tendo seu próprio banco de dados e API para se comunicar com outros microsserviços.
+Essa arquitetura permite que uma aplicação seja construída e mantida de forma modular, com cada microsserviço desenvolvido, implantado e dimensionado separadamente.</description>
+    </item>
+    
+    <item>
+      <title>The New New Product Development Game</title>
+      <link>https://ovalves.github.io/posts/agil/the-new-new-product-development-game/</link>
+      <pubDate>Sun, 10 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/the-new-new-product-development-game/</guid>
+      <description>Nos últimos anos, temos visto uma revolução no mundo dos negócios e da tecnologia que tem impactado significativamente a forma como as empresas desenvolvem e lançam produtos. Uma abordagem que tem ganhado destaque nesse cenário é o &amp;ldquo;The New New Product Development Game&amp;rdquo; ou, em português, &amp;ldquo;O Novo Jogo de Desenvolvimento de Produtos&amp;rdquo;.
+O &amp;ldquo;The New New Product Development Game&amp;rdquo; foi popularizado por autores como Hirotaka Takeuchi e Ikujiro Nonaka em um artigo de 1986, &amp;ldquo;The New New Product Development Game&amp;rdquo;, publicado na revista Harvard Business Review.</description>
+    </item>
+    
+    <item>
+      <title>Teoria dos Jogos</title>
+      <link>https://ovalves.github.io/posts/agil/teoria-dos-jogos/</link>
+      <pubDate>Sat, 09 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/teoria-dos-jogos/</guid>
+      <description>A Teoria dos Jogos é um campo interdisciplinar que combina elementos da matemática, economia, psicologia, biologia e outras disciplinas para analisar interações estratégicas entre indivíduos, organizações e países. A teoria dos jogos busca responder a perguntas como:
+ Como as decisões são tomadas quando os resultados dependem das ações de outros indivíduos? Como as estratégias são formuladas em cenários competitivos? Quais são os incentivos para a cooperação e a traição?  A Teoria dos Jogos não se limita apenas a jogos tradicionais, como xadrez ou pôquer.</description>
+    </item>
+    
+    <item>
+      <title>Teoria das restrições</title>
+      <link>https://ovalves.github.io/posts/agil/teoria-das-restricoes/</link>
+      <pubDate>Fri, 08 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/teoria-das-restricoes/</guid>
+      <description>A Teoria das Restrições é uma abordagem de gestão desenvolvida por ==Eliyahu M. Goldratt== na década de 1980. Sua premissa fundamental é simples, mas profundamente eficaz: toda organização tem pelo menos uma restrição que limita sua capacidade de atingir seus objetivos. Essa restrição pode ser um gargalo em um processo de produção, uma equipe sobrecarregada, ou até mesmo uma falta de recursos financeiros.
+Principais conceitos por trás da Teoria das Restrições:</description>
+    </item>
+    
+    <item>
+      <title>Lean Manufacturing</title>
+      <link>https://ovalves.github.io/posts/agil/lean-manufacturing/</link>
+      <pubDate>Thu, 07 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/lean-manufacturing/</guid>
+      <description>O Lean Manufacturing, também conhecido como Lean Production ou simplesmente Lean, é uma filosofia de gestão que se concentra na eliminação de desperdícios e na maximização do valor para o cliente. Essa abordagem teve origem na Toyota no Japão e foi posteriormente adotada por muitas outras empresas em todo o mundo.
+O Lean Manufacturing se baseia em alguns princípios fundamentais:
+  Identificar e Eliminar Desperdícios: Identificar e eliminar todos os tipos de desperdícios, incluindo estoque excessivo, processos desnecessários, defeitos e tempo ocioso de máquinas.</description>
+    </item>
+    
+    <item>
+      <title>Ciclo de Deming (PDCA)</title>
+      <link>https://ovalves.github.io/posts/agil/ciclo-de-deming-pdca/</link>
+      <pubDate>Mon, 04 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/ciclo-de-deming-pdca/</guid>
+      <description>O que é o Ciclo de Deming (PDCA)?
+O Ciclo de Deming, também conhecido como PDCA, é um método de gestão da qualidade desenvolvido pelo renomado estatístico e professor ==William Edwards Deming==. Ele é composto por quatro etapas interligadas, que são fundamentais para melhorar processos, produtos e serviços de forma constante e eficaz.
+1. Planejar (Plan):
+A primeira etapa do ciclo envolve a definição de metas e objetivos claros. Aqui, você deve identificar os problemas ou oportunidades de melhoria, estabelecer metas realistas e criar um plano detalhado sobre como alcançá-las.</description>
+    </item>
+    
+    <item>
+      <title>Metodologias Ágeis</title>
+      <link>https://ovalves.github.io/posts/agil/metodologias-ageis/</link>
+      <pubDate>Sun, 03 Sep 2023 15:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/metodologias-ageis/</guid>
+      <description>Tipos de Metodologias Ágeis As Metodologias Ágeis são um conjunto de princípios e práticas que priorizam a colaboração, a flexibilidade e a entrega contínua de valor.
+Existem várias estruturas de Metodologias Ágeis, como Scrum, Kanban, e Extreme Programming (XP), cada uma com suas próprias práticas e rituais. No entanto, todas compartilham o objetivo comum de entregar valor de forma rápida e eficaz.
+  Scrum: Divide o projeto em ciclos curtos chamados sprints, onde as equipes entregam valor de forma incremental, geralmente as sprints duram de duas a quatro semanas.</description>
+    </item>
+    
+    <item>
+      <title>O Manifesto Agil</title>
+      <link>https://ovalves.github.io/posts/agil/manifesto-agil/</link>
+      <pubDate>Sun, 03 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/manifesto-agil/</guid>
+      <description>O Manifesto Ágil é um documento fundamental que sintetiza os valores e princípios que orientam o desenvolvimento de software ágil. Foi escrito em 2001 como uma abordagem mais flexível e adaptativa para o desenvolvimento de software. O manifesto ágil é dividido em quatro valores e 12 princípios.
+Valores Ágeis:
+  Indivíduos e interações mais que processos e ferramentas: O foco deve estar nas pessoas e em como elas colaboram e se comunicam, em vez de depender excessivamente de processos e ferramentas.</description>
+    </item>
+    
+    <item>
+      <title>Mundo BANI</title>
+      <link>https://ovalves.github.io/posts/agil/mundo-bani/</link>
+      <pubDate>Sat, 02 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/mundo-bani/</guid>
+      <description>Vivemos em uma era de mudanças constantes e aceleradas, onde a única constante é a mudança. Essa realidade é o que alguns especialistas chamam de &amp;ldquo;Mundo BANI&amp;rdquo;.
+BANI é um acrônimo que representa quatro características essenciais deste mundo em constante evolução:
+🔄 Frágil (Brittle): No Mundo BANI, sistemas e estruturas são frágeis e suscetíveis a rupturas. O que funcionou ontem pode não funcionar hoje, e as organizações precisam estar preparadas para se adaptar rapidamente a novos desafios e circunstâncias.</description>
+    </item>
+    
+    <item>
+      <title>Mundo VUCA</title>
+      <link>https://ovalves.github.io/posts/agil/mundo-vuca/</link>
+      <pubDate>Fri, 01 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/agil/mundo-vuca/</guid>
+      <description>À medida que a tecnologia avança, as economias se globalizam e os desafios se tornam cada vez mais interconectados, uma nova realidade surgiu: o Mundo VUCA.
+A sigla VUCA surgiu originalmente no contexto militar, mas hoje em dia se aplica a praticamente todos os aspectos da nossa vida. VUCA é um acrônimo que representa quatro características essenciais: Volatilidade (Volatility), Incerteza (Uncertainty), Complexidade (Complexity) e Ambiguidade (Ambiguity).
+Volatilidade: Nosso mundo é caracterizado por mudanças rápidas e imprevisíveis.</description>
     </item>
     
     <item>

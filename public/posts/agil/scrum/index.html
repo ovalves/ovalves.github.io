@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Scrum | Vinicius Alves</title>
+  <link rel = 'canonical' href = 'https://ovalves.github.io/posts/agil/scrum/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Scrum" />
+<meta property="og:description" content="Scrum é uma metodologia ágil de gerenciamento de projetos que oferece uma abordagem flexível e colaborativa para o desenvolvimento de produtos. O Scrum enfatiza a comunicação constante, a adaptação às mudanças e a entrega contínua de valor aos clientes.
+Os Pilares do Scrum:
+  Transparência: Todas as informações relevantes sobre o projeto são visíveis para todos os membros da equipe, criando um ambiente de trabalho transparente e honesto.
+  Inspeção: A equipe Scrum regularmente inspeciona o progresso do trabalho para identificar problemas e áreas de melhoria." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ovalves.github.io/posts/agil/scrum/" />
+<meta property="article:published_time" content="2023-09-13T12:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-13T12:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scrum"/>
+<meta name="twitter:description" content="Scrum é uma metodologia ágil de gerenciamento de projetos que oferece uma abordagem flexível e colaborativa para o desenvolvimento de produtos. O Scrum enfatiza a comunicação constante, a adaptação às mudanças e a entrega contínua de valor aos clientes.
+Os Pilares do Scrum:
+  Transparência: Todas as informações relevantes sobre o projeto são visíveis para todos os membros da equipe, criando um ambiente de trabalho transparente e honesto.
+  Inspeção: A equipe Scrum regularmente inspeciona o progresso do trabalho para identificar problemas e áreas de melhoria."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ovalves.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ovalves.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ovalves.github.io/about/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ovalves.github.io/posts/system-design/back-of-the-envelope-estimation/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&text=Scrum" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&is_video=false&description=Scrum" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Scrum&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&name=Scrum&description=Scrum%20%c3%a9%20uma%20metodologia%20%c3%a1gil%20de%20gerenciamento%20de%20projetos%20que%20oferece%20uma%20abordagem%20flex%c3%advel%20e%20colaborativa%20para%20o%20desenvolvimento%20de%20produtos.%20O%20Scrum%20enfatiza%20a%20comunica%c3%a7%c3%a3o%20constante%2c%20a%20adapta%c3%a7%c3%a3o%20%c3%a0s%20mudan%c3%a7as%20e%20a%20entrega%20cont%c3%adnua%20de%20valor%20aos%20clientes.%0aOs%20Pilares%20do%20Scrum%3a%0a%20%20Transpar%c3%aancia%3a%20Todas%20as%20informa%c3%a7%c3%b5es%20relevantes%20sobre%20o%20projeto%20s%c3%a3o%20vis%c3%adveis%20para%20todos%20os%20membros%20da%20equipe%2c%20criando%20um%20ambiente%20de%20trabalho%20transparente%20e%20honesto.%0a%20%20Inspe%c3%a7%c3%a3o%3a%20A%20equipe%20Scrum%20regularmente%20inspeciona%20o%20progresso%20do%20trabalho%20para%20identificar%20problemas%20e%20%c3%a1reas%20de%20melhoria." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&t=Scrum" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Scrum
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-09-13 12:00:00 &#43;0000 UTC" itemprop="datePublished">13/09/2023</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/agil">agil</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/agil" rel="tag">agil</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Scrum é uma metodologia ágil de gerenciamento de projetos que oferece uma abordagem flexível e colaborativa para o desenvolvimento de produtos. O Scrum enfatiza a comunicação constante, a adaptação às mudanças e a entrega contínua de valor aos clientes.</p>
+<p><strong>Os Pilares do Scrum:</strong></p>
+<ol>
+<li>
+<p><strong>Transparência:</strong> Todas as informações relevantes sobre o projeto são visíveis para todos os membros da equipe, criando um ambiente de trabalho transparente e honesto.</p>
+</li>
+<li>
+<p><strong>Inspeção:</strong> A equipe Scrum regularmente inspeciona o progresso do trabalho para identificar problemas e áreas de melhoria.</p>
+</li>
+<li>
+<p><strong>Adaptação:</strong> Com base nas informações obtidas pela inspeção, a equipe Scrum se adapta, ajusta suas estratégias e planos para otimizar o processo e atender às necessidades do cliente de forma mais eficaz.</p>
+</li>
+</ol>
+<p><strong>Os Papéis no Scrum:</strong></p>
+<ol>
+<li>
+<p><strong>Product Owner:</strong> Responsável por representar os interesses do cliente e definir as funcionalidades do produto.</p>
+</li>
+<li>
+<p><strong>Scrum Master:</strong> Facilitador do processo Scrum, remove obstáculos, ajuda a equipe a manter o foco e garante que as práticas do Scrum sejam seguidas.</p>
+</li>
+<li>
+<p><strong>Equipe de Desenvolvimento:</strong> Profissionais responsáveis por transformar as ideias em produtos funcionais.</p>
+</li>
+</ol>
+<p><strong>Os principais artefatos do Scrum incluem:</strong></p>
+<ol>
+<li>
+<p><strong>Product Backlog (Lista de Itens do Produto)</strong>: A lista de itens do produto é uma lista priorizada de todos os recursos, funcionalidades, correções de bugs e melhorias desejadas para o produto. Ela é mantida e priorizada pelo Product Owner.</p>
+</li>
+<li>
+<p><strong>Sprint Backlog (Lista de Tarefas da Sprint)</strong>: A Sprint Backlog é uma lista de itens do Product Backlog que foram selecionados para a Sprint atual. Ela contém as tarefas específicas que a equipe de desenvolvimento planeja realizar durante a Sprint.</p>
+</li>
+<li>
+<p><strong>Incremento</strong>: O Incremento é o resultado do trabalho da equipe de desenvolvimento durante uma Sprint. É uma versão potencialmente entregável do produto, que é incrementada a cada Sprint. Isso significa que a cada Sprint, o produto se torna um pouco mais completo e funcional.</p>
+</li>
+</ol>
+<p><strong>Benefícios do Scrum:</strong></p>
+<ol>
+<li>
+<p><strong>Flexibilidade:</strong> O Scrum permite que as equipes se adaptem rapidamente às mudanças de requisitos, prioridades e tecnologias, mantendo a qualidade do produto.</p>
+</li>
+<li>
+<p><strong>Maior Colaboração:</strong> A comunicação aberta e regular entre os membros da equipe promove um ambiente colaborativo e eficiente.</p>
+</li>
+<li>
+<p><strong>Entrega Contínua de Valor:</strong> O Scrum enfoca a entrega contínua de incrementos de produto, garantindo que o cliente receba valor constantemente.</p>
+</li>
+</ol>
+<p><strong>Conclusão:</strong></p>
+<p>O Scrum é muito mais do que apenas uma metodologia de gerenciamento de projetos; é uma filosofia que transforma a maneira como as equipes trabalham juntas. Ao adotar os princípios do Scrum, as organizações podem melhorar a qualidade de seus produtos, aumentar a satisfação do cliente e criar equipes mais eficazes e motivadas.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Início</a></li>
+         
+          <li><a href="/posts">Artigos</a></li>
+         
+          <li><a href="/categories">Categorias</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&text=Scrum" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&is_video=false&description=Scrum" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Scrum&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&title=Scrum" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&name=Scrum&description=Scrum%20%c3%a9%20uma%20metodologia%20%c3%a1gil%20de%20gerenciamento%20de%20projetos%20que%20oferece%20uma%20abordagem%20flex%c3%advel%20e%20colaborativa%20para%20o%20desenvolvimento%20de%20produtos.%20O%20Scrum%20enfatiza%20a%20comunica%c3%a7%c3%a3o%20constante%2c%20a%20adapta%c3%a7%c3%a3o%20%c3%a0s%20mudan%c3%a7as%20e%20a%20entrega%20cont%c3%adnua%20de%20valor%20aos%20clientes.%0aOs%20Pilares%20do%20Scrum%3a%0a%20%20Transpar%c3%aancia%3a%20Todas%20as%20informa%c3%a7%c3%b5es%20relevantes%20sobre%20o%20projeto%20s%c3%a3o%20vis%c3%adveis%20para%20todos%20os%20membros%20da%20equipe%2c%20criando%20um%20ambiente%20de%20trabalho%20transparente%20e%20honesto.%0a%20%20Inspe%c3%a7%c3%a3o%3a%20A%20equipe%20Scrum%20regularmente%20inspeciona%20o%20progresso%20do%20trabalho%20para%20identificar%20problemas%20e%20%c3%a1reas%20de%20melhoria." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fagil%2fscrum%2f&t=Scrum" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Vinicius Alves 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

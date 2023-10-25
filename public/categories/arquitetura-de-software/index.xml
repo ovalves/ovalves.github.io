@@ -1,16 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Arquitetura de software on Vinicius Alves</title>
+    <title>arquitetura-de-software on Vinicius Alves</title>
     <link>https://ovalves.github.io/categories/arquitetura-de-software/</link>
-    <description>Recent content in Arquitetura de software on Vinicius Alves</description>
+    <description>Recent content in arquitetura-de-software on Vinicius Alves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <copyright>Vinicius Alves</copyright>
-    <lastBuildDate>Sun, 01 Oct 2023 18:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Oct 2023 18:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ovalves.github.io/categories/arquitetura-de-software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Padrão DDD</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/</link>
+      <pubDate>Fri, 20 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/</guid>
+      <description>O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:
+  Domínio: O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Orquestração de Serviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/</link>
+      <pubDate>Tue, 10 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/</guid>
+      <description>Estilo Baseado Em Orquestração de Serviços A orquestração de serviços é um estilo arquitetural que se concentra na coordenação de vários serviços independentes para alcançar uma funcionalidade mais ampla e complexa. Nesse modelo, um serviço central, chamado &amp;ldquo;orquestrador&amp;rdquo;, coordena a execução dos serviços componentes, garantindo que eles trabalhem juntos harmoniosamente para atender a um objetivo específico.
+ Fundamentals of Software Architecture
+ Exemplo 1: Microserviços e Aplicações em Nuvem:
+Em ambientes de microserviços, a orquestração de serviços é essencial.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Espaços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/08-estilo-baseado-em-espacos/</link>
+      <pubDate>Mon, 09 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/08-estilo-baseado-em-espacos/</guid>
+      <description>Estilo Baseado em Espaços A arquitetura baseada em espaços, é um estilo arquitetural que oferece uma maneira de compartilhar e processar dados em sistemas distribuídos. Esses espaços funcionam como armazenamentos de dados colaborativos em que informações podem ser escritas, lidas e compartilhadas. Os sistemas que adotam essa arquitetura têm componentes que interagem com esses espaços, tornando-a uma abordagem flexível e eficaz para a comunicação entre componentes distribuídos.
+ Fundamentals of Software Architecture</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Eventos</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/07-estilo-baseado-em-eventos/</link>
+      <pubDate>Sun, 08 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/07-estilo-baseado-em-eventos/</guid>
+      <description>Estilo Baseado em Eventos Na arquitetura baseada em eventos, o foco está na comunicação assíncrona por meio de eventos. Eventos são disparados quando algo significativo acontece em um sistema e podem ser consumidos por outros componentes ou serviços interessados. Isso permite que os sistemas sejam altamente reativos, escaláveis e interoperáveis.
+ Fundamentals of Software Architecture
+ Exemplo 1: Aplicações em Tempo Real:
+Um dos exemplos mais proeminentes da arquitetura baseada em eventos é em aplicações em tempo real, como salas de bate-papo ou aplicativos de jogos multiplayer.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Serviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/</link>
+      <pubDate>Sat, 07 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/</guid>
+      <description>Estilo Baseado em Serviços A arquitetura baseada em serviços, também conhecida como arquitetura orientada a serviços (SOA), é um estilo arquitetural amplamente adotado que permite a criação de sistemas flexíveis, escaláveis e altamente interoperáveis.
+Entendendo a Arquitetura Baseada em Serviços:
+A arquitetura baseada em serviços é centrada na ideia de dividir um sistema em componentes independentes e autônomos, conhecidos como &amp;ldquo;serviços&amp;rdquo;. Cada serviço realiza uma função específica e se comunica com outros serviços por meio de padrões de comunicação bem definidos, como SOAP, REST ou gRPC.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Microkernel</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/</link>
+      <pubDate>Fri, 06 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/</guid>
+      <description>Estilo Baseado em Microkernel A arquitetura baseada em microkernel é um estilo arquitetural que se concentra em manter o núcleo do sistema simples, com funcionalidades essenciais, enquanto os serviços adicionais são movidos para módulos externos. Essa abordagem facilita a manutenção, extensibilidade e adaptabilidade em sistemas complexos.
+Entendendo a Arquitetura Baseada em Microkernel: O conceito-chave por trás da arquitetura baseada em microkernel é manter o núcleo (kernel) do sistema o mais enxuto e simples possível, tratando apenas das funções essenciais, como gerenciamento de memória, escalonamento de processos e comunicação básica.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Pipelines</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/</link>
+      <pubDate>Thu, 05 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/</guid>
+      <description>Estilo Baseado em Pipelines A arquitetura baseada em pipelines é um estilo arquitetural frequentemente utilizado em sistemas que envolvem processamento de dados em lote, transformações sequenciais ou encadeamento de tarefas. Essa arquitetura é projetada para facilitar o envio e processamento de dados por uma série de estágios, onde cada estágio executa uma função específica.
+A imagem1 abaixo exemplifica o uso da arquitetura baseada em pipelines e como as pipelines se comunicam2.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Camadas</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/</link>
+      <pubDate>Wed, 04 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/</guid>
+      <description>Estilo Baseado em Camadas A arquitetura em camadas é um dos estilos arquiteturais mais fundamentais e amplamente utilizados na construção de sistemas. Baseia-se na ideia de dividir um sistema em camadas distintas, cada uma com um conjunto específico de responsabilidades, promovendo a modularidade e a manutenção mais fácil.
+Entendendo a Arquitetura em Camadas: Na arquitetura em camadas, o sistema é dividido em camadas horizontais, com cada camada executando funções bem definidas.</description>
+    </item>
+    
+    <item>
+      <title>Condutores arquiteturais</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/</link>
+      <pubDate>Tue, 03 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/</guid>
+      <description>Condutores arquiteturais Os condutores arquiteturais são direcionadores chave que desempenham um papel crucial na determinação do estilo arquitetural, na escolha de padrões de design e nas decisões de implementação. Esses condutores são considerações-chave que ajudam a orientar o processo de arquitetura, garantindo que o sistema atenda aos requisitos e às necessidades específicas do projeto.
+Exemplos de condutores arquiteturais de software:
+  Requisitos de Desempenho: O desempenho é um condutor arquitetural fundamental.</description>
+    </item>
+    
+    <item>
+      <title>Estilos Arquiteturais</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/01-estilos-arquiteturais/</link>
+      <pubDate>Mon, 02 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/01-estilos-arquiteturais/</guid>
+      <description>O que é um estilo arquitetural? Uma das decisões mais importantes na concepção de um software é a escolha do estilo arquitetural, que estabelece as diretrizes e padrões gerais para a organização do sistema.
+Estilos arquiteturais mais comuns:
+1. Arquitetura em Camadas (Layered Architecture):
+Este é um dos estilos arquiteturais mais amplamente utilizados, caracterizado pela separação de um sistema em camadas distintas. Cada camada possui um conjunto específico de responsabilidades e se comunica com camadas adjacentes.</description>
+    </item>
     
     <item>
       <title>Architectural Decision Records (ADRs)</title>
@@ -20,6 +128,15 @@
       <guid>https://ovalves.github.io/posts/solution-architecture/adr/</guid>
       <description>Architectural Decision Records (ADRs) O que são ADRs? Os Architectural Decision Records, ou ADRs, são documentos que registram as decisões arquitetônicas significativas tomadas durante o desenvolvimento de um projeto de software. Eles são uma maneira de documentar o porquê, o quê e o como de escolhas importantes relacionadas à arquitetura de um sistema.
 Por que são importantes?   Rastreabilidade: ADRs permitem que você rastreie as decisões arquitetônicas ao longo do tempo.</description>
+    </item>
+    
+    <item>
+      <title>Padrão MVVM</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/04-padrao-clean-arch/</link>
+      <pubDate>Sun, 01 Oct 2023 18:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/04-padrao-clean-arch/</guid>
+      <description>A Arquitetura Limpa (Clean Architecture) é um conceito e uma abordagem de design de software que enfatiza a separação de preocupações e a organização do código de forma a torná-lo mais flexível, testável e fácil de manter. Desenvolvida por Robert C. Martin, também conhecido como &amp;ldquo;Uncle Bob&amp;rdquo;, a Arquitetura Limpa tem como objetivo principal criar sistemas de software que sejam independentes de frameworks, bancos de dados e detalhes de implementação, permitindo que as regras de negócios sejam o ponto central do projeto.</description>
     </item>
     
     <item>
@@ -41,6 +158,16 @@ Principais Causas de Baixa Performance As principais razões para a baixa perfor
       <guid>https://ovalves.github.io/posts/solution-architecture/basic/</guid>
       <description>O que é Arquitetura de Software? A arquitetura de software é o projeto estrutural e organizacional de um sistema de software. É a maneira como os diversos componentes de uma aplicação se relacionam e interagem entre si. A arquitetura define a divisão de responsabilidades, a comunicação entre os módulos, a escalabilidade do sistema e muitos outros aspectos críticos do desenvolvimento de software.
 Fundamentos da Arquitetura de Software   Separation of Concerns (Separação de Responsabilidades): Um dos princípios mais fundamentais da arquitetura de software é a separação de responsabilidades.</description>
+    </item>
+    
+    <item>
+      <title>Estilo Baseado em Microsserviços</title>
+      <link>https://ovalves.github.io/posts/solution-architecture/10-estilo-baseado-em-microsservicos/</link>
+      <pubDate>Mon, 11 Sep 2023 12:00:00 +0000</pubDate>
+      
+      <guid>https://ovalves.github.io/posts/solution-architecture/10-estilo-baseado-em-microsservicos/</guid>
+      <description>Estilo Baseado em Microsserviços O estilo arquitetural baseado em microsserviços é uma abordagem para projetar sistemas de software em que uma aplicação é dividida em uma coleção de serviços independentes, conhecidos como &amp;ldquo;microsserviços&amp;rdquo;. Cada microsserviço é responsável por executar uma função específica do sistema e opera de maneira autônoma, tendo seu próprio banco de dados e API para se comunicar com outros microsserviços.
+Essa arquitetura permite que uma aplicação seja construída e mantida de forma modular, com cada microsserviço desenvolvido, implantado e dimensionado separadamente.</description>
     </item>
     
   </channel>

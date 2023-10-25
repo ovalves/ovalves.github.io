@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Estilo Baseado em Camadas | Vinicius Alves</title>
+  <link rel = 'canonical' href = 'https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Estilo Baseado em Camadas" />
+<meta property="og:description" content="Estilo Baseado em Camadas A arquitetura em camadas é um dos estilos arquiteturais mais fundamentais e amplamente utilizados na construção de sistemas. Baseia-se na ideia de dividir um sistema em camadas distintas, cada uma com um conjunto específico de responsabilidades, promovendo a modularidade e a manutenção mais fácil.
+Entendendo a Arquitetura em Camadas: Na arquitetura em camadas, o sistema é dividido em camadas horizontais, com cada camada executando funções bem definidas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ovalves.github.io/posts/solution-architecture/03-estilo-baseado-em-camadas/" />
+<meta property="article:published_time" content="2023-10-04T18:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-04T18:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Estilo Baseado em Camadas"/>
+<meta name="twitter:description" content="Estilo Baseado em Camadas A arquitetura em camadas é um dos estilos arquiteturais mais fundamentais e amplamente utilizados na construção de sistemas. Baseia-se na ideia de dividir um sistema em camadas distintas, cada uma com um conjunto específico de responsabilidades, promovendo a modularidade e a manutenção mais fácil.
+Entendendo a Arquitetura em Camadas: Na arquitetura em camadas, o sistema é dividido em camadas horizontais, com cada camada executando funções bem definidas."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ovalves.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ovalves.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ovalves.github.io/posts/solution-architecture/02-condutores-arquiteturais/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&text=Estilo%20Baseado%20em%20Camadas" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&is_video=false&description=Estilo%20Baseado%20em%20Camadas" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Estilo%20Baseado%20em%20Camadas&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&name=Estilo%20Baseado%20em%20Camadas&description=Estilo%20Baseado%20em%20Camadas%20A%20arquitetura%20em%20camadas%20%c3%a9%20um%20dos%20estilos%20arquiteturais%20mais%20fundamentais%20e%20amplamente%20utilizados%20na%20constru%c3%a7%c3%a3o%20de%20sistemas.%20Baseia-se%20na%20ideia%20de%20dividir%20um%20sistema%20em%20camadas%20distintas%2c%20cada%20uma%20com%20um%20conjunto%20espec%c3%adfico%20de%20responsabilidades%2c%20promovendo%20a%20modularidade%20e%20a%20manuten%c3%a7%c3%a3o%20mais%20f%c3%a1cil.%0aEntendendo%20a%20Arquitetura%20em%20Camadas%3a%20Na%20arquitetura%20em%20camadas%2c%20o%20sistema%20%c3%a9%20dividido%20em%20camadas%20horizontais%2c%20com%20cada%20camada%20executando%20fun%c3%a7%c3%b5es%20bem%20definidas." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&t=Estilo%20Baseado%20em%20Camadas" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#entendendo-a-arquitetura-em-camadas"><strong>Entendendo a Arquitetura em Camadas:</strong></a></li>
+        <li><a href="#vantagens-da-arquitetura-em-camadas"><strong>Vantagens da Arquitetura em Camadas:</strong></a></li>
+        <li><a href="#a-arquitetura-em-camadas-pode-ser-utilizada-de-diversas-formas"><strong>A Arquitetura em camadas pode ser utilizada de diversas formas</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Estilo Baseado em Camadas
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-10-04 18:00:00 &#43;0000 UTC" itemprop="datePublished">04/10/2023</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/arquitetura-de-software">arquitetura-de-software</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/arquitetura-de-software" rel="tag">arquitetura-de-software</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="estilo-baseado-em-camadas">Estilo Baseado em Camadas</h1>
+<p>A arquitetura em camadas é um dos estilos arquiteturais mais fundamentais e amplamente utilizados na construção de sistemas. Baseia-se na ideia de dividir um sistema em camadas distintas, cada uma com um conjunto específico de responsabilidades, promovendo a modularidade e a manutenção mais fácil.</p>
+<h3 id="entendendo-a-arquitetura-em-camadas"><strong>Entendendo a Arquitetura em Camadas:</strong></h3>
+<p>Na arquitetura em camadas, o sistema é dividido em camadas horizontais, com cada camada executando funções bem definidas. A comunicação entre as camadas ocorre de maneira controlada, geralmente de uma camada para a próxima.</p>
+<p><strong>Exemplo 1: Aplicações Web:</strong></p>
+<p>As aplicações web são um dos exemplos mais comuns de arquitetura em camadas. Normalmente as aplicações web utilizam as seguintes camadas:</p>
+<ol>
+<li>
+<p><strong>Camada de Apresentação:</strong> Esta camada é responsável pela interação com o usuário. Ela inclui a interface gráfica, o código do lado do cliente e é onde os dados são apresentados de forma amigável ao usuário.</p>
+</li>
+<li>
+<p><strong>Camada de Lógica de Aplicação:</strong> Esta camada contém a lógica do negócio e é responsável pelo processamento de solicitações do usuário. Ela pode validar entradas, realizar cálculos e coordenar a interação com a camada de dados.</p>
+</li>
+<li>
+<p><strong>Camada de Dados:</strong> Aqui, os dados são armazenados e gerenciados. Geralmente, envolve um banco de dados onde informações são armazenadas e recuperadas. A camada de dados também lida com operações de leitura e gravação.</p>
+</li>
+</ol>
+<p><strong>Exemplo 2: Sistema de Gerenciamento de Banco de Dados:</strong></p>
+<p>Outro exemplo é um Sistema de Gerenciamento de Banco de Dados (DBMS), que geralmente segue uma arquitetura em camadas:</p>
+<ol>
+<li>
+<p><strong>Camada de Apresentação:</strong> Nesse caso, a &ldquo;apresentação&rdquo; pode ser uma interface de linha de comando, uma interface gráfica ou um serviço da web que permite aos usuários interagir com o banco de dados.</p>
+</li>
+<li>
+<p><strong>Camada de Lógica de Negócios:</strong> Esta camada processa as solicitações do usuário, valida as consultas e executa operações no banco de dados. Ela garante que as operações sejam seguras e eficazes.</p>
+</li>
+<li>
+<p><strong>Camada de Gerenciamento de Dados:</strong> A camada de gerenciamento de dados é responsável por acessar o banco de dados subjacente, otimizar consultas e gerenciar o armazenamento e a recuperação dos dados.</p>
+</li>
+</ol>
+<h3 id="vantagens-da-arquitetura-em-camadas"><strong>Vantagens da Arquitetura em Camadas:</strong></h3>
+<ul>
+<li>
+<p><strong>Modularidade:</strong> Cada camada é independente e pode ser desenvolvida, testada e mantida separadamente.</p>
+</li>
+<li>
+<p><strong>Facilidade de Manutenção:</strong> A separação de preocupações simplifica a manutenção, pois as mudanças em uma camada não afetam necessariamente as outras.</p>
+</li>
+<li>
+<p><strong>Reusabilidade:</strong> Componentes de uma camada podem ser reutilizados em outros projetos.</p>
+</li>
+<li>
+<p><strong>Escalabilidade:</strong> Você pode escalar camadas individualmente para atender às demandas específicas.</p>
+</li>
+</ul>
+<h3 id="a-arquitetura-em-camadas-pode-ser-utilizada-de-diversas-formas"><strong>A Arquitetura em camadas pode ser utilizada de diversas formas</strong></h3>
+<p>A imagem<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> abaixo exemplifica três maneiras do uso da arquitetura em camadas e como as camadas se comunicam<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p><img src="../_files/1664372266667.png" alt="arquitetura em camadas"></p>
+<blockquote>
+<p>Fundamentals of Software Architecture</p>
+</blockquote>
+<p>Em resumo, a arquitetura em camadas é versátil e amplamente aplicável em diversos domínios. Seja em aplicações web, sistemas empresariais ou bancos de dados.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Imagem retirada do livro: Fundamentals of Software Architecture <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>As setas indicam que as camadas se comunicam via <em>rede</em> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Início</a></li>
+         
+          <li><a href="/posts">Artigos</a></li>
+         
+          <li><a href="/categories">Categorias</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#entendendo-a-arquitetura-em-camadas"><strong>Entendendo a Arquitetura em Camadas:</strong></a></li>
+        <li><a href="#vantagens-da-arquitetura-em-camadas"><strong>Vantagens da Arquitetura em Camadas:</strong></a></li>
+        <li><a href="#a-arquitetura-em-camadas-pode-ser-utilizada-de-diversas-formas"><strong>A Arquitetura em camadas pode ser utilizada de diversas formas</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&text=Estilo%20Baseado%20em%20Camadas" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&is_video=false&description=Estilo%20Baseado%20em%20Camadas" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Estilo%20Baseado%20em%20Camadas&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&title=Estilo%20Baseado%20em%20Camadas" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&name=Estilo%20Baseado%20em%20Camadas&description=Estilo%20Baseado%20em%20Camadas%20A%20arquitetura%20em%20camadas%20%c3%a9%20um%20dos%20estilos%20arquiteturais%20mais%20fundamentais%20e%20amplamente%20utilizados%20na%20constru%c3%a7%c3%a3o%20de%20sistemas.%20Baseia-se%20na%20ideia%20de%20dividir%20um%20sistema%20em%20camadas%20distintas%2c%20cada%20uma%20com%20um%20conjunto%20espec%c3%adfico%20de%20responsabilidades%2c%20promovendo%20a%20modularidade%20e%20a%20manuten%c3%a7%c3%a3o%20mais%20f%c3%a1cil.%0aEntendendo%20a%20Arquitetura%20em%20Camadas%3a%20Na%20arquitetura%20em%20camadas%2c%20o%20sistema%20%c3%a9%20dividido%20em%20camadas%20horizontais%2c%20com%20cada%20camada%20executando%20fun%c3%a7%c3%b5es%20bem%20definidas." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-estilo-baseado-em-camadas%2f&t=Estilo%20Baseado%20em%20Camadas" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Vinicius Alves 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
