@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Padrão DDD | Vinicius Alves</title>
+  <link rel = 'canonical' href = 'https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Padrão DDD" />
+<meta property="og:description" content="O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:
+  Domínio: O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ovalves.github.io/posts/solution-architecture/03-padrao-ddd/" />
+<meta property="article:published_time" content="2023-10-20T18:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-20T18:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Padrão DDD"/>
+<meta name="twitter:description" content="O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:
+  Domínio: O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ovalves.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ovalves.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ovalves.github.io/posts/solution-architecture/09-estilo-baseado-em-orquestacao-servicos/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&text=Padr%c3%a3o%20DDD" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&is_video=false&description=Padr%c3%a3o%20DDD" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Padr%c3%a3o%20DDD&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&name=Padr%c3%a3o%20DDD&description=O%20Dom%c3%adnio-Driven%20Design%20%28DDD%29%20%c3%a9%20uma%20abordagem%20de%20desenvolvimento%20de%20software%20que%20coloca%20um%20forte%20foco%20na%20modelagem%20do%20dom%c3%adnio%20de%20neg%c3%b3cios.%20Existem%20v%c3%a1rios%20conceitos%20fundamentais%20no%20DDD%20que%20s%c3%a3o%20usados%20para%20criar%20modelos%20de%20dom%c3%adnio%20eficazes.%20Alguns%20dos%20conceitos%20mais%20usados%20s%c3%a3o%3a%0a%20%20Dom%c3%adnio%3a%20O%20dom%c3%adnio%20se%20refere%20ao%20espa%c3%a7o%20de%20neg%c3%b3cios%20ou%20%c3%a1rea%20de%20conhecimento%20em%20que%20um%20aplicativo%20est%c3%a1%20operando.%20%c3%89%20o%20conjunto%20de%20regras%2c%20conceitos%20e%20processos%20que%20governam%20uma%20determinada%20%c3%a1rea%20de%20neg%c3%b3cios." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&t=Padr%c3%a3o%20DDD" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tipos-de-modelagens-no-ddd">Tipos de Modelagens no DDD</a></li>
+        <li><a href="#modelagem-estratégica">Modelagem Estratégica</a></li>
+        <li><a href="#modelagem-tática">Modelagem Tática</a></li>
+        <li><a href="#modelagem-de-aplicação"><strong>Modelagem de Aplicação</strong></a></li>
+        <li><a href="#camadas-do-ddd">Camadas do DDD</a></li>
+        <li><a href="#exemplo-usando-linguagem-ubíqua-do-ddd">Exemplo usando linguagem Ubíqua do DDD</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Padrão DDD
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-10-20 18:00:00 &#43;0000 UTC" itemprop="datePublished">20/10/2023</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/arquitetura-de-software">arquitetura-de-software</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/arquitetura-de-software" rel="tag">arquitetura-de-software</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>O Domínio-Driven Design (DDD) é uma abordagem de desenvolvimento de software que coloca um forte foco na modelagem do domínio de negócios. Existem vários conceitos fundamentais no DDD que são usados para criar modelos de domínio eficazes. Alguns dos conceitos mais usados são:</p>
+<p><img src="../_files/ddd.png" alt="ddd"></p>
+<ol>
+<li>
+<p><strong>Domínio:</strong> O domínio se refere ao espaço de negócios ou área de conhecimento em que um aplicativo está operando. É o conjunto de regras, conceitos e processos que governam uma determinada área de negócios.</p>
+</li>
+<li>
+<p><strong>Entidades:</strong> As entidades são objetos de negócios com identidade própria que podem mudar ao longo do tempo. Elas são fundamentais para representar objetos do mundo real no sistema.</p>
+</li>
+<li>
+<p><strong>Objetos de Valor:</strong> Objetos de valor são objetos que não têm identidade própria, mas representam um conceito importante no domínio. Eles são imutáveis e são usados para encapsular valores que não mudam.</p>
+</li>
+<li>
+<p><strong>Agregados:</strong> Agregados são grupos de entidades e objetos de valor relacionados que são tratados como uma única unidade transacional. Eles fornecem limites claros para as operações no domínio e garantem a consistência dos dados.</p>
+</li>
+<li>
+<p><strong>Repositórios:</strong> Os repositórios são responsáveis por armazenar e recuperar entidades. Eles permitem o acesso aos objetos do domínio sem a necessidade de conhecer os detalhes de armazenamento, como o banco de dados subjacente.</p>
+</li>
+<li>
+<p><strong>Serviços de Domínio:</strong> Serviços de domínio encapsulam a lógica de negócios que não pertence naturalmente a uma entidade ou objeto de valor. Eles são usados para implementar operações de alto nível que envolvem várias entidades ou agregados.</p>
+</li>
+<li>
+<p><strong>Eventos de Domínio:</strong> Eventos de domínio são eventos que representam mudanças no estado do sistema. Eles são usados para notificar outras partes do sistema sobre alterações no domínio.</p>
+</li>
+<li>
+<p><strong>Bounded Contexts:</strong> Bounded Contexts são limites lógicos no sistema onde o vocabulário e o modelo de domínio são consistentes e bem definidos. Diferentes partes do sistema podem ter diferentes bounded contexts.</p>
+</li>
+<li>
+<p><strong>Context Mapping:</strong> O Context Mapping é o processo de definir e gerenciar interações entre bounded contexts, especialmente em sistemas maiores e mais complexos. Isso envolve lidar com a tradução de conceitos entre contextos e estabelecer acordos de comunicação.</p>
+</li>
+<li>
+<p><strong>Factory (Fábrica)</strong>: As fábricas são usadas para criar objetos complexos, como agregados, com um processo de criação controlado. Isso ajuda a garantir a consistência do estado dos objetos.</p>
+</li>
+<li>
+<p><strong>Serviços de Aplicação:</strong> Os serviços de aplicação são responsáveis por coordenar a interação entre a interface do usuário e o domínio, traduzindo comandos e consultas da interface do usuário em ações no domínio.</p>
+</li>
+</ol>
+<h3 id="tipos-de-modelagens-no-ddd">Tipos de Modelagens no DDD</h3>
+<ol>
+<li>
+<p><strong>Modelagem Estratégica</strong>: Esta camada lida com questões de alto nível, como a visão geral do negócio, as conexões entre diferentes domínios e a organização de equipes de desenvolvimento. Nessa camada, são definidos conceitos como Bounded Contexts, que representam limites bem definidos onde um modelo específico é aplicado.</p>
+</li>
+<li>
+<p><strong>Modelagem Tática</strong>: A Modelagem Tática é o foco desta pergunta. Ela se concentra na tradução dos conceitos estratégicos do domínio em código concreto. Isso envolve a criação de modelos ricos em conceitos (também chamados de Entidades e Objetos de Valor) que representam os elementos fundamentais do domínio e a definição de Agregados que encapsulam um conjunto de entidades e objetos de valor. Além disso, a Modelagem Tática envolve a definição de Repositórios para acessar esses objetos e a especificação de Serviços de Domínio para implementar regras de negócios complexas.</p>
+</li>
+<li>
+<p><strong>Modelagem de Aplicação</strong>: A terceira camada lida com a interação do software com o mundo exterior. Aqui, você define os casos de uso, interfaces de usuário, adaptadores, controladores e outros elementos que permitem que o software interaja com os usuários, outros sistemas e recursos externos.</p>
+</li>
+</ol>
+<h3 id="modelagem-estratégica">Modelagem Estratégica</h3>
+<p>A Modelagem Estratégica no Domain-Driven Design (DDD) é a camada mais alta da modelagem e se concentra na compreensão do contexto do domínio e na organização de equipes e limites estratégicos. Os princípios da Modelagem Estratégica visam fornecer uma visão geral clara e estruturada do domínio de negócios e são essenciais para alinhar o desenvolvimento de software com as necessidades do negócio. Aqui estão alguns dos princípios-chave da Modelagem Estratégica no DDD:</p>
+<ol>
+<li>
+<p><strong>Bounded Contexts (Contextos Delimitados)</strong>: Identifique e defina os limites de contexto delimitado, que são áreas bem definidas do domínio em que um modelo específico é aplicado. Cada contexto delimitado tem seu próprio modelo de domínio e linguagem ubíqua. Isso ajuda a evitar conflitos de terminologia e conceitos entre diferentes partes do sistema.</p>
+</li>
+<li>
+<p><strong>Linguagem Ubíqua</strong>: Desenvolva uma linguagem compartilhada entre especialistas em domínio e desenvolvedores. A linguagem ubíqua é usada para descrever o domínio de forma clara e unificada, garantindo que todos tenham uma compreensão comum.</p>
+</li>
+<li>
+<p><strong>Context Map (Mapa de Contexto)</strong>: Crie um mapa de contexto que represente visualmente os relacionamentos e as interações entre os contextos delimitados. Isso ajuda a entender como os diferentes modelos de domínio se encaixam e colaboram.</p>
+</li>
+<li>
+<p><strong>Compartilhamento de Conhecimento</strong>: Promova a colaboração e o compartilhamento de conhecimento entre especialistas em domínio, desenvolvedores e outros stakeholders. Isso ajuda a garantir uma compreensão mais profunda e precisa do domínio.</p>
+</li>
+<li>
+<p><strong>Limites Explícitos</strong>: Defina os limites de contexto de forma explícita e documente as expectativas e os contratos entre diferentes contextos. Isso ajuda a evitar mal-entendidos e conflitos quando os limites são cruzados.</p>
+</li>
+<li>
+<p><strong>Anticorrupção Layer (Camada de Anticorrupção)</strong>: Quando você precisa integrar contextos delimitados que têm modelos de domínio conflitantes, use uma camada de anticorrupção para traduzir e adaptar as informações entre eles, garantindo que a integridade do seu modelo de domínio seja mantida.</p>
+</li>
+<li>
+<p><strong>Equipes Autônomas</strong>: Organize as equipes de desenvolvimento em torno dos limites de contexto delimitado, permitindo que cada equipe seja responsável por seu próprio modelo de domínio. Isso ajuda a melhorar a autonomia e a eficiência das equipes.</p>
+</li>
+<li>
+<p><strong>Padrões Estratégicos</strong>: Identifique e aplique padrões estratégicos que sejam relevantes para o domínio e para a organização. Isso inclui padrões para integração, segurança, escalabilidade e outros aspectos estratégicos do sistema.</p>
+</li>
+<li>
+<p><strong>Design para Mudança</strong>: Reconheça que o domínio e as necessidades do negócio podem evoluir ao longo do tempo. Projete sistemas que sejam flexíveis e adaptáveis para acomodar mudanças futuras.</p>
+</li>
+<li>
+<p><strong>Visão Global do Negócio</strong>: Mantenha uma visão global do negócio e do ecossistema em que o software está inserido. Isso ajuda a garantir que as decisões de design sejam alinhadas com os objetivos estratégicos da organização.</p>
+</li>
+</ol>
+<h3 id="modelagem-tática">Modelagem Tática</h3>
+<p>A Modelagem Tática no Domain-Driven Design (DDD) é orientada por um conjunto de princípios que ajudam a guiar a construção de modelos de domínio eficazes e ricos em conceitos. Esses princípios são essenciais para criar uma representação precisa e funcional do domínio de negócios em seu software. Aqui estão alguns dos princípios-chave da Modelagem Tática no DDD:</p>
+<ol>
+<li>
+<p><strong>Entidades</strong>: As entidades representam objetos que têm identidade e podem mudar ao longo do tempo. Elas são caracterizadas por um identificador único e podem ter atributos e métodos. As entidades desempenham um papel central na Modelagem Tática e ajudam a representar objetos do mundo real no domínio.</p>
+</li>
+<li>
+<p><strong>Objetos de Valor</strong>: Objetos de Valor são imutáveis e representam conceitos que não têm identidade própria, mas são fundamentais para o domínio. Eles são usados para modelar características e propriedades que não mudam individualmente, mas que são importantes para o domínio.</p>
+</li>
+<li>
+<p><strong>Agregados</strong>: Os Agregados são grupos de entidades e objetos de valor relacionados que são tratados como uma única unidade. Eles têm uma raiz, que é uma entidade que atua como ponto de entrada para o acesso ao restante do agregado. Agregados ajudam a garantir a consistência e a integridade dos dados dentro de um conjunto relacionado de objetos.</p>
+</li>
+<li>
+<p><strong>Repositórios</strong>: Repositórios são interfaces ou classes que fornecem métodos para acessar e persistir entidades dentro de um Agregado. Eles permitem isolar o código de domínio da infraestrutura de armazenamento de dados, facilitando a substituição de diferentes fontes de dados sem afetar o domínio.</p>
+</li>
+<li>
+<p><strong>Serviços de Domínio</strong>: Serviços de Domínio são usados para encapsular a lógica de negócios que não pertence naturalmente a uma entidade ou objeto de valor específico. Eles fornecem operações que afetam vários objetos no domínio e são úteis para implementar regras de negócios complexas.</p>
+</li>
+<li>
+<p><strong>Foco na Linguagem Ubíqua</strong>: A linguagem usada na Modelagem Tática deve ser consistente com a linguagem usada pelos especialistas no domínio. Isso ajuda a garantir que a comunicação entre desenvolvedores e especialistas seja eficaz e que o software reflita com precisão o conhecimento do domínio.</p>
+</li>
+<li>
+<p><strong>Limite o Acoplamento</strong>: É importante manter o baixo acoplamento entre os diversos componentes do sistema. Agregados, repositórios e serviços de domínio devem ser projetados para limitar as dependências entre eles, facilitando a manutenção e a evolução do sistema.</p>
+</li>
+<li>
+<p><strong>Separação de Responsabilidades</strong>: A Modelagem Tática segue o princípio de separação de responsabilidades, onde diferentes componentes do sistema têm funções bem definidas e limitadas. Entidades, objetos de valor, Agregados e Serviços de Domínio desempenham papéis distintos no sistema.</p>
+</li>
+</ol>
+<h3 id="modelagem-de-aplicação"><strong>Modelagem de Aplicação</strong></h3>
+<p>Na abordagem de Domain-Driven Design (DDD), a Modelagem de Aplicação é uma camada responsável pela interação entre o domínio do problema (modelagem tática) e o mundo exterior, como interfaces de usuário, sistemas externos e adaptadores. Embora os princípios da Modelagem Tática estejam mais relacionados à representação do domínio de negócios, a Modelagem de Aplicação lida com a orquestração e a coordenação de casos de uso e interações com atores externos. Aqui estão alguns princípios-chave da Modelagem de Aplicação no DDD:</p>
+<ol>
+<li>
+<p><strong>Casos de Uso Claros</strong>: Defina e identifique claramente os casos de uso da aplicação. Isso envolve a compreensão dos fluxos de trabalho do usuário e dos requisitos funcionais do sistema. Os casos de uso devem ser bem definidos e mapeados para as operações do domínio.</p>
+</li>
+<li>
+<p><strong>Interfaces de Usuário Efetivas</strong>: Desenvolva interfaces de usuário que sejam eficazes para os usuários finais. As interfaces devem refletir a linguagem ubíqua do domínio e fornecer uma experiência de usuário intuitiva.</p>
+</li>
+<li>
+<p><strong>Controladores de Aplicação</strong>: Use controladores de aplicação para orquestrar a execução dos casos de uso. Os controladores de aplicação são responsáveis por receber solicitações dos usuários, chamar os serviços de domínio apropriados e coordenar a resposta para as interfaces de usuário.</p>
+</li>
+<li>
+<p><strong>Adaptadores</strong>: Use adaptadores para interagir com sistemas externos e recursos, como bancos de dados, serviços web, dispositivos de hardware, etc. Os adaptadores ajudam a isolar a lógica de aplicação do código de infraestrutura.</p>
+</li>
+<li>
+<p><strong>Modelo de Aplicação</strong>: O modelo de aplicação é uma representação simplificada do domínio que é usada para atender às necessidades das interfaces de usuário. Ele pode ser composto por DTOs (Objetos de Transferência de Dados) e objetos de apresentação que são otimizados para a exibição e entrada de dados.</p>
+</li>
+<li>
+<p><strong>Caso de Uso Único</strong>: Em muitos casos, cada controlador de aplicação deve corresponder a um único caso de uso. Isso ajuda a manter a coesão e a clareza no código de aplicação.</p>
+</li>
+<li>
+<p><strong>Injeção de Dependência</strong>: Use técnicas de injeção de dependência para gerenciar as dependências entre os componentes da aplicação. Isso ajuda a tornar o código mais testável e flexível.</p>
+</li>
+<li>
+<p><strong>Testes de Unidade e Integração</strong>: Desenvolva testes de unidade para verificar a lógica da aplicação e testes de integração para verificar a interação com os componentes externos.</p>
+</li>
+<li>
+<p><strong>Evitar a Lógica de Domínio na Camada de Aplicação</strong>: Evite colocar regras de negócios complexas na camada de aplicação. Em vez disso, coloque essas regras na camada de modelagem tática, nos serviços de domínio apropriados.</p>
+</li>
+<li>
+<p><strong>Linguagem Ubíqua na Interface de Usuário</strong>: Mantenha a consistência da linguagem ubíqua na interface de usuário para garantir uma compreensão clara e eficaz do sistema pelos usuários.</p>
+</li>
+</ol>
+<h3 id="camadas-do-ddd">Camadas do DDD</h3>
+<p>Embora o DDD não defina um conjunto rígido de camadas, geralmente é implementado com as seguintes camadas:</p>
+<ol>
+<li>
+<p><strong>Camada de Domínio (Domain Layer):</strong> Esta é a camada central do DDD e contém as regras de negócios e a lógica do domínio. É onde as entidades, agregados, objetos de valor e serviços do domínio são definidos. Esta camada é a mais crítica no DDD, pois se concentra em capturar o conhecimento do domínio e expressar as regras de negócios de forma clara e encapsulada.</p>
+</li>
+<li>
+<p><strong>Camada de Aplicação (Application Layer):</strong> A camada de aplicação atua como uma camada intermediária que coordena a interação entre a camada de domínio e a camada de infraestrutura. Ela contém os serviços de aplicação que orquestram as operações do domínio, incluindo a validação de regras de negócios e a coordenação das operações de diferentes agregados. Essa camada é muitas vezes responsável pela tradução de solicitações da interface do usuário em comandos para o domínio.</p>
+</li>
+<li>
+<p><strong>Camada de Infraestrutura (Infrastructure Layer):</strong> A camada de infraestrutura lida com preocupações técnicas e detalhes de implementação, como o acesso a bancos de dados, serviços de terceiros, notificações, e assim por diante. Ela fornece uma base técnica para o aplicativo, permitindo que a camada de domínio permaneça desacoplada de detalhes de implementação. A camada de infraestrutura geralmente inclui componentes como repositórios, adaptadores de banco de dados, serviços de mensageria, serviços de autenticação, entre outros.</p>
+</li>
+<li>
+<p><strong>Camada de Interface do Usuário (User Interface Layer):</strong> Essa camada é responsável por interagir com os usuários finais ou outros sistemas. Ela pode incluir interfaces web, aplicativos móveis, APIs REST, ou qualquer outra forma de interação com o aplicativo. É importante que a camada de interface do usuário separe adequadamente as preocupações de apresentação das regras de negócios e coordenação.</p>
+</li>
+</ol>
+<h3 id="exemplo-usando-linguagem-ubíqua-do-ddd">Exemplo usando linguagem Ubíqua do DDD</h3>
+<p><strong>Entidade:</strong> Pedido</p>
+<ol>
+<li>
+<p><strong>Pedido:</strong> Um Pedido representa um registro das escolhas do cliente em relação aos produtos que deseja comprar.</p>
+</li>
+<li>
+<p><strong>Cliente:</strong> O Cliente é a pessoa que faz um Pedido. Ele tem informações como nome, endereço, e-mail, etc.</p>
+</li>
+<li>
+<p><strong>Produto:</strong> Um Produto é um item disponível para compra no sistema de comércio eletrônico.</p>
+</li>
+<li>
+<p><strong>Carrinho de Compras:</strong> O Carrinho de Compras é onde os Clientes adicionam os Produtos que desejam comprar antes de fazer o Pedido. Pode conter vários Produtos e quantidades.</p>
+</li>
+<li>
+<p><strong>Status do Pedido:</strong> O Status do Pedido é o estado atual do Pedido e pode ser &ldquo;Em processamento,&rdquo; &ldquo;Enviado,&rdquo; &ldquo;Entregue,&rdquo; etc.</p>
+</li>
+<li>
+<p><strong>Itens do Pedido:</strong> Itens do Pedido representam os Produtos específicos e as quantidades incluídas em um Pedido. Cada Item do Pedido está associado a um Produto.</p>
+</li>
+<li>
+<p><strong>Endereço de Entrega:</strong> O Endereço de Entrega é o local para onde o Pedido será enviado, fornecido pelo Cliente.</p>
+</li>
+<li>
+<p><strong>Pagamento:</strong> O Pagamento é a transação financeira que ocorre quando o Cliente confirma o Pedido. Pode incluir informações de pagamento, como número do cartão de crédito, data de validade, etc.</p>
+</li>
+<li>
+<p><strong>Estoque:</strong> O Estoque é a quantidade disponível de cada Produto no sistema. Quando um Pedido é feito, o Estoque é atualizado.</p>
+</li>
+</ol>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Início</a></li>
+         
+          <li><a href="/posts">Artigos</a></li>
+         
+          <li><a href="/categories">Categorias</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tipos-de-modelagens-no-ddd">Tipos de Modelagens no DDD</a></li>
+        <li><a href="#modelagem-estratégica">Modelagem Estratégica</a></li>
+        <li><a href="#modelagem-tática">Modelagem Tática</a></li>
+        <li><a href="#modelagem-de-aplicação"><strong>Modelagem de Aplicação</strong></a></li>
+        <li><a href="#camadas-do-ddd">Camadas do DDD</a></li>
+        <li><a href="#exemplo-usando-linguagem-ubíqua-do-ddd">Exemplo usando linguagem Ubíqua do DDD</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&text=Padr%c3%a3o%20DDD" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&is_video=false&description=Padr%c3%a3o%20DDD" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Padr%c3%a3o%20DDD&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&title=Padr%c3%a3o%20DDD" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&name=Padr%c3%a3o%20DDD&description=O%20Dom%c3%adnio-Driven%20Design%20%28DDD%29%20%c3%a9%20uma%20abordagem%20de%20desenvolvimento%20de%20software%20que%20coloca%20um%20forte%20foco%20na%20modelagem%20do%20dom%c3%adnio%20de%20neg%c3%b3cios.%20Existem%20v%c3%a1rios%20conceitos%20fundamentais%20no%20DDD%20que%20s%c3%a3o%20usados%20para%20criar%20modelos%20de%20dom%c3%adnio%20eficazes.%20Alguns%20dos%20conceitos%20mais%20usados%20s%c3%a3o%3a%0a%20%20Dom%c3%adnio%3a%20O%20dom%c3%adnio%20se%20refere%20ao%20espa%c3%a7o%20de%20neg%c3%b3cios%20ou%20%c3%a1rea%20de%20conhecimento%20em%20que%20um%20aplicativo%20est%c3%a1%20operando.%20%c3%89%20o%20conjunto%20de%20regras%2c%20conceitos%20e%20processos%20que%20governam%20uma%20determinada%20%c3%a1rea%20de%20neg%c3%b3cios." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f03-padrao-ddd%2f&t=Padr%c3%a3o%20DDD" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Vinicius Alves 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

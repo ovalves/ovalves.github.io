@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Estilo Baseado em Microkernel | Vinicius Alves</title>
+  <link rel = 'canonical' href = 'https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/'>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Estilo Baseado em Microkernel" />
+<meta property="og:description" content="Estilo Baseado em Microkernel A arquitetura baseada em microkernel é um estilo arquitetural que se concentra em manter o núcleo do sistema simples, com funcionalidades essenciais, enquanto os serviços adicionais são movidos para módulos externos. Essa abordagem facilita a manutenção, extensibilidade e adaptabilidade em sistemas complexos.
+Entendendo a Arquitetura Baseada em Microkernel: O conceito-chave por trás da arquitetura baseada em microkernel é manter o núcleo (kernel) do sistema o mais enxuto e simples possível, tratando apenas das funções essenciais, como gerenciamento de memória, escalonamento de processos e comunicação básica." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ovalves.github.io/posts/solution-architecture/05-estilo-baseado-em-microkernel/" />
+<meta property="article:published_time" content="2023-10-06T18:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-06T18:00:00+00:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Estilo Baseado em Microkernel"/>
+<meta name="twitter:description" content="Estilo Baseado em Microkernel A arquitetura baseada em microkernel é um estilo arquitetural que se concentra em manter o núcleo do sistema simples, com funcionalidades essenciais, enquanto os serviços adicionais são movidos para módulos externos. Essa abordagem facilita a manutenção, extensibilidade e adaptabilidade em sistemas complexos.
+Entendendo a Arquitetura Baseada em Microkernel: O conceito-chave por trás da arquitetura baseada em microkernel é manter o núcleo (kernel) do sistema o mais enxuto e simples possível, tratando apenas das funções essenciais, como gerenciamento de memória, escalonamento de processos e comunicação básica."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ovalves.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ovalves.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ovalves.github.io/posts/solution-architecture/04-estilo-baseado-em-pipelines/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ovalves.github.io/posts/solution-architecture/06-estilo-baseado-em-servicos/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&text=Estilo%20Baseado%20em%20Microkernel" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&is_video=false&description=Estilo%20Baseado%20em%20Microkernel" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Estilo%20Baseado%20em%20Microkernel&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&name=Estilo%20Baseado%20em%20Microkernel&description=Estilo%20Baseado%20em%20Microkernel%20A%20arquitetura%20baseada%20em%20microkernel%20%c3%a9%20um%20estilo%20arquitetural%20que%20se%20concentra%20em%20manter%20o%20n%c3%bacleo%20do%20sistema%20simples%2c%20com%20funcionalidades%20essenciais%2c%20enquanto%20os%20servi%c3%a7os%20adicionais%20s%c3%a3o%20movidos%20para%20m%c3%b3dulos%20externos.%20Essa%20abordagem%20facilita%20a%20manuten%c3%a7%c3%a3o%2c%20extensibilidade%20e%20adaptabilidade%20em%20sistemas%20complexos.%0aEntendendo%20a%20Arquitetura%20Baseada%20em%20Microkernel%3a%20O%20conceito-chave%20por%20tr%c3%a1s%20da%20arquitetura%20baseada%20em%20microkernel%20%c3%a9%20manter%20o%20n%c3%bacleo%20%28kernel%29%20do%20sistema%20o%20mais%20enxuto%20e%20simples%20poss%c3%advel%2c%20tratando%20apenas%20das%20fun%c3%a7%c3%b5es%20essenciais%2c%20como%20gerenciamento%20de%20mem%c3%b3ria%2c%20escalonamento%20de%20processos%20e%20comunica%c3%a7%c3%a3o%20b%c3%a1sica." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&t=Estilo%20Baseado%20em%20Microkernel" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#entendendo-a-arquitetura-baseada-em-microkernel"><strong>Entendendo a Arquitetura Baseada em Microkernel:</strong></a>
+          <ul>
+            <li><a href="#exemplo-de-uso-do-microkernel-sistemas-operacionais"><strong>Exemplo de uso do Microkernel: Sistemas Operacionais:</strong></a></li>
+            <li><a href="#exemplo-de-uso-do-microkernel-sistemas-embarcados-e-telecomunicações"><strong>Exemplo de uso do Microkernel: Sistemas Embarcados e Telecomunicações:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#vantagens-da-arquitetura-baseada-em-microkernel"><strong>Vantagens da Arquitetura Baseada em Microkernel:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Estilo Baseado em Microkernel
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-10-06 18:00:00 &#43;0000 UTC" itemprop="datePublished">06/10/2023</time>
+          
+        </div>
+        
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/arquitetura-de-software">arquitetura-de-software</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/arquitetura-de-software" rel="tag">arquitetura-de-software</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <h1 id="estilo-baseado-em-microkernel">Estilo Baseado em Microkernel</h1>
+<p>A arquitetura baseada em microkernel é um estilo arquitetural que se concentra em manter o núcleo do sistema simples, com funcionalidades essenciais, enquanto os serviços adicionais são movidos para módulos externos. Essa abordagem facilita a manutenção, extensibilidade e adaptabilidade em sistemas complexos.</p>
+<h3 id="entendendo-a-arquitetura-baseada-em-microkernel"><strong>Entendendo a Arquitetura Baseada em Microkernel:</strong></h3>
+<p>O conceito-chave por trás da arquitetura baseada em microkernel é manter o núcleo (kernel) do sistema o mais enxuto e simples possível, tratando apenas das funções essenciais, como gerenciamento de memória, escalonamento de processos e comunicação básica. As funcionalidades mais complexas e específicas do sistema são implementadas como módulos externos que se comunicam com o núcleo por meio de interfaces bem definidas.</p>
+<h4 id="exemplo-de-uso-do-microkernel-sistemas-operacionais"><strong>Exemplo de uso do Microkernel: Sistemas Operacionais:</strong></h4>
+<p>Os sistemas operacionais são um exemplo clássico de aplicação da arquitetura baseada em microkernel. Nesse contexto, o microkernel contém funcionalidades essenciais, como o gerenciamento de hardware, comunicação entre processos e escalonamento de tarefas. Funcionalidades mais complexas, como sistemas de arquivos, sistemas de rede e drivers de dispositivos, são implementadas como módulos externos que se comunicam com o microkernel.</p>
+<h4 id="exemplo-de-uso-do-microkernel-sistemas-embarcados-e-telecomunicações"><strong>Exemplo de uso do Microkernel: Sistemas Embarcados e Telecomunicações:</strong></h4>
+<p>A arquitetura baseada em microkernel também é comumente aplicada em sistemas embarcados e na indústria de telecomunicações. Nesses cenários, o microkernel fornece as funcionalidades essenciais do sistema, como gerenciamento de recursos, segurança e comunicação de baixo nível. Serviços específicos, como protocolos de comunicação, serviços de transcodificação de áudio/vídeo e serviços de gerenciamento de chamadas, são implementados como módulos externos. Isso permite que os fabricantes personalizem sistemas para atender às necessidades específicas de seus dispositivos ou infraestrutura de telecomunicações.</p>
+<h5 id="a-imagemimage-abaixo-exemplifica-o-uso-da-arquitetura-baseada-em-micro-kernel">A imagem<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> abaixo exemplifica o uso da arquitetura baseada em Micro Kernel.</h5>
+<p><img src="../_files/20231017111108.png" alt="arquitetura baseada em micro kernel"></p>
+<blockquote>
+<p>Fundamentals of Software Architecture</p>
+</blockquote>
+<h3 id="vantagens-da-arquitetura-baseada-em-microkernel"><strong>Vantagens da Arquitetura Baseada em Microkernel:</strong></h3>
+<ul>
+<li><strong>Flexibilidade e Extensibilidade:</strong> A modularidade facilita a adição, remoção e atualização de serviços sem afetar o núcleo do sistema.</li>
+<li><strong>Confiabilidade e Tolerância a Falhas:</strong> Problemas em módulos externos têm menos impacto no funcionamento do núcleo do sistema.</li>
+<li><strong>Manutenção Simplificada:</strong> A separação entre o núcleo e os módulos externos facilita a manutenção e o desenvolvimento.</li>
+<li><strong>Segurança Aprimorada:</strong> Restringir as funcionalidades no núcleo pode melhorar a segurança, limitando a superfície de ataque.</li>
+</ul>
+<p>A arquitetura baseada em microkernel é uma abordagem poderosa para a construção de sistemas complexos e adaptáveis. Ela é particularmente adequada para sistemas que requerem <code>flexibilidade</code>, <code>escalabilidade</code> e <code>extensibilidade</code>. Ao manter o núcleo simples e delegar funcionalidades específicas a módulos externos, as organizações podem criar sistemas que se adaptam facilmente as constantes mudanças.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Imagem retirada do livro: Fundamentals of Software Architecture <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Início</a></li>
+         
+          <li><a href="/posts">Artigos</a></li>
+         
+          <li><a href="/categories">Categorias</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#entendendo-a-arquitetura-baseada-em-microkernel"><strong>Entendendo a Arquitetura Baseada em Microkernel:</strong></a>
+          <ul>
+            <li><a href="#exemplo-de-uso-do-microkernel-sistemas-operacionais"><strong>Exemplo de uso do Microkernel: Sistemas Operacionais:</strong></a></li>
+            <li><a href="#exemplo-de-uso-do-microkernel-sistemas-embarcados-e-telecomunicações"><strong>Exemplo de uso do Microkernel: Sistemas Embarcados e Telecomunicações:</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#vantagens-da-arquitetura-baseada-em-microkernel"><strong>Vantagens da Arquitetura Baseada em Microkernel:</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&text=Estilo%20Baseado%20em%20Microkernel" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&is_video=false&description=Estilo%20Baseado%20em%20Microkernel" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Estilo%20Baseado%20em%20Microkernel&body=Check out this article: https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&title=Estilo%20Baseado%20em%20Microkernel" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&name=Estilo%20Baseado%20em%20Microkernel&description=Estilo%20Baseado%20em%20Microkernel%20A%20arquitetura%20baseada%20em%20microkernel%20%c3%a9%20um%20estilo%20arquitetural%20que%20se%20concentra%20em%20manter%20o%20n%c3%bacleo%20do%20sistema%20simples%2c%20com%20funcionalidades%20essenciais%2c%20enquanto%20os%20servi%c3%a7os%20adicionais%20s%c3%a3o%20movidos%20para%20m%c3%b3dulos%20externos.%20Essa%20abordagem%20facilita%20a%20manuten%c3%a7%c3%a3o%2c%20extensibilidade%20e%20adaptabilidade%20em%20sistemas%20complexos.%0aEntendendo%20a%20Arquitetura%20Baseada%20em%20Microkernel%3a%20O%20conceito-chave%20por%20tr%c3%a1s%20da%20arquitetura%20baseada%20em%20microkernel%20%c3%a9%20manter%20o%20n%c3%bacleo%20%28kernel%29%20do%20sistema%20o%20mais%20enxuto%20e%20simples%20poss%c3%advel%2c%20tratando%20apenas%20das%20fun%c3%a7%c3%b5es%20essenciais%2c%20como%20gerenciamento%20de%20mem%c3%b3ria%2c%20escalonamento%20de%20processos%20e%20comunica%c3%a7%c3%a3o%20b%c3%a1sica." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fovalves.github.io%2fposts%2fsolution-architecture%2f05-estilo-baseado-em-microkernel%2f&t=Estilo%20Baseado%20em%20Microkernel" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Vinicius Alves 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Início</a></li>
+         
+        <li><a href="/posts">Artigos</a></li>
+         
+        <li><a href="/categories">Categorias</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">Sobre</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
