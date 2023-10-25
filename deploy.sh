@@ -15,3 +15,4 @@ fi
 git commit -m "$msg"
 git push origin master
 git subtree push --prefix=public git@github.com:ovalves/ovalves.github.io.git gh-pages
+# git push origin `git subtree split --prefix public master`:gh-pages --force
